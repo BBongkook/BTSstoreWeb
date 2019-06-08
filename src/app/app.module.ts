@@ -4,11 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
+import { LoginComponent } from './login/login.component';
+import { SignComponent } from './sign/sign.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    LoginComponent,
+    SignComponent
   ],
   imports: [
     BrowserModule,
