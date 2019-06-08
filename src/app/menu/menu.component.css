@@ -1,0 +1,16 @@
+body {
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-size: 2em;
+  font-weight: bold;
+  background: #5457de;
+  color: #fff;
+  display: inline-block;
+  padding: 0 8px;
+}
