@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
 import { SignComponent } from './sign/sign.component';
 import { FormsModule } from '@angular/forms';
+import { MainComponent } from './main/main.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     MenuComponent,
     LoginComponent,
-    SignComponent
+    SignComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
