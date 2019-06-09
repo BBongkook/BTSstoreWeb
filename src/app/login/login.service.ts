@@ -8,11 +8,11 @@ import { User } from '../vo/user';
   providedIn: 'root'
 })
 export class LoginService {
-  private baseUrl: string = 'http://bts.chrnu6fdargl.ap-northeast-2.rds.amazonaws.com:1588/'
+  private baseUrl: string = 'http://localhost:88/'
   constructor() { }
 
   doLogin(us: User) {
-    return ajax.post(this.baseUrl + 'login', us, { 'Content-Type': 'application/json', 'rxjs-custom-header': 'Rxjs' }
+    return ajax.post(this.baseUrl + 'uiLogin', us, { 'Content-Type': 'application/json', 'rxjs-custom-header': 'Rxjs' }
     );
   }
 
