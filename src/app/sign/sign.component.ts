@@ -33,4 +33,20 @@ export class SignComponent implements OnInit {
 
     }
   }
+
+  fn_setAddr() : void{
+    var width = 500;
+    var height = 600;
+    daum.postcode.load(function () {
+      new daum.postcode({
+        oncomplete: function (data) {
+          $("#sample6_postcode").var(data.address);
+          $("#sample6_address").var(data.buildingName);
+        }
+      }).open({
+        left: (window.screen.width / 2) - (width / 2),
+        top: (window.screen.height / 2) - (height / 2)
+      });
+    });
+  }
 }

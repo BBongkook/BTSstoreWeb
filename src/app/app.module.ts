@@ -16,7 +16,7 @@ import { MainComponent } from './main/main.component';
     MenuComponent,
     LoginComponent,
     SignComponent,
-    MainComponent
+    MainComponent,
   ],
   imports: [
     BrowserModule,
