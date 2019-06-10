@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Sign } from '../vo/sign';
 import { SignService } from './sign.service';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-sign',
@@ -10,6 +11,7 @@ import { SignService } from './sign.service';
 export class SignComponent implements OnInit {
   ss: Sign = new Sign();
   uiPwd2: string = "";
+  daum: string = "";
   constructor(private _ss: SignService) { }
 
   ngOnInit() {
@@ -34,7 +36,7 @@ export class SignComponent implements OnInit {
     }
   }
 
-  fn_setAddr() : void{
+  fn_setAddr(): void {
     var width = 500;
     var height = 600;
     daum.postcode.load(function () {
