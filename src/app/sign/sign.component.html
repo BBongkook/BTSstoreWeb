@@ -1,5 +1,5 @@
-<div align="center">
-  <table>
+<div id="signUp" align="center">
+  <table id="sign">
     <tr>
       <td> <label for="ssuiName">이름</label></td>
       <td colspan="2"><input type="text" id="ssuiName" [(ngModel)]="ss.uiName" autofocus><br></td>
@@ -31,7 +31,7 @@
       <td><label for="ssuiZipcode">우편번호</label></td>
       <td><input type="text" id="ssuiZipcode" [(ngModel)]="ss.uiZipcode"></td>
       <td>
-        
+
         <btn-daum-address (result)="setDaumAddressApi($event)" [options]="daumAddressOptions"></btn-daum-address>
       </td>
     </tr>
@@ -47,12 +47,11 @@
 
     <tr>
       <td><label for="ssuiPhone">핸드폰번호</label></td>
-      <td colspan="2"><input type="text" id="ssuiPhone" [(ngModel)]="ss.uiPhone"></td>
+      <td colspan="2">
+      <input type="text" id="ssuiPhone" [(ngModel)]="ss.uiPhone"></td>
     </tr>
     <tr>
-      <td colspan="3"> <button (click)="sign()">회원가입</button> </td>
+      <td colspan="3" align="center"> <button (click)="sign()" class="button button2">회원가입</button> </td>
     </tr>
   </table>
-</div> 
-
-
+</div>
