@@ -2,52 +2,56 @@
   <table border="1">
     <tr>
       <td> <label for="ssuiName">이름</label></td>
-      <td><input type="text" id="ssuiName" [(ngModel)]="ss.uiName" autofocus><br></td>
+      <td colspan="2"><input type="text" id="ssuiName" [(ngModel)]="ss.uiName" autofocus><br></td>
     </tr>
     <tr>
       <td> <label for="ssuiId">아이디</label></td>
-      <td><input type="text" id="ssuiId" [(ngModel)]="ss.uiId"><br></td>
+      <td colspan="2"><input type="text" id="ssuiId" [(ngModel)]="ss.uiId"><br></td>
     </tr>
     <tr>
       <td><label for="ssuiPwd">비밀번호</label></td>
-      <td><input type="password" id="ssuiPwd" [(ngModel)]="ss.uiPwd"></td>
+      <td colspan="2"><input type="password" id="ssuiPwd" [(ngModel)]="ss.uiPwd"></td>
     </tr>
     <tr>
       <td><label for="ssuiPwd2">비밀번호 확인</label></td>
-      <td><input type="password" id="ssuiPwd2" [(ngModel)]="uiPwd2"></td>
+      <td colspan="2"><input type="password" id="ssuiPwd2" [(ngModel)]="uiPwd2"></td>
     </tr>
     <tr>
       <td><label for="ssuiAge">성별</label></td>
-      <td><select id="ss.uiTrans" [(ngModel)]="ss.uiTrans">
+      <td colspan="2"><select id="ss.uiTrans" [(ngModel)]="ss.uiTrans">
           <option value="1">남자</option>
           <option value="2">여자</option>
         </select></td>
     </tr>
     <tr>
       <td><label for="ssuiEmail">Email</label></td>
-      <td><input type="email" id="ssuiEmail" [(ngModel)]="ss.uiEmail"></td>
+      <td colspan="2"><input type="email" id="ssuiEmail" [(ngModel)]="ss.uiEmail"></td>
     </tr>
     <tr>
       <td><label for="ssuiZipcode">우편번호</label></td>
       <td><input type="text" id="ssuiZipcode" [(ngModel)]="ss.uiZipcode"></td>
+      <td>
+        <btn-daum-address (result)="setDaumAddressApi($event)" [options]="daumAddressOptions"></btn-daum-address>
+      </td>
     </tr>
     <tr>
       <td><label for="ssuiKoaddress">한글주소</label></td>
-      <td><input type="text" id="ssuiAddr" [(ngModel)]="ss.uiAddr"></td>
+      <td colspan="2"><input type="text" id="ssuiAddr" [(ngModel)]="ss.uiAddr"></td>
     </tr>
     <tr>
       <td><label for="ssuiEnaddress">상세주소</label></td>
-      <td><input type="text" id="ssuiAddr2" [(ngModel)]="ss.uiAddr2"></td>
+      <td colspan="2"><input type="text" id="ssuiAddr2" [(ngModel)]="ss.uiAddr2"></td>
 
     </tr>
-    
+
     <tr>
       <td><label for="ssuiPhone">핸드폰번호</label></td>
-      <td><input type="text" id="ssuiPhone" [(ngModel)]="ss.uiPhone"></td>
+      <td colspan="2"><input type="text" id="ssuiPhone" [(ngModel)]="ss.uiPhone"></td>
     </tr>
     <tr>
-      <td colspan="2"> <button (click)="sign()">회원가입</button> </td>
+      <td colspan="3"> <button (click)="sign()">회원가입</button> </td>
     </tr>
   </table>
 </div>
-<btn-daum-address (result)="setDaumAddressApi($event)" [options]="daumAddressOptions"></btn-daum-address>
+
+
