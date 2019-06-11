@@ -66,7 +66,7 @@ export class SignComponent implements OnInit {
       return;
     }
 
-    this._ss.join(this.ss).subscribe(res => {
+    this._ss.sign(this.ss).subscribe(res => {
       if(res.response){
         alert('회원가입이 성공하였습니다.');
         location.href = '/login';

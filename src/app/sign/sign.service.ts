@@ -9,7 +9,7 @@ export class SignService {
   private baseUrl: string = 'http://localhost:88/'
   constructor() { }
 
-  join(si: Sign) {
+  sign(si: Sign) {
     return ajax.post(this.baseUrl + 'signup', si, { 'Content-Type': 'application/json', 'rxjs-custom-header': 'Rxjs' }
     )
   };

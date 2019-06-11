@@ -12,7 +12,7 @@ export class LoginService {
   constructor() { }
 
   doLogin(us: User) {
-    return ajax.post(this.baseUrl + 'uiLogin', us, { 'Content-Type': 'application/json', 'rxjs-custom-header': 'Rxjs' }
+    return ajax.post(this.baseUrl + 'login', us, { 'Content-Type': 'application/json', 'rxjs-custom-header': 'Rxjs' }
     );
   }
 
