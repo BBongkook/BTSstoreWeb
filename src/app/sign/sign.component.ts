@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Sign } from '../vo/sign';
 import { SignService } from './sign.service';
-import { $ } from 'protractor';
 
 @Component({
   selector: 'app-sign',
@@ -11,44 +10,55 @@ import { $ } from 'protractor';
 export class SignComponent implements OnInit {
   ss: Sign = new Sign();
   uiPwd2: string = "";
-  daum: string = "";
   constructor(private _ss: SignService) { }
-
+  daumAddressOptions =  {
+    class: ['btn', 'btn-primary']
+  };
+   
+  setDaumAddressApi(data){
+    this.ss.uiAddr=data.addr;
+    this.ss.uiZipcode=data.zip;
+  }
   ngOnInit() {
   }
-  sign(): void {
+  sign():any{
     if (!this.ss.uiName) {
       alert("이름을 입력해주세요.");
+      return;
     } else if (!this.ss.uiId) {
       alert("아이디를 입력해주세요.");
+      return;
     } else if (!this.ss.uiPwd) {
       alert("비밀번호를 입력해주세요.");
+      return;
     } else if (this.ss.uiPwd != this.uiPwd2) {
       alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+      return;
     } else if (!this.ss.uiTrans) {
       alert("성별을 선택해 주세요.");
+      return;
+    } else if(!this.ss.uiZipcode){
+      alert("우편번호를 입력해주세요.");
+      return;
     } else if (!this.ss.uiAddr) {
-
+      alert("주소를 입력해주세요.");
+      return;
     } else if (!this.ss.uiAddr2) {
-
+      alert("상세주소를 입력해주세요.");
+      return;
     } else if (!this.ss.uiPhone) {
-
+      alert("휴대폰 번호를 입력해주세요.");
+      return;
     }
-  }
 
-  fn_setAddr(): void {
-    var width = 500;
-    var height = 600;
-    daum.postcode.load(function () {
-      new daum.postcode({
-        oncomplete: function (data) {
-          $("#sample6_postcode").var(data.address);
-          $("#sample6_address").var(data.buildingName);
-        }
-      }).open({
-        left: (window.screen.width / 2) - (width / 2),
-        top: (window.screen.height / 2) - (height / 2)
-      });
+    this._ss.join(this.ss).subscribe(res => {
+      if(res.response){
+        alert('회원가입이 성공하였습니다.');
+        location.href = '/login';
+      }else{
+        alert('작성된 걸 확인하세요.');
+      }
     });
   }
+
 }

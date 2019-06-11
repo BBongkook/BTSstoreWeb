@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { SignComponent } from './sign/sign.component';
 import { FormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
-
+import { NgDaumAddressModule } from 'ng2-daum-address';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { MainComponent } from './main/main.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgDaumAddressModule
   ],
   providers: [],
   bootstrap: [AppComponent]

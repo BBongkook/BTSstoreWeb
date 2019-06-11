@@ -4,6 +4,7 @@ export class Sign {
   uiPwd: string
   uiTrans: number
   uiEmail: string
+  uiZipcode: number
   uiAddr: string
   uiAddr2: string
   uiPhone: string
