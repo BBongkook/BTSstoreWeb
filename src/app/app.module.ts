@@ -9,6 +9,7 @@ import { SignComponent } from './sign/sign.component';
 import { FormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
 import { NgDaumAddressModule } from 'ng2-daum-address';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NgDaumAddressModule } from 'ng2-daum-address';
     LoginComponent,
     SignComponent,
     MainComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,

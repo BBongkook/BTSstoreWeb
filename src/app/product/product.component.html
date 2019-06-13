@@ -1,0 +1,17 @@
+<div class="container" *ngIf="product">
+  <table border="1" *ngIf="product">
+<tr>
+  <th>No</th>
+  <th>이름</th>
+  <th>수량</th>
+  <th>가격</th>
+</tr>
+<tr>
+<td>{{product.pNum}}</td>
+<td>{{product.pName}}</td>
+<td>{{product.pAmount}}</td>
+<td>{{product.pPrice}}</td>
+</tr>
+
+  </table>
+</div>

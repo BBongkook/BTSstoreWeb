@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { Sign } from './vo/sign';
 import { SignComponent } from './sign/sign.component';
 import { MainComponent } from './main/main.component';
+import { Product } from './vo/product';
+import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
   {
@@ -18,6 +20,10 @@ const routes: Routes = [
     path: '',
     component: MainComponent
   },
+  {
+    path: 'product',
+    component : ProductComponent
+  }
 ];
 
 @NgModule({
