@@ -8,6 +8,7 @@ import { ProductService } from './product.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
+  imgurl:string = 'http://localhost:88/img/'
   product: Product = new Product();
   productList:Product[]=[];
 
