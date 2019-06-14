@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
 import { NgDaumAddressModule } from 'ng2-daum-address';
 import { ProductComponent } from './product/product.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { ProductComponent } from './product/product.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgDaumAddressModule
+    NgDaumAddressModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
