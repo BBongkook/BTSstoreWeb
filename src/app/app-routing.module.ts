@@ -6,6 +6,7 @@ import { SignComponent } from './sign/sign.component';
 import { MainComponent } from './main/main.component';
 import { Product } from './vo/product';
 import { ProductComponent } from './product/product.component';
+import { ProductviewComponent } from './productview/productview.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'product',
     component : ProductComponent
+  },
+  {
+    path:'productview',
+    component:ProductviewComponent
   }
 ];
 

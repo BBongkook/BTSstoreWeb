@@ -38,7 +38,8 @@
               "src/js/main.js",
               "src/js/owl.carousel.min.js",
               "src/js/popper.min.js",
-              "src/js/slick.min.js"
+              "src/js/slick.min.js",
+              "node_modules/jquery/dist/jquery.min.js"
             ],
             "es5BrowserSupport": true
           },

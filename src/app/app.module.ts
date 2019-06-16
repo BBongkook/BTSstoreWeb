@@ -11,6 +11,7 @@ import { MainComponent } from './main/main.component';
 import { NgDaumAddressModule } from 'ng2-daum-address';
 import { ProductComponent } from './product/product.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductviewComponent } from './productview/productview.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     SignComponent,
     MainComponent,
     ProductComponent,
+    ProductviewComponent,
   ],
   imports: [
     BrowserModule,
