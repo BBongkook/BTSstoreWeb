@@ -17,6 +17,7 @@
           <table class="table table-hover table-bordered" id="sampleTable">
             <thead>
               <tr>
+                <th>CHECK</th>
                 <th>NO</th>
                 <th>NAME</th>
                 <th>ID</th>
@@ -28,6 +29,14 @@
             </thead>
             <tbody *ngFor="let user of userList">
               <tr>
+                <td>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" [(ngModel)]="user.uiNum">
+                      Display value
+                    </label>
+                  </div>
+                </td>
                 <td>{{user.uiNum}}</td>
                 <td>{{user.uiName}}</td>
                 <td>{{user.uiId}}</td>
@@ -36,11 +45,14 @@
                 <td>{{user.uiZipcode}} / {{user.uiAddr}} / {{user.uiAddr2}}</td>
                 <td>{{user.uiPhone}}</td>
               </tr>
-             
+
             </tbody>
           </table>
         </div>
       </div>
     </div>
+  </div>
+  <div align="right">
+    <button (click)="deleteUser()">삭제</button>
   </div>
 </main>

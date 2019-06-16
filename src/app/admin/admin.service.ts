@@ -7,8 +7,12 @@ import { ajax } from 'rxjs/ajax';
 export class AdminService {
   private baseUrl: string = 'http://localhost:88/'
   constructor() { }
-  
+
   loadUserList() {
     return ajax.get(this.baseUrl + 'userlist')
+  };
+
+  deleteUser(){
+    return ajax.delete(this.baseUrl + 'delete')
   };
 }
