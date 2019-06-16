@@ -27,7 +27,8 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",            
               "src/css/magnific-popup.css",
               "src/css/owl.theme.default.min.css",
-              "src/css/style.css"
+              "src/css/style.css",
+              "src/css/userlist.css"
             ],
             "scripts": [
               "src/assets/postcode.v2.js",

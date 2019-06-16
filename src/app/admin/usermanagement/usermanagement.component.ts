@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../admin.service';
+import { User } from 'src/app/vo/user';
 
 @Component({
   selector: 'app-usermanagement',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usermanagement.component.css']
 })
 export class UsermanagementComponent implements OnInit {
-
-  constructor() { }
+user:User = new User()
+userList:User[]=[];
+  constructor(private _as:AdminService) { }
 
   ngOnInit() {
+    this._as.loadUserList().subscribe(res=>{
+      console.log(res.response);
+      this.userList=res.response;
+    })
   }
 
 }
