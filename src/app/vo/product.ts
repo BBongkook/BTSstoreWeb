@@ -13,7 +13,7 @@ export class Product {
   constructor() {
 
   }
-  join(product: Product): boolean {
+  product(product: Product): boolean {
     return false;
   }
 }

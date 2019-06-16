@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Sign } from '../vo/sign';
 import { SignService } from './sign.service';
+import { User } from '../vo/user';
 
 @Component({
   selector: 'app-sign',
@@ -10,15 +11,17 @@ import { SignService } from './sign.service';
 export class SignComponent implements OnInit {
   ss: Sign = new Sign();
   uiPwd2: string = "";
+  isUnique: boolean = false;
+  pw_passed: boolean = true;
   constructor(private _ss: SignService) { }
-  daumAddressOptions =  {
+  daumAddressOptions = {
     class: ['btn', 'btn-primary']
   };
-   
-  setDaumAddressApi(data){
-    this.ss.uiAddr=data.addr;
-    this.ss.uiZipcode=data.zip;
-    
+
+  setDaumAddressApi(data) {
+    this.ss.uiAddr = data.addr;
+    this.ss.uiZipcode = data.zip;
+
   }
 
   themeObj = {
@@ -31,49 +34,124 @@ export class SignComponent implements OnInit {
     //postcodeTextColor: "", //우편번호 글자색
     //emphTextColor: "", //강조 글자색
     //outlineColor: "", //테두리
- };
- 
-  
+  };
+
+
   ngOnInit() {
   }
-  sign():any{
+  sign(): any {
+    var pw = this.ss.uiPwd;
+    var id = this.ss.uiId;
+    var SamePass_0 = 0; //동일문자 카운트
+    var SamePass_1 = 0; //연속성(+) 카운드
+    var SamePass_2 = 0; //연속성(-) 카운드
+    var pattern1 = /[0-9]/;
+    var pattern2 = /[a-zA-Z]/;
+    var pattern3 = /[~!@\#$%<>^&*]/;     // 원하는 특수문자 추가 제거
+    var pw_msg = "";
+
     if (!this.ss.uiName) {
       alert("이름을 입력해주세요.");
       return;
-    } else if (!this.ss.uiId) {
+    }
+
+    else if (!this.ss.uiId) {
       alert("아이디를 입력해주세요.");
       return;
-    } else if (!this.ss.uiPwd) {
+    }
+
+    else if (!this.ss.uiPwd) {
       alert("비밀번호를 입력해주세요.");
       return;
-    } else if (this.ss.uiPwd != this.uiPwd2) {
+    }
+
+    else if (this.ss.uiPwd != this.uiPwd2) {
       alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
       return;
-    } else if (!this.ss.uiTrans) {
+    }
+
+    // 여기서부터 비밀번호 특수문자 확인로직.
+    else if (!pattern1.test(pw) || !pattern2.test(pw) || !pattern3.test(pw) || pw.length < 8 || pw.length > 50) {
+      alert("영문+숫자+특수기호 8자리 이상으로 구성하여야 합니다.");
+      return false;
+    }
+
+    else if (pw.indexOf(id) > -1) {
+      alert("비밀번호는 ID를 포함할 수 없습니다.");
+      return false;
+    }
+    //까지 비밀번호 확인 로직
+    else if (!this.ss.uiTrans) {
       alert("성별을 선택해 주세요.");
       return;
-    } else if(!this.ss.uiZipcode){
+    }
+
+    else if (!this.ss.uiZipcode) {
       alert("우편번호를 입력해주세요.");
       return;
-    } else if (!this.ss.uiAddr) {
+    }
+
+    else if (!this.ss.uiAddr) {
       alert("주소를 입력해주세요.");
       return;
-    } else if (!this.ss.uiAddr2) {
+    }
+
+    else if (!this.ss.uiAddr2) {
       alert("상세주소를 입력해주세요.");
       return;
-    } else if (!this.ss.uiPhone) {
+    }
+
+    else if (!this.ss.uiPhone) {
       alert("휴대폰 번호를 입력해주세요.");
       return;
     }
 
     this._ss.sign(this.ss).subscribe(res => {
-      if(res.response){
+      if (res.response) {
         alert('회원가입이 성공하였습니다.');
         location.href = '/login';
-      }else{
-        alert('작성된 걸 확인하세요.');
+      } else {
+        alert('회원가입에 실패하였습니다.');
       }
     });
+  }
+
+  checkId() {
+    var url = "userlist/" + this.ss.uiId;
+    this._ss.get(url).subscribe(
+      res => {
+        if (!res) {
+          alert(this.ss.uiId + '는 사용 가능한 아이디 입니다')
+          this.isUnique = true;
+        } else {
+          alert(this.ss.uiId + '는 중복 아이디 입니다')
+        }
+      },
+      err => {
+        console.log(err);
+      }
+    )
+  }
+
+  checkPwd() {
+    var pw = this.ss.uiPwd;
+    var id = this.ss.uiId;
+    var pattern1 = /[0-9]/;
+    var pattern2 = /[a-zA-Z]/;
+    var pattern3 = /[~!@\#$%<>^&*]/;     // 원하는 특수문자 추가 제거
+
+    if (!pattern1.test(pw) || !pattern2.test(pw) || !pattern3.test(pw) || pw.length < 8 || pw.length > 50) {
+      alert("영문+숫자+특수기호 8자리 이상으로 구성하여야 합니다.");
+      return false;
+    } else if (pw.indexOf(id) > -1) {
+      alert("비밀번호는 ID를 포함할 수 없습니다.");
+      return false;
+    } else if (this.ss.uiPwd === this.uiPwd2) {
+      alert('비밀번호가 일치합니다.')
+    } else {
+      alert('비밀번호가 일치하지 않습니다.')
+    }
+
   }
 
 }
