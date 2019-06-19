@@ -23,25 +23,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",            
-              "src/css/magnific-popup.css",
-              "src/css/owl.theme.default.min.css",
-              "src/css/style.css",
-              "src/css/userlist.css"
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
             ],
             "scripts": [
-              "src/assets/postcode.v2.js",
-              "node_modules/jquery/dist/jquery.min.js",
-              "src/js/aos.js",
-              "src/js/jquery-ui.js",
-              "src/js/jquery.magnific-popup.min.js",
-              "src/js/main.js",
-              "src/js/owl.carousel.min.js",
-              "src/js/popper.min.js",
-              "src/js/slick.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-              
+              "node_modules/jquery/dist/jquery.min.js"
             ],
             "es5BrowserSupport": true
           },
@@ -97,10 +85,12 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
             ],
-            "scripts": [
-                
-            ],
+            "scripts": [],
             "assets": [
               "src/favicon.ico",
               "src/assets"

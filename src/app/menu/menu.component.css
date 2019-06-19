@@ -1,16 +1,11 @@
-body {
-  padding-bottom: 20px;
+.example-icon {
+  padding: 0 14px;
 }
 
-.navbar {
-  margin-bottom: 20px;
+.example-spacer {
+  flex: 1 1 auto;
 }
-
-.logo {
-  font-size: 2em;
-  font-weight: bold;
-  background: #5457de;
-  color: #fff;
-  display: inline-block;
-  padding: 0 8px;
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
 }

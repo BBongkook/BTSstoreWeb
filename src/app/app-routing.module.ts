@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { Sign } from './vo/sign';
@@ -9,6 +9,8 @@ import { ProductComponent } from './product/product.component';
 import { ProductviewComponent } from './productview/productview.component';
 import { AdminComponent } from './admin/admin.component';
 import { UsermanagementComponent } from './admin/usermanagement/usermanagement.component';
+import { TestComponent } from './test/test.component';
+import { CategoryComponent } from './category/category.component';
 
 const routes: Routes = [
   {
@@ -38,6 +40,14 @@ const routes: Routes = [
   {
     path:'usermanagement',
     component:UsermanagementComponent
+  },
+  {
+    path:'test',
+    component:TestComponent
+  },
+  {
+    path:'category',
+    component:CategoryComponent
   }
 ];
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Sign } from '../vo/sign';
 import { SignService } from './sign.service';
 import { User } from '../vo/user';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign',
@@ -15,13 +16,21 @@ export class SignComponent implements OnInit {
   pw_passed: boolean = true;
   constructor(private _ss: SignService) { }
   daumAddressOptions = {
-    class: ['btn', 'btn-primary']
+    class: ['btn', 'mat-raised-button']
   };
 
   setDaumAddressApi(data) {
     this.ss.uiAddr = data.addr;
     this.ss.uiZipcode = data.zip;
 
+  }
+
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+  getErrorMessage() {
+    return this.email.hasError('required') ? 'You must enter a value' :
+        this.email.hasError('email') ? 'Not a valid email' :
+            '';
   }
 
   themeObj = {

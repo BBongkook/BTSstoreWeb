@@ -3,7 +3,7 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
  */
- body {
+ /* body {
     overflow-x: hidden;
   }
   
@@ -46,5 +46,41 @@
     #wrapper.toggled #sidebar-wrapper {
       margin-left: -15rem;
     }
+  } */
+  
+   .example-container {
+    width: 1900px;
+    height: 900px;
+    margin: 10px;
+    background: yellowgreen;
+  } 
+  
+  .example-container2 {
+    background: gray;
+  } 
+  #left{
+    background:red;
+  }
+
+  #end{
+    background: black;
+  }
+
+/*   
+  .example-container {
+    width: 500px;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    
   }
   
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  } */
