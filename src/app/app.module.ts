@@ -54,6 +54,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { TestComponent } from './test/test.component';
 import { CategoryComponent } from './category/category.component';
+// import { Directive, Pipe } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -116,6 +117,8 @@ import { CategoryComponent } from './category/category.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    // Directive,
+    // Pipe,
   ],
   providers: [],
   bootstrap: [AppComponent]

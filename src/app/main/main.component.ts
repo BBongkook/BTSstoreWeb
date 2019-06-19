@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-main',
@@ -6,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-
-  constructor() { }
+  url = '';
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  goPage() {
+    return this.router.navigateByUrl('/' + this.url);
+  }
 
 }
 
