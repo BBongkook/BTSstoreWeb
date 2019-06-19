@@ -1,10 +1,15 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <a href="/"><span>BTS</span></a>
-      <span class="example-spacer"></span>
-      <div class="example-button-row">
-        <button mat-flat-button color="primary" routerLink="/login">테스트</button>
-        <a mat-raised-button routerLink="/sign">회원가입</a>
-      </div>
-    </mat-toolbar-row>
-  </mat-toolbar>
+  <mat-toolbar-row>
+    <a href="/"><span>BTS</span></a>
+    <span class="example-spacer"></span>
+    <div class="example-button-row">
+      <mat-form-field>
+        <input matInput>
+      </mat-form-field>
+      &nbsp;
+      <button mat-raised-button>SEARCH</button>
+      <button mat-raised-button routerLink="/login">LOGIN</button>
+      <a mat-raised-button routerLink="/sign">SIGN UP</a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
