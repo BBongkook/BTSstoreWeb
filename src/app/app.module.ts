@@ -54,6 +54,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { TestComponent } from './test/test.component';
 import { CategoryComponent } from './category/category.component';
+import { GoodsmanagementComponent } from './admin/goodsmanagement/goodsmanagement.component';
 // import { Directive, Pipe } from '@angular/core';
 
 @NgModule({
@@ -69,6 +70,7 @@ import { CategoryComponent } from './category/category.component';
     UsermanagementComponent,
     TestComponent,
     CategoryComponent,
+    GoodsmanagementComponent,
 
 
   ],

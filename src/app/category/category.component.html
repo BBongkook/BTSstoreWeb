@@ -2,13 +2,14 @@
 
   <button mat-button [matMenuTriggerFor]="aboveMenu">노트북</button>
   <mat-menu #aboveMenu="matMenu" yPosition="above">
-    <button mat-menu-item (click)="goPage('/product')">삼성전자</button>
-    <button mat-menu-item>LG전자</button>
-    <button mat-menu-item>레노버</button>
-    <button mat-menu-item>HP</button>
-    <button mat-menu-item>MSI</button>
-    <button mat-menu-item>ASUS</button>
-    <button mat-menu-item>DELL</button>
+    <button mat-menu-item (click)="goPage('/product')"><mat-icon>dialpad</mat-icon>삼성전자</button>
+    
+    <button mat-menu-item><mat-icon>dialpad</mat-icon>LG전자</button>
+    <button mat-menu-item><mat-icon>dialpad</mat-icon>레노버</button>
+    <button mat-menu-item><mat-icon>dialpad</mat-icon>HP</button>
+    <button mat-menu-item><mat-icon>dialpad</mat-icon>MSI</button>
+    <button mat-menu-item><mat-icon>dialpad</mat-icon>ASUS</button>
+    <button mat-menu-item><mat-icon>dialpad</mat-icon>DELL</button>
   </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="belowMenu">컴퓨터 부품</button>

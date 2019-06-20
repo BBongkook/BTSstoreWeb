@@ -10,6 +10,7 @@ import * as $ from 'jquery';
 export class AdminComponent implements OnInit {
   constructor(private router: Router) { }
   showFiller = false;
+  page = 'usermanagement';
   ngOnInit() {
     // $("#menu-toggle").click(function (e) {
     //   e.preventDefault();
@@ -17,6 +18,9 @@ export class AdminComponent implements OnInit {
     // });
   }
 
+  changePage(page){
+    this.page = page;
+  }
   // changeValue(evt) {
   //   $(document).ready(function () {
   //     $("#naver").load("/usermanagement");
