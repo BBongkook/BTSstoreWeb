@@ -1,4 +1,5 @@
 export class User {
+  uiNum: number
   uiName: string
   uiId: string
   uiPwd: string
