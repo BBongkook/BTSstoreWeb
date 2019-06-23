@@ -21,7 +21,7 @@
       <mat-list-item> <a mat-raised-button (click)="changePage('usermanagement')" id='user'>회원관리</a></mat-list-item>
       <mat-divider></mat-divider>
 
-      <mat-list-item><a mat-stroked-button (click)="changePage('goodsmanagement')" >상품관리</a></mat-list-item>
+      <mat-list-item><a mat-stroked-button (click)="changePage('productmanage')" >상품관리</a></mat-list-item>
       <mat-divider></mat-divider>
 
       <mat-list-item><a mat-stroked-button routerLink=".">결제관리</a></mat-list-item>
@@ -33,7 +33,7 @@
 </mat-sidenav>
   <mat-drawer-container id="center">
     <app-usermanagement *ngIf="page=='usermanagement'"></app-usermanagement>
-    <app-goodsmanagement *ngIf="page=='goodsmanagement'"></app-goodsmanagement>
+    <app-productmanage *ngIf="page=='productmanage'"></app-productmanage>
     
   </mat-drawer-container>
 </mat-sidenav-container>

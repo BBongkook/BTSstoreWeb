@@ -27,27 +27,31 @@ const routes: Routes = [
   },
   {
     path: 'product',
-    component : ProductComponent
+    component: ProductComponent
   },
   {
-    path:'admin',
-    component:AdminComponent
+    path: 'admin',
+    component: AdminComponent
   },
   {
-    path:'productview',
-    component:ProductviewComponent
+    path: 'productview',
+    component: ProductviewComponent
   },
   {
-    path:'usermanagement',
-    component:UsermanagementComponent
+    path: 'usermanagement',
+    component: UsermanagementComponent
   },
   {
-    path:'test',
-    component:TestComponent
+    path: 'test',
+    component: TestComponent
   },
   {
-    path:'category',
-    component:CategoryComponent
+    path: 'category',
+    component: CategoryComponent
+  },
+  {
+    path: 'productmanage',
+    component: ProductComponent
   }
 ];
 

@@ -55,6 +55,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { TestComponent } from './test/test.component';
 import { CategoryComponent } from './category/category.component';
 import { GoodsmanagementComponent } from './admin/goodsmanagement/goodsmanagement.component';
+import { ProductmanageComponent } from './admin/productmanage/productmanage.component';
 // import { Directive, Pipe } from '@angular/core';
 
 @NgModule({
@@ -71,6 +72,7 @@ import { GoodsmanagementComponent } from './admin/goodsmanagement/goodsmanagemen
     TestComponent,
     CategoryComponent,
     GoodsmanagementComponent,
+    ProductmanageComponent,
 
 
   ],
