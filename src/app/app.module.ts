@@ -54,8 +54,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { TestComponent } from './test/test.component';
 import { CategoryComponent } from './category/category.component';
-import { GoodsmanagementComponent } from './admin/goodsmanagement/goodsmanagement.component';
 import { ProductmanageComponent } from './admin/productmanage/productmanage.component';
+import { FacebookModule } from 'ngx-facebook'
 // import { Directive, Pipe } from '@angular/core';
 
 @NgModule({
@@ -71,7 +71,6 @@ import { ProductmanageComponent } from './admin/productmanage/productmanage.comp
     UsermanagementComponent,
     TestComponent,
     CategoryComponent,
-    GoodsmanagementComponent,
     ProductmanageComponent,
 
 
@@ -121,6 +120,7 @@ import { ProductmanageComponent } from './admin/productmanage/productmanage.comp
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    FacebookModule,
     // Directive,
     // Pipe,
   ],

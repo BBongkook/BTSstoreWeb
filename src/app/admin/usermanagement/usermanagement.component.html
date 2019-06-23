@@ -1,20 +1,15 @@
- <!-- <main class="app-content">
+<main class="app-content">
   <div class="app-title">
     <div>
-      <h1><i class="fa fa-th-list"></i> Data Table</h1>
+      <h1><i class="fa fa-th-list"></i> User Info Table</h1>
       <p>Table to display analytical data effectively</p>
     </div>
-    <ul class="app-breadcrumb breadcrumb side">
-      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-      <li class="breadcrumb-item">Tables</li>
-      <li class="breadcrumb-item active"><a href="#">Data Table</a></li>
-    </ul>
   </div>
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
         <div class="tile-body">
-          <table>
+          <table border="1">
             <thead>
               <tr>
                 <th>CHECK</th>
@@ -32,18 +27,19 @@
                 <td>
                   <div class="form-check">
                     <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue">
-                      Display value
+                      <input type="checkbox" class="form-check-input" name="deleteCheck" id="deleteCheck">
+                      {{user.uiNum}}
                     </label>
                   </div>
                 </td>
-
+                <td>{{user.uiNum}}</td>
                 <td>{{user.uiName}}</td>
                 <td>{{user.uiId}}</td>
                 <td>{{user.uiTrans}}</td>
                 <td>{{user.uiEmail}}</td>
                 <td>{{user.uiZipcode}} / {{user.uiAddr}} / {{user.uiAddr2}}</td>
                 <td>{{user.uiPhone}}</td>
+
               </tr>
 
             </tbody>
@@ -53,18 +49,7 @@
     </div>
   </div>
   <div align="right">
-    <button (click)="deleteUser()">삭제</button>
+    <button (click)="deleteUser()" [(ngModel)]="user.uiNum">삭제</button>
+
   </div>
-</main>  
- -->
-<mat-table [dataSource]="dataSource">
-<div>
-  <thead>
-    <th>book</th>
-    <th>table</th>
-    <th>shose</th>
-  </thead>
-  <tbody *ngFor="let user of userList">
-    <td>user.ui</td>
-  </tbody>
-</div>>
+</main>

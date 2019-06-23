@@ -3,6 +3,7 @@ import { AdminService } from '../admin.service';
 import { User } from 'src/app/vo/user';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatTableDataSource } from '@angular/material/table';
+import { CommonService } from 'src/app/common/common.service';
 
 
 @Component({
@@ -16,17 +17,34 @@ export class UsermanagementComponent implements OnInit {
 
 
 
-  constructor(private _as: AdminService) { }
+  constructor(private _as: AdminService, private _cs:CommonService) { }
 
   ngOnInit() {
-    this._as.loadUserList().subscribe(res => {
-      console.log(res.response);
-      this.userList = res.response;
-    })
-  }
+    this._cs.get('/userlist').subscribe(res => {
+      this.userList = <User[]>res;
+    },
+      err => {
+        console.log(err);
+      })
+  };
+
+
+  // loadUserList() {
+  //   this._cs.get('/userlist').subscribe(res => {
+  //     this.userList = <User[]>res;
+  //   },
+  //     err => {
+  //       console.log(err);
+  //     })
+  // };
 
   deleteUser() {
-    alert('삭제하시겠습니까?')
+    this._cs.delete('/deluser').subscribe(res=>{
+      console.log(res);
+    },
+    err=>{
+      console.log('삭제실패!');
+    })
   }
 
 
