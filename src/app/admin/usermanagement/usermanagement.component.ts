@@ -113,40 +113,39 @@ export class UsermanagementComponent implements OnInit {
     return arrayDatas;
   }
 
-  doDelete() {
-    this._cs.delete('/deluser').subscribe(res => {
-      if (res) {
-        // 1. selected/unselected 배열을 받아옴
-        var getSelect = this.getSelect();
-        this.userList = getSelect['selectedList'];
-        this.userList = <User[]>this.userList;
-        // 2. (선택된것)삭제될 data 인 recodeDeptDelete 에 담기
-        for (let selected of this.userList) {
-          this.recodeDeptDelete.push(selected);
-        }
-        console.log(this.recodeDeptDelete);
-        // 3. (미선택된것)화면에 다시 뿌리기
-        this.userList = getSelect['unselectedList'];
-        this.userList = <User[]>this.userList;
-        this.dataSource = new MatTableDataSource(this.userList);
-        this.selection = new SelectionModel<User>(true, []);
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-      }else{
-        alert('삭제실패!!')
-      }
 
-    },
-      err => {
-        console.log('삭제실패!');
-      })
+  doDelete() {
+    // 1. selected/unselected 배열을 받아옴
+    var getSelect = this.getSelect();
+    this.userList = getSelect['selectedList'];
+    this.userList = <User[]>this.userList;
+    // 2. (선택된것)삭제될 data 인 recodeDeptDelete 에 담기
+    for (let selected of this.userList) {
+      this.recodeDeptDelete.push(selected);
+    }
+    console.log(this.recodeDeptDelete);
+    // 3. (미선택된것)화면에 다시 뿌리기
+    this.userList = getSelect['unselectedList'];
+    this.userList = <User[]>this.userList;
+    this.dataSource = new MatTableDataSource(this.userList);
+    this.selection = new SelectionModel<User>(true, []);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+
   }
 
 
+  delete(row?: User) {
+    this._cs.delete('/deluser').subscribe(res => {
+      console.log(row.uiNum)
+    },
 
 
+      err => {
+        console.log('삭제실패!');
+      })
 
-}
+  }
 
   // loadUserList() {
   //   this._cs.get('/userlist').subscribe(res => {
@@ -167,4 +166,5 @@ export class UsermanagementComponent implements OnInit {
   // }
 
 
-// }
+  // }
+}

@@ -51,13 +51,9 @@ export class SignComponent implements OnInit {
   sign(): any {
     var pw = this.ss.uiPwd;
     var id = this.ss.uiId;
-    var SamePass_0 = 0; //동일문자 카운트
-    var SamePass_1 = 0; //연속성(+) 카운드
-    var SamePass_2 = 0; //연속성(-) 카운드
     var pattern1 = /[0-9]/;
     var pattern2 = /[a-zA-Z]/;
     var pattern3 = /[~!@\#$%<>^&*]/;     // 원하는 특수문자 추가 제거
-    var pw_msg = "";
 
     if (!this.ss.uiName) {
       alert("이름을 입력해주세요.");
