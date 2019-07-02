@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    margin-top: 70px;
+    margin-left: 30%
+  }
+  
+  .table-full-width {
+    width: 70%;
+  }
+  
+  td {
+    padding-right: 1px;
+  }
+  .example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  .radio-container > * {
+    width: 50%;
+  }
+  
+  

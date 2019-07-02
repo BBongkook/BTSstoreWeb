@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       if(res.response){
         this.us=res.response;
         alert('로그인이 성공하였습니다.');
+        localStorage.setItem('id',this.us.uiId);
         location.href = '';
       }else{
         alert('아이디나 비밀번호를 확인하세요.');

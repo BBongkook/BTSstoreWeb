@@ -8,9 +8,10 @@
       </mat-form-field>
       &nbsp;
       <button mat-raised-button>SEARCH</button>
-      <button mat-raised-button routerLink="/login">LOGIN</button>
+        <button *ngIf=this.isLoginout mat-raised-button routerLink="/login">{{this.loginout}}</button>
+        <button *ngIf=!this.isLoginout mat-raised-button (click)="doLogout()">{{this.loginout}}</button>
       <a mat-raised-button routerLink="/sign">SIGN UP</a>
-      <a mat-raised-button routerLink="/admin">MANAGE</a>
+      <a mat-raised-button routerLink="/admin" *ngIf="this.isButtonVisible">MANAGE</a>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
