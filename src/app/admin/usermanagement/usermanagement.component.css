@@ -45,3 +45,8 @@ tr.example-element-row:not(.example-expanded-row):active {
 .example-element-description-attribution {
   opacity: 0.5;
 }
+.all-div{
+  margin-top: 30px;
+  margin-left: 15px;
+  margin-right: 40px;
+}
