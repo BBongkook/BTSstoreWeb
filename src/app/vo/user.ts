@@ -9,6 +9,7 @@ export class User {
   uiAddr: string
   uiAddr2: string
   uiPhone: string
+  uiAuth: string
 
   constructor() {
   }

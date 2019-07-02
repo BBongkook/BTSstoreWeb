@@ -1,84 +1,10 @@
 <div align="center" id="topdiv">
-
-  <button mat-button [matMenuTriggerFor]="aboveMenu">노트북</button>
-  <mat-menu #aboveMenu="matMenu" yPosition="above">
-    <button mat-menu-item (click)="goPage('/product')"><mat-icon>dialpad</mat-icon>삼성전자</button>
-    
-    <button mat-menu-item><mat-icon>dialpad</mat-icon>LG전자</button>
-    <button mat-menu-item><mat-icon>dialpad</mat-icon>레노버</button>
-    <button mat-menu-item><mat-icon>dialpad</mat-icon>HP</button>
-    <button mat-menu-item><mat-icon>dialpad</mat-icon>MSI</button>
-    <button mat-menu-item><mat-icon>dialpad</mat-icon>ASUS</button>
-    <button mat-menu-item><mat-icon>dialpad</mat-icon>DELL</button>
-  </mat-menu>
-
-  <button mat-button [matMenuTriggerFor]="belowMenu">컴퓨터 부품</button>
-  <mat-menu #belowMenu="matMenu" yPosition="below">
-    <button mat-menu-item>CPU</button>
-    <button mat-menu-item>그래픽카드</button>
-    <button mat-menu-item>HDD</button>
-    <button mat-menu-item>SSD</button>
-    <button mat-menu-item>메인보드</button>
-    <button mat-menu-item>메모리</button>
-    <button mat-menu-item>파워</button>
-  </mat-menu>
-
-  <button mat-button [matMenuTriggerFor]="beforeMenu">소프트웨어</button>
-  <mat-menu #beforeMenu="matMenu" xPosition="before">
-    <button mat-menu-item>운영체제</button>
-    <button mat-menu-item>사무용(오피스/OA)</button>
-    <button mat-menu-item>보안/유틸리티</button>
-    <button mat-menu-item>데이터베이스/솔루션</button>
-  </mat-menu>
-
-  <button mat-button [matMenuTriggerFor]="afterMenu">모 니 터</button>
-  <mat-menu #afterMenu="matMenu" xPosition="after">
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu>
-
-  <button mat-button [matMenuTriggerFor]="afterMenu">케 이 블</button>
-  <mat-menu #afterMenu="matMenu" xPosition="after">
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu>
-
-  <button mat-button [matMenuTriggerFor]="afterMenu">케 이 블</button>
-  <mat-menu #afterMenu="matMenu" xPosition="after">
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu>
-
-
-<!--
-<mat-toolbar>
-  <button mat-button [matMenuTriggerFor]="menu">ㄴㅇㄴㅇ</button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>삼성전자</button>
-    <button mat-menu-item>LG전자</button>
-    <button mat-menu-item>레노버</button>
-    <button mat-menu-item>HP</button>
-    <button mat-menu-item>MSI</button>
-    <button mat-menu-item>ASUS</button>
-    <button mat-menu-item>DELL</button>
-  </mat-menu>
-  </mat-toolbar>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-      <mat-icon>dialpad</mat-icon>
-      <span>Redial</span>
-    </button>
-    <button mat-menu-item disabled>
-      <mat-icon>voicemail</mat-icon>
-      <span>Check voicemail</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>notifications_off</mat-icon>
-      <span>Disable alerts</span>
-    </button>
-  </mat-menu>
-
-  <li><a href="/product">소프트웨어</a></li>
-  <li><a href="/product">모 니 터</a></li>
-  <li><a href="/product">케 이 블</a></li> -->
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1:100,200,300,400,500,600,700,800,900&display=swap&subset=korean" rel="stylesheet">
+  <button mat-button (click)="goPage('/product')" id="buttonFont">노 트 북</button>
+  <button mat-button (click)="goPage('/product')" id="buttonFont">컴퓨터 부품</button>
+  <button mat-button (click)="goPage('/product')" id="buttonFont">소프트웨어</button>
+  <button mat-button (click)="goPage('/product')" id="buttonFont">모 니 터</button>
+  <button mat-button (click)="goPage('/product')" id="buttonFont">케 이 블</button>
+  <button mat-button (click)="goPage('/product')" id="buttonFont">케 이 블</button>
+  
 

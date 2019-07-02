@@ -1,26 +1,20 @@
-.container{
-    display: flex;
-    margin-top: 70px;
-    margin-left: 30%
-  }
-  
-  .table-full-width {
-    width: 70%;
-  }
-  
-  td {
-    padding-right: 1px;
-  }
-  .example-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .example-container > * {
-    width: 100%;
-  }
-  .radio-container > * {
-    width: 50%;
-  }
-  
-  
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+.example-container form {
+  margin-bottom: 20px;
+}
+
+.example-container form > * {
+  margin: 5px 0;
+}
+
+.example-container .mat-radio-button {
+  margin: 0 12px;
+}
