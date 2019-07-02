@@ -21,20 +21,21 @@
       <mat-list-item> <a mat-raised-button (click)="changePage('usermanagement')" id='user'>회원관리</a></mat-list-item>
       <mat-divider></mat-divider>
 
-      <mat-list-item><a mat-stroked-button (click)="changePage('productmanage')" >상품관리</a></mat-list-item>
+      <mat-list-item><a mat-stroked-button (click)="changePage('productmanage')">상품관리</a></mat-list-item>
       <mat-divider></mat-divider>
+      <mat-list-item><a mat-stroked-button (click)="changePage('productinsert')">상품등록</a></mat-list-item>
 
+      <mat-divider></mat-divider>
       <mat-list-item><a mat-stroked-button routerLink=".">결제관리</a></mat-list-item>
-      <mat-divider></mat-divider>
 
-      <mat-list-item><a mat-stroked-button routerLink=".">리뷰관리</a></mat-list-item>
 
     </mat-list>
-</mat-sidenav>
+  </mat-sidenav>
   <mat-drawer-container id="center">
     <app-usermanagement *ngIf="page=='usermanagement'"></app-usermanagement>
     <app-productmanage *ngIf="page=='productmanage'"></app-productmanage>
-    
+    <app-productinsert *ngIf="page=='productinsert'"></app-productinsert>
+
   </mat-drawer-container>
 </mat-sidenav-container>
 

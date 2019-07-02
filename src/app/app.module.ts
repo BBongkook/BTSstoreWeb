@@ -55,7 +55,6 @@ import { MatTreeModule } from '@angular/material/tree';
 import { TestComponent } from './test/test.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductmanageComponent } from './admin/productmanage/productmanage.component';
-import { TestInsertComponent } from './test-insert/test-insert.component';
 import { ProductinsertComponent } from './admin/productinsert/productinsert.component';
 // import { Directive, Pipe } from '@angular/core';
 
@@ -73,7 +72,6 @@ import { ProductinsertComponent } from './admin/productinsert/productinsert.comp
     TestComponent,
     CategoryComponent,
     ProductmanageComponent,
-    TestInsertComponent,
     ProductinsertComponent,
 
 

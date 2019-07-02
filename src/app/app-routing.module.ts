@@ -11,7 +11,7 @@ import { AdminComponent } from './admin/admin.component';
 import { UsermanagementComponent } from './admin/usermanagement/usermanagement.component';
 import { TestComponent } from './test/test.component';
 import { CategoryComponent } from './category/category.component';
-import { TestInsertComponent } from './test-insert/test-insert.component';
+import { ProductinsertComponent } from './admin/productinsert/productinsert.component';
 
 const routes: Routes = [
   {
@@ -55,8 +55,8 @@ const routes: Routes = [
     component: ProductComponent
   },
   {
-    path: 'test-insert',
-    component: TestInsertComponent
+    path: 'productinsert',
+    component: ProductinsertComponent
   }
 ];
 
