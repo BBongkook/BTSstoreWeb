@@ -11,6 +11,7 @@ export class MenuComponent implements OnInit {
   loginout: string = 'LOGIN';
   isLoginout: boolean = true;
   isButtonVisible: boolean = false;
+  isButtonMyPage: boolean = false;
   user = new User;
 
   constructor(private _router: Router) { }
@@ -22,6 +23,9 @@ export class MenuComponent implements OnInit {
     }
     if (localStorage.getItem('auth') === "0") {
       this.isButtonVisible = true;
+    }
+    if (localStorage.getItem('auth') === "1") {
+      this.isButtonMyPage = true;
     }
 
   }

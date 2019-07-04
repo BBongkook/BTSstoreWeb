@@ -56,6 +56,7 @@ import { TestComponent } from './test/test.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductmanageComponent } from './admin/productmanage/productmanage.component';
 import { ProductinsertComponent } from './admin/productinsert/productinsert.component';
+import { MypageComponent } from './user/mypage/mypage.component';
 // import { Directive, Pipe } from '@angular/core';
 
 @NgModule({
@@ -73,6 +74,7 @@ import { ProductinsertComponent } from './admin/productinsert/productinsert.comp
     CategoryComponent,
     ProductmanageComponent,
     ProductinsertComponent,
+    MypageComponent,
 
 
   ],

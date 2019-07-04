@@ -12,6 +12,7 @@ import { UsermanagementComponent } from './admin/usermanagement/usermanagement.c
 import { TestComponent } from './test/test.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductinsertComponent } from './admin/productinsert/productinsert.component';
+import { MypageComponent } from './user/mypage/mypage.component';
 
 const routes: Routes = [
   {
@@ -57,6 +58,10 @@ const routes: Routes = [
   {
     path: 'productinsert',
     component: ProductinsertComponent
+  },
+  {
+    path: 'mypage',
+    component: MypageComponent
   }
 ];
 
