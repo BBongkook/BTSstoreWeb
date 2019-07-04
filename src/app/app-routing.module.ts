@@ -9,7 +9,6 @@ import { ProductComponent } from './product/product.component';
 import { ProductviewComponent } from './productview/productview.component';
 import { AdminComponent } from './admin/admin.component';
 import { UsermanagementComponent } from './admin/usermanagement/usermanagement.component';
-import { TestComponent } from './test/test.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductinsertComponent } from './admin/productinsert/productinsert.component';
 import { MypageComponent } from './user/mypage/mypage.component';
@@ -42,10 +41,6 @@ const routes: Routes = [
   {
     path: 'usermanagement',
     component: UsermanagementComponent
-  },
-  {
-    path: 'test',
-    component: TestComponent
   },
   {
     path: 'category',

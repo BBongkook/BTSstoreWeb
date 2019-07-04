@@ -1,24 +1,42 @@
-<table mat-table [dataSource] = "dataSource" class = "mat-elevation-z8">
-  <ng-container matColumnDef = "name">
-     <th mat-header-cell *matHeaderCellDef> Dessert (100g)</th>
-     <td mat-cell *matCellDef = "let element"> {{element.name}} </td>
-  </ng-container>
-  <ng-container matColumnDef = "calories">
-     <th mat-header-cell *matHeaderCellDef>Calories</th>
-     <td mat-cell *matCellDef = "let element"> {{element.calories}} </td>
-  </ng-container>
-  <ng-container matColumnDef = "fat">
-     <th mat-header-cell *matHeaderCellDef>Fat (g)</th>
-     <td mat-cell *matCellDef = "let element"> {{element.fat}} </td>
-  </ng-container>
-  <ng-container matColumnDef = "carbs">
-     <th mat-header-cell *matHeaderCellDef>Carbs (g)</th>
-     <td mat-cell *matCellDef = "let element"> {{element.carbs}} </td>
-  </ng-container>
-  <ng-container matColumnDef = "protein">
-     <th mat-header-cell *matHeaderCellDef>Protein (g)</th>
-    <td mat-cell *matCellDef = "let element"> {{element.protein}} </td>
-  </ng-container>
-  <tr mat-header-row *matHeaderRowDef = "displayedColumns"></tr>
-  <tr mat-row *matRowDef = "let row; columns: displayedColumns;"></tr>
-</table>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Basic Table</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>

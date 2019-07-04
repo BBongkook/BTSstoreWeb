@@ -1,34 +1,77 @@
-<div class="example-container">
-    <form class="example-container" [formGroup]="options">
-      <mat-checkbox formControlName="hideRequired">Hide required marker</mat-checkbox>
-      <div>
-        <label>Float label: </label>
-        <mat-radio-group formControlName="floatLabel">
-          <mat-radio-button value="auto">Auto</mat-radio-button>
-          <mat-radio-button value="always">Always</mat-radio-button>
-          <mat-radio-button value="never">Never</mat-radio-button>
-        </mat-radio-group>
-      </div>
-    </form>
-  
-    <mat-form-field
-        [hideRequiredMarker]="options.value.hideRequired"
-        [floatLabel]="options.value.floatLabel">
-      <input matInput placeholder="Simple placeholder" required>
-    </mat-form-field>
-  
-    <mat-form-field [floatLabel]="options.value.floatLabel">
-      <mat-label>Both a label and a placeholder</mat-label>
-      <input matInput placeholder="Simple placeholder">
-    </mat-form-field>
-  
-    <mat-form-field
-        [hideRequiredMarker]="options.value.hideRequired"
-        [floatLabel]="options.value.floatLabel">
-      <mat-select required>
-        <mat-option>-- None --</mat-option>
-        <mat-option value="option">Option</mat-option>
-      </mat-select>
-      <mat-label><mat-icon>favorite</mat-icon> <b> Fancy</b> <i> label</i></mat-label>
-    </mat-form-field>
-  </div>
+<div class="container">
+    
+  <table class="table-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-label>이름</mat-label>
+      </td> 
+      <td>
+        <mat-form-field class="table-full-width">
+          <input matInput placeholder="Product Name" [(ngModel)]="pd.pName">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-label>재고</mat-label>
+      </td> 
+      <td>
+        <mat-form-field class="table-full-width">
+          <input matInput placeholder="Amount" [(ngModel)]="pd.pAmount">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-label>가격</mat-label>
+      </td> 
+      <td>
+        <mat-form-field class="table-full-width">
+          <input matInput placeholder="Price" [(ngModel)]="pd.pPrice">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-label>이미지파일 업로드</mat-label>
+      </td> 
+      <td>
+        <mat-form-field class="table-full-width">
+          <input type="file" (change)="setFile($event)" [(ngModel)]="pd.pImageFile" matInput placeholder="이미지 선택">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-label>대분류</mat-label>
+      </td> 
+      <td>
+        <mat-form-field class="table-full-width">
+          <input matInput placeholder="대분류" [(ngModel)]="pd.pLarge">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-label>중분류</mat-label>
+      </td> 
+      <td>
+        <mat-form-field class="table-full-width">
+          <input matInput placeholder="중분류" [(ngModel)]="pd.pMedium">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-label>소분류</mat-label>
+      </td> 
+      <td>
+        <mat-form-field class="table-full-width">
+          <input matInput placeholder="소분류" [(ngModel)]="pd.pSmall">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <button mat-raised-button color="primary" (click)="insertProduct()">등록</button>
+
+</div> 

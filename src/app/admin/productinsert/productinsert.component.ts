@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { CommonService } from 'src/app/common/common.service';
+import { Product } from 'src/app/vo/product';
 
 @Component({
   selector: 'app-productinsert',
@@ -7,15 +8,16 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./productinsert.component.css']
 })
 export class ProductinsertComponent implements OnInit {
-  options: FormGroup;
-  constructor(fb: FormBuilder) {
-    this.options = fb.group({
-      hideRequired: false,
-      floatLabel: 'auto', 
-    });
-  }
+  pd:Product = new Product();
+  constructor(private cs:CommonService) { }
 
   ngOnInit() {
   }
-
+  insertProduct(){
+    console.log(this.pd);
+    this.cs.postFile(this.pd).subscribe();
+  }
+  setFile(evt){
+    this.pd.pImageFile = evt.target.files[0];
+}
 }
