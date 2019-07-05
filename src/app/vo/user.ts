@@ -10,6 +10,7 @@ export class User {
   uiAddr2: string
   uiPhone: string
   uiAuth: string
+  uiToken : string
 
   constructor() {
   }

@@ -5,6 +5,7 @@ export class Product {
   pAmount: number;
   pPrice: string;
   pImageUrl: String;
+  pImageFile:File;
   pCredat: String;
   pLarge: String;
   pMedium: String;
