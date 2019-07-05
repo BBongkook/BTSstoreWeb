@@ -1,10 +1,8 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { Sign } from './vo/sign';
 import { SignComponent } from './sign/sign.component';
 import { MainComponent } from './main/main.component';
-import { Product } from './vo/product';
 import { ProductComponent } from './product/product.component';
 import { ProductviewComponent } from './productview/productview.component';
 import { AdminComponent } from './admin/admin.component';
@@ -12,6 +10,7 @@ import { UsermanagementComponent } from './admin/usermanagement/usermanagement.c
 import { CategoryComponent } from './category/category.component';
 import { ProductinsertComponent } from './admin/productinsert/productinsert.component';
 import { MypageComponent } from './user/mypage/mypage.component';
+import { RouterGuardService } from './auth/router-guard.service';
 
 const routes: Routes = [
   {
@@ -32,7 +31,8 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    component: AdminComponent
+    component: AdminComponent,
+    canActivate:[RouterGuardService]
   },
   {
     path: 'productview',
@@ -40,7 +40,8 @@ const routes: Routes = [
   },
   {
     path: 'usermanagement',
-    component: UsermanagementComponent
+    component: UsermanagementComponent,
+    canActivate:[RouterGuardService]
   },
   {
     path: 'category',
@@ -48,15 +49,18 @@ const routes: Routes = [
   },
   {
     path: 'productmanage',
-    component: ProductComponent
+    component: ProductComponent,
+    canActivate:[RouterGuardService]
   },
   {
     path: 'productinsert',
-    component: ProductinsertComponent
+    component: ProductinsertComponent,
+    canActivate:[RouterGuardService]
   },
   {
     path: 'mypage',
-    component: MypageComponent
+    component: MypageComponent,
+    canActivate:[RouterGuardService]
   }
 ];
 
