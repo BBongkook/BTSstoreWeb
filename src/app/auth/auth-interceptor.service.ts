@@ -13,8 +13,9 @@ export class AuthInterceptorService implements HttpInterceptor{
   }
   intercept(req: HttpRequest<any>, next: HttpHandler):Observable<HttpEvent<any>>{
     var uiId = localStorage.getItem('id');
-    var tokken = localStorage.getItem('tokken');
+    var tokken = localStorage.getItem('token');
     var headers:HttpHeaders = new HttpHeaders();
+    console.log(tokken);
     console.log(req);
     if(req.url.indexOf('login')==-1 && !tokken){
       this._router.navigate(['/login']);

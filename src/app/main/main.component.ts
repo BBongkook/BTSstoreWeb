@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { Product } from '../vo/product';
 import { CommonService } from '../common/common.service';
+import { AuthInterceptorService } from '../auth/auth-interceptor.service';
 
 @Component({
   selector: 'app-main',
@@ -16,7 +17,7 @@ export class MainComponent implements OnInit {
 
   //productvo 호출한후 제품리스트 생성. 즉, 화면에 대응하는 vo배열
   productList: Product[] = [];
-  constructor(private router: Router, private _common : CommonService) { }
+  constructor(private router: Router, private _common : CommonService, private _auservice : AuthInterceptorService) { }
 
   ngOnInit() {
   }

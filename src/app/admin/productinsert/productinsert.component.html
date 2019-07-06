@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     
   <table class="table-full-width" cellspacing="0">
     <tr>
@@ -74,4 +74,37 @@
   </table>
   <button mat-raised-button color="primary" (click)="insertProduct()">등록</button>
 
-</div> 
+</div>  -->
+<div class="container">
+  <form class="example-form">
+    <table class="table-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-label>이름</mat-label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Favorite food" value="Sushi">
+          </mat-form-field>
+        </td>
+      </tr>
+
+      <tr>
+          <td>
+            <mat-label>재고</mat-label>
+          </td> 
+        </tr>
+        <tr>
+        <td>
+          <mat-form-field class="table-full-width">
+            <input matInput placeholder="Amount" [(ngModel)]="pd.pAmount">
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+  </form>
+</div>
