@@ -80,14 +80,13 @@
     <table class="table-full-width" cellspacing="0">
       <tr>
         <td>
-          <mat-label>이름</mat-label>
+          <mat-label>상품이름</mat-label>
         </td>
-      </tr>
+      
 
-      <tr>
         <td>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Favorite food" value="Sushi">
+            <input id="pName" [(ngModel)]="pd.pName" matInput placeholder="name">
           </mat-form-field>
         </td>
       </tr>
@@ -96,15 +95,131 @@
           <td>
             <mat-label>재고</mat-label>
           </td> 
-        </tr>
-        <tr>
+       
         <td>
           <mat-form-field class="table-full-width">
-            <input matInput placeholder="Amount" [(ngModel)]="pd.pAmount">
+            <input id="pAmount" [(ngModel)]="pd.Amount" matInput placeholder="Amount">
           </mat-form-field>
         </td>
       </tr>
-    </table>
 
+      <tr>
+          <td>
+            <mat-label>가격</mat-label>
+          </td> 
+       
+        <td>
+          <mat-form-field class="table-full-width">
+            <input type="number" id="pPrice" [(ngModel)]="pd.pPrice" matInput placeholder="price" >
+          </mat-form-field>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <mat-label>상품이미지</mat-label>
+        </td> 
+      <td>
+          <input type="file" id="pImageFile" [(ngModel)]="pd.pImageFile" >
+      </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-label>카테고리 분류</mat-label>
+          </td> 
+          <td>
+        <mat-form-field>
+          <mat-label>대분류</mat-label>
+          <mat-select [formControl]="animalControl" required>
+            <mat-option>--</mat-option>
+            <!-- <mat-option *ngFor="let animal of animals" [value]="animal">
+              {{animal.name}}
+            </mat-option> -->
+            <mat-option>노트북</mat-option>
+            <mat-option>컴퓨터부품</mat-option>
+            <mat-option>소프트웨어</mat-option>
+            <mat-option>모니터</mat-option>
+            <mat-option>케이블</mat-option>
+          </mat-select>
+       
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-label></mat-label>
+          </td> 
+          <td>
+        <mat-form-field>
+          <mat-label>중분류</mat-label>
+          <mat-select [formControl]="animalControl" required>
+            <mat-option>--</mat-option>
+            <!-- <mat-option *ngFor="let animal of animals" [value]="animal">
+              {{animal.name}}
+            </mat-option> -->
+            <mat-option>노트북</mat-option>
+            <mat-option>컴퓨터부품</mat-option>
+            <mat-option>소프트웨어</mat-option>
+            <mat-option>모니터</mat-option>
+            <mat-option>케이블</mat-option>
+          </mat-select>
+       
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <tr>
+        <td>
+            <mat-label></mat-label>
+          </td> 
+          <td>
+        <mat-form-field>
+          <mat-label>소분류</mat-label>
+          <mat-select [formControl]="animalControl" required>
+            <mat-option>--</mat-option>
+            <!-- <mat-option *ngFor="let animal of animals" [value]="animal">
+              {{animal.name}}
+            </mat-option> -->
+            <mat-option>노트북</mat-option>
+            <mat-option>컴퓨터부품</mat-option>
+            <mat-option>소프트웨어</mat-option>
+            <mat-option>모니터</mat-option>
+            <mat-option>케이블</mat-option>
+          </mat-select>
+       
+        </mat-form-field>
+      </td>
+    </tr>
+      <tr>
+        <td>
+      <mat-form-field>
+        <mat-select placeholder="대분류" name="pLarge_level" (selectionChange)="pLargeLevelChangeAction(pLarge_level)" [(ngModel)]="pLarge_level" >
+          <mat-option *ngFor="let pLarge of pLargeList" [value]="pLarge.pLargeName" >{{ pLarge.pLargeName }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field>
+        <mat-select placeholder="중분류" name="exam_title" [(ngModel)]="exam_title">
+          <mat-option *ngFor="let degreeTitle of degreeTitleList" [value]="degreeTitle">{{ degreeTitle }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+  </tr>
+
+    </table>
+    <h2>그냥 해보기</h2>
+    <mat-form-field>
+      <mat-label>Favorite food</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="example-button-row">
+      <button mat-raised-button color="primary" (click)="insertProduct()">로그인</button>
+  </div>
   </form>
 </div>
