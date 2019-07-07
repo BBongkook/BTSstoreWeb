@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
 import { NgDaumAddressModule } from 'ng2-daum-address';
 import { ProductComponent } from './product/product.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProductviewComponent } from './productview/productview.component';
 import { AdminComponent } from './admin/admin.component';
 import { UsermanagementComponent } from './admin/usermanagement/usermanagement.component';
@@ -56,6 +56,7 @@ import { CategoryComponent } from './category/category.component';
 import { ProductmanageComponent } from './admin/productmanage/productmanage.component';
 import { ProductinsertComponent } from './admin/productinsert/productinsert.component';
 import { MypageComponent } from './user/mypage/mypage.component';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
 // import { Directive, Pipe } from '@angular/core';
 
 @NgModule({
@@ -124,7 +125,7 @@ import { MypageComponent } from './user/mypage/mypage.component';
     // Directive,
     // Pipe,
   ],
-  providers: [],
+  providers: [ { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

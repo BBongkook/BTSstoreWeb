@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms'
-import { LoginService } from './login.service';
 import { User } from '../vo/user';
 import { Router } from '@angular/router';
 import { CommonService } from '../common/common.service';
@@ -35,6 +33,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('id', this.us.uiId);
         localStorage.setItem('auth', this.us.uiAuth);
         localStorage.setItem('token', this.us.uiToken);
+        console.log(localStorage.getItem('token'));
         location.href = '';
       } else {
         alert('아이디나 비밀번호를 확인하세요.');

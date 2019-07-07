@@ -31,8 +31,7 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    component: AdminComponent,
-    canActivate:[RouterGuardService]
+    component: AdminComponent
   },
   {
     path: 'productview',
