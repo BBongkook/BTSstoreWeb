@@ -25,7 +25,7 @@ export class CommonService {
   }
   postFile(obj) {
     const data = this.makeFormData(obj);
-    return this._http.post(baseUrl + '/member', data);
+    return this._http.post(baseUrl + '/insertProduct', data);
   }
   postJson(obj) {
     const data = this.makeFormData(obj);

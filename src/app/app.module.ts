@@ -57,6 +57,7 @@ import { ProductmanageComponent } from './admin/productmanage/productmanage.comp
 import { ProductinsertComponent } from './admin/productinsert/productinsert.component';
 import { MypageComponent } from './user/mypage/mypage.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { OrderComponent } from './user/order/order.component';
 // import { Directive, Pipe } from '@angular/core';
 
 @NgModule({
@@ -74,6 +75,7 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     ProductmanageComponent,
     ProductinsertComponent,
     MypageComponent,
+    OrderComponent,
 
 
   ],

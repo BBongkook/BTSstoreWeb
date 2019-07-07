@@ -1,0 +1,27 @@
+body {
+  padding:20px;
+}
+
+.bordertable th{
+  background-color: #f7f8fa;
+  text-align: center;
+}
+
+.bordertable td{
+  padding-left:20px;
+}
+
+.bordertable th, .bordertable td{
+  font-family: '나눔고딕',NanumGothic,'맑은고딕',MalgunGothic,'돋움',Dotum,Helvetica,sans-serif;
+  font-size: 12px;
+  border:1px solid #ededed ;
+  font-weight: normal;
+  line-height: 19px;
+  color:#ededed;
+  padding-top: 9px;
+  padding-bottom: 7px ;
+}
+
+.th120 th{
+  width:120px;
+}

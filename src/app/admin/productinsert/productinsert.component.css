@@ -1,20 +1,33 @@
 .container{
   display: flex;
-  margin-top: 50px;
-  margin-left: 10%
+  /* margin-top: 50px; */
+  margin-left: 20%
+}
+
+.Topcontainer{
+  margin-top:100px;
+  margin-left: 10%;
+}
+
+.bottomcontainer{
+  margin-top:10px;
+  margin-left: 10%;
+  width: 80%;
+  text-align: center;
 }
 
 .table-full-width {
-  width: 100%;
+  width: 80%;
+}
+
+th{
+  text-align: center;
 }
 
 td {
-  padding-right: 50px;
+  padding-right: 10px;
 }
-.example-container {
-  display:  flex;
-  flex-direction: column;
-}
+
 
 .example-container > * {
   width: 100%;
@@ -29,6 +42,3 @@ td {
   width: 70%;
 }
 
-.example-full-width {
-  width: 100%;
-}
