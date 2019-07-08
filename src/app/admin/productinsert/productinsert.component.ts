@@ -58,6 +58,8 @@ export class ProductinsertComponent implements OnInit {
   }
 
   insertProduct(){
+    this.pd.pLarge = this.pLarge_level;
+    this.pd.pMedium =this.exam_title;
     console.log(this.pd);
     this.cs.postFile(this.pd).subscribe();
   }
