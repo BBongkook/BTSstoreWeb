@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class CategoryComponent implements OnInit {
   constructor(private _moverouter: Router) { }
-
+  userId:string = localStorage.getItem('id');
   ngOnInit() {
   }
   goPage(url: string) {

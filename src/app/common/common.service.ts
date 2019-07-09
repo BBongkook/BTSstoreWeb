@@ -35,6 +35,10 @@ export class CommonService {
     return this._http.post(baseUrl + '/login', params, httpJson);
   }
 
+  sign(params) {
+    return this._http.post(baseUrl + '/signup', params, httpJson);
+  };
+
   delete(url, param?) {
     url = baseUrl + url;
     return this._http.delete(url);

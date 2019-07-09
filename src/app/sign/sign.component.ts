@@ -3,6 +3,7 @@ import { Sign } from '../vo/sign';
 import { SignService } from './sign.service';
 import { User } from '../vo/user';
 import { FormControl, Validators } from '@angular/forms';
+import { CommonService } from '../common/common.service';
 
 @Component({
   selector: 'app-sign',
@@ -14,7 +15,7 @@ export class SignComponent implements OnInit {
   uiPwd2: string = "";
   isUnique: boolean = false;
   pw_passed: boolean = true;
-  constructor(private _ss: SignService) { }
+  constructor(private _ss: SignService, private _cs:CommonService) { }
   daumAddressOptions = {
     class: ['btn', 'mat-raised-button']
   };
@@ -100,8 +101,8 @@ export class SignComponent implements OnInit {
       return;
     }
 
-    this._ss.sign(this.ss).subscribe(res => {
-      if (res.response) {
+    this._cs.sign(this.ss).subscribe(res => {
+      if (res) {
         alert('회원가입이 성공하였습니다.');
         location.href = '/login';
       } else {
@@ -111,7 +112,7 @@ export class SignComponent implements OnInit {
   }
 
   checkId() {
-    var url = "userlist/" + this.ss.uiId;
+    var url = "userId/" + this.ss.uiId;
     this._ss.get(url).subscribe(
       res => {
         if (!res) {

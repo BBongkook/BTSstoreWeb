@@ -40,8 +40,7 @@ const routes: Routes = [
   },
   {
     path: 'usermanagement',
-    component: UsermanagementComponent,
-    canActivate: [RouterGuardService]
+    component: UsermanagementComponent
   },
   {
     path: 'category',
@@ -59,8 +58,7 @@ const routes: Routes = [
   },
   {
     path: 'mypage',
-    component: MypageComponent,
-    canActivate: [RouterGuardService]
+    component: MypageComponent
   },
   {
     path: 'order',
