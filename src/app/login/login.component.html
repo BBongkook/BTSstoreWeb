@@ -1,25 +1,25 @@
-<div *ngIf=isLoginout>
-  <div class="login-container">
-    <h1>Login</h1>
+
+<div class="login-container">
+        <h1>Login</h1>
     <mat-form-field>
       <input matInput id="uiId" [(ngModel)]="us.uiId" placeholder="아이디">
     </mat-form-field>
-
+  
     <mat-form-field>
       <input matInput type="password" id="uiPwd" [(ngModel)]="us.uiPwd" placeholder="비밀번호">
     </mat-form-field>
     <div class="example-button-row">
-      <button mat-raised-button color="primary" (click)="doLogin()">로그인</button>
+        <button mat-raised-button color="primary" (click)="doLogin()">로그인</button>
     </div>
-  </div>
 </div>
+
 <div>
-  관리자 아이디 : admin
-  <br>
-  관리자 비밀번호 : admin
-  <br>
-  <br>
-  일반유저 아이디 : a1
-  <br>
-  일번유저 비밀번호 : asdf
+관리자 아이디 : admin
+<br>
+관리자 비밀번호 : admin
+<br>
+<br>
+일반유저 아이디 : a1
+<br>
+일번유저 비밀번호 : asdf
 </div>
