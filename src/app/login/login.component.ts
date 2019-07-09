@@ -9,12 +9,17 @@ import { CommonService } from '../common/common.service';
 })
 export class LoginComponent implements OnInit {
   us: User = new User();
+  isLoginout: boolean = true;
   token:any ="";
   constructor(private _cs: CommonService, private _router: Router) {
 
 
   }
   ngOnInit() {
+    if(localStorage.getItem('id')){
+      this._router.navigate(['/']);
+    }
+
   }
   doLogin(form): void {
 

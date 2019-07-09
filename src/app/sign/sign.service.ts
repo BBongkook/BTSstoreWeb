@@ -16,8 +16,4 @@ export class SignService {
     return this._http.get(url);
   }
 
-  sign(si: Sign) {
-    return ajax.post(this.baseUrl + 'signup', si, { 'Content-Type': 'application/json', 'rxjs-custom-header': 'Rxjs' }
-    )
-  };
 }
