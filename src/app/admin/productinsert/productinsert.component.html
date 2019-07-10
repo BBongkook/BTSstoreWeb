@@ -101,7 +101,7 @@
       </th>
       <td>
         <mat-form-field class="table-full-width">
-          <input id="pAmount" [(ngModel)]="pd.pAmount" matInput placeholder="Amount">
+          <input type="number" id="pAmount" [(ngModel)]="pd.pAmount" matInput placeholder="Amount">
         </mat-form-field>
       </td>
     </tr>
@@ -117,7 +117,7 @@
         </mat-form-field>
       </td>
     </tr>
-
+    <br>
     <!-- 상품이미지 -->
     <tr>
       <th>
@@ -125,9 +125,10 @@
       </th>
       <td>
         <input type="file" id="pImageFile" (change)="setFile($event)" [(ngModel)]="pd.pImageFile">
+
       </td>
     </tr>
-
+    <br>
     <!-- 카테고리 분류 -->
     <tr>
       <th>
@@ -172,7 +173,7 @@
 
   </table>
 </div>
-
+<br>
 <div class="bottomcontainer">
-  <button mat-raised-button color="primary" (click)="insertProduct()">상품추가</button>
+  <button mat-raised-button color="primary" (click)="insertProduct()">등록</button>
 </div>

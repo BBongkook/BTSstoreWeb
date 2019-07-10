@@ -59,9 +59,16 @@ export class ProductinsertComponent implements OnInit {
 
   insertProduct(){
     this.pd.pLarge = this.pLarge_level;
-    this.pd.pMedium =this.exam_title;
+    this.pd.pMedium = this.exam_title;
     console.log(this.pd);
-    this.cs.postFile(this.pd).subscribe();
+    this.cs.postFile(this.pd).subscribe(res=>{
+      if(res==1){
+        alert('상품등록 완료');
+        location.href = 'admin';
+      }else{
+        alert('상품등록에 실패하였습니다.');
+      }
+    });
   }
   setFile(evt){
     this.pd.pImageFile = evt.target.files[0];

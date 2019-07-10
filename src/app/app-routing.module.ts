@@ -12,6 +12,7 @@ import { ProductinsertComponent } from './admin/productinsert/productinsert.comp
 import { MypageComponent } from './user/mypage/mypage.component';
 import { RouterGuardService } from './auth/router-guard.service';
 import { OrderComponent } from './user/order/order.component';
+import { MyInfoManagementComponent } from './user/mypage/my-info-management/my-info-management.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,7 @@ const routes: Routes = [
     path: 'usermanagement',
     component: UsermanagementComponent
   },
+  
   {
     path: 'category',
     component: CategoryComponent
@@ -55,6 +57,10 @@ const routes: Routes = [
     path: 'productinsert',
     component: ProductinsertComponent,
     canActivate: [RouterGuardService]
+  },
+  {
+    path: 'myinfomanagement',
+    component: MyInfoManagementComponent
   },
   {
     path: 'mypage',

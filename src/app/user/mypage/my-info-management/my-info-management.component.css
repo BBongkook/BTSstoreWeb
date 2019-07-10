@@ -1,0 +1,79 @@
+.example-form {
+    margin-top:30px;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin-left: 10%;
+    
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  td {
+    padding-right: 8px;
+  }
+
+  .Topcontainer{
+    margin-top:40px;
+    margin-left: 5%;
+  }
+
+  .dd {
+    background-color:white;
+    color: rgba(0,0,0,.87);
+}
+
+  
+.container{
+    display: flex;
+   margin-top: 50px; 
+    margin-left: 1%;
+  }
+  
+  .Topcontainer{
+    margin-top:50px;
+    margin-left: 10%;
+  }
+  
+  .bottomcontainer{
+    margin-top:10px;
+    margin-left: 70%;
+    width: 80%;
+    
+  }
+  
+  .table-full-width {
+    width: 50%;
+  }
+  
+  th{
+    text-align: left;
+   
+    
+  }
+  
+  td {
+    padding-right: 10px;
+    max-height: 35px;
+  }
+  
+  
+  .example-container > * {
+    width: 100%;
+  }
+  .radio-container > * {
+    width: 100%;
+  }
+  
+  .example-form {
+    min-width: 500px;
+    max-width: 500px;
+    width: 70%;
+  }
+
+ 
+  
+  
+  

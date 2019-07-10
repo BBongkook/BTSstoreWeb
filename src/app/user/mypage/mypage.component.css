@@ -1,0 +1,27 @@
+
+   .example-container {
+    width: 80%;
+    height: 1700px;
+    margin: 10px;
+    background: none;
+  }
+
+  .example-container2 {
+    background: gray;
+  }
+  #left{
+    background: none;
+  }
+
+  #end{
+    background: black;
+  }
+
+  .example-button-row button,
+.example-button-row a {
+  margin-right: 20px;
+}
+.mat-drawer-container {
+    background-color:white;
+    color: rgba(0,0,0,.87);
+}

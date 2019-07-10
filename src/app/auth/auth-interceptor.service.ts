@@ -24,7 +24,7 @@ export class AuthInterceptorService implements HttpInterceptor{
       this._router.navigate(['/login']);
       return throwError('Auth Error');
     }else if(tokken){
-      headers = new HttpHeaders().set('x-auth-id',uiId).set('x-auth-tokken',tokken);
+      headers = new HttpHeaders().set('X-AUTH-ID',uiId).set('x-auth-tokken',tokken);
     }
     const authReq = req.clone({headers});
     console.log(authReq);

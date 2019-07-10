@@ -1,19 +1,19 @@
 .container{
   display: flex;
-  /* margin-top: 50px; */
-  margin-left: 20%
+ margin-top: 50px; 
+  margin-left: 1%;
 }
 
 .Topcontainer{
-  margin-top:100px;
+  margin-top:50px;
   margin-left: 10%;
 }
 
 .bottomcontainer{
   margin-top:10px;
-  margin-left: 10%;
+  margin-left: 28%;
   width: 80%;
-  text-align: center;
+  text-align: center; 
 }
 
 .table-full-width {
