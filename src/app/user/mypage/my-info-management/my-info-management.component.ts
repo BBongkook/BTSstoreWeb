@@ -11,5 +11,7 @@ export class MyInfoManagementComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  modifyMyinfo(){
+    
+  }
 }
