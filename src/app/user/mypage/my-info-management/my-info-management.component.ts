@@ -11,7 +11,7 @@ import { CssKeyframesDriver } from '@angular/animations/browser/src/render/css_k
 })
 export class MyInfoManagementComponent implements OnInit {
   user:User = new User();
-  transValue:boolean = true;
+  transValue:boolean = true; //trans check 하려고 만든건데 못하겠어
   constructor(private cs:CommonService) { }
 
   ngOnInit() {
