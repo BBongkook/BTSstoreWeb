@@ -13,6 +13,7 @@ import { MypageComponent } from './user/mypage/mypage.component';
 import { RouterGuardService } from './auth/router-guard.service';
 import { OrderComponent } from './user/order/order.component';
 import { MyInfoManagementComponent } from './user/mypage/my-info-management/my-info-management.component';
+import { WithdrawalComponent } from './user/mypage/withdrawal/withdrawal.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
   {
     path: 'myinfomanagement',
     component: MyInfoManagementComponent
+  },
+  {
+    path: 'withdrawal',
+    component: WithdrawalComponent
   },
   {
     path: 'mypage',
