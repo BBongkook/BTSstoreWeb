@@ -50,7 +50,7 @@
       </th>
       <td>
   <mat-form-field class="example-full-width">
-      <input matInput placeholder="이름" value="{{user.uiName}}" ><br>
+      <input matInput placeholder="이름" id="uiName" value="{{user.uiName}}" ><br>
     </mat-form-field>
     </td>
   </tr>
@@ -59,11 +59,15 @@
               <mat-label>성별</mat-label>   
             </th>
             <td>
-    <mat-radio-group aria-label="Select an option">
-        <mat-radio-button value="1">남자 </mat-radio-button>   
+   
+    <mat-radio-group aria-label="Select an option" >
+        <mat-radio-button value="{{user.uiTrans}}" checked >남자 </mat-radio-button>   
         &nbsp;
         <mat-radio-button value="2">여자 </mat-radio-button><br>
       </mat-radio-group>
+    
+
+
       </td>
     </tr>
     <tr>
@@ -101,7 +105,7 @@
     
     <tr>
         <th>
-            <mat-label>주소1</mat-label>   
+            <mat-label>주소</mat-label>   
           </th>
           <td>
   
