@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/vo/user';
+import { CommonService } from 'src/app/common/common.service';
+import { CssKeyframesDriver } from '@angular/animations/browser/src/render/css_keyframes/css_keyframes_driver';
 
 @Component({
   selector: 'app-my-info-management',
@@ -6,12 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-info-management.component.css']
 })
 export class MyInfoManagementComponent implements OnInit {
-
-  constructor() { }
+  user:User = new User();
+  constructor(private cs:CommonService) { }
 
   ngOnInit() {
+    console.log(localStorage.getItem('id'));
+    this.getMyInfo();
   }
   modifyMyinfo(){
     
+  }
+  getMyInfo(){
+    this.cs.get('/userId/'+localStorage.getItem('id')).subscribe(res=>{
+      console.log(res);
+      this.user = <User>res;
+    }
+      )
   }
 }

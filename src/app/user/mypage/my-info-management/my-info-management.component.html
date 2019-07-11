@@ -2,52 +2,8 @@
 <div class="Topcontainer">
   <h2>나의 정보 관리</h2>
 </div>
-<!-- <div class="container">
-    <table class="table-full-width" cellspacing="0">
-  
-   
-      <tr>
-        <th>
-          <mat-label>비밀번호</mat-label>
-        </th>
-        <td>
-            <mat-form-field appearance="outline">
-                <mat-label>Outline form field</mat-label>
-                <input matInput placeholder="Placeholder">
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-              </mat-form-field>
-        </td>
-      </tr>
-      <tr>
-          <th>
-            <mat-label>주소</mat-label>
-          </th>
-          <td>
-              <mat-form-field appearance="outline">
-                  <mat-label>Outline form field</mat-label>
-                  <input matInput placeholder="Placeholder">
-                  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                </mat-form-field>
-          </td>
-        </tr>
-        <tr>
-            <th>
-              <mat-label>전화번호</mat-label>
-            </th>
-            <td>
-                <mat-form-field appearance="outline">
-                    <mat-label>Outline form field</mat-label>
-                    <input matInput placeholder="Placeholder">
-                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                  </mat-form-field>
-            </td>
-          </tr>
-      </table>
-      </div> -->
       <form class="example-form">
       <table class="table-full-width" cellspacing="10">
-
-          <!-- 상품 이름 -->
           <tr>
             <th width="200px" nowrap>
               <mat-label>아이디</mat-label>   
@@ -55,7 +11,7 @@
         
             <td width="100px" nowrap>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="ID (disabled)" disabled value="회원아이디!">
+    <input matInput placeholder="ID" disabled value="{{user.uiId}}">
   </mat-form-field>
 </td>
   </tr>
@@ -67,7 +23,7 @@
       </th>
       <td>
   <mat-form-field class="example-full-width">
-       <input matInput type="password" placeholder="현재 비밀번호 "  value="">
+       <input matInput type="password" placeholder="현재 비밀번호"  >
     </mat-form-field>
   </td>
   </tr>
@@ -94,7 +50,7 @@
       </th>
       <td>
   <mat-form-field class="example-full-width">
-      <input matInput placeholder="이름" ><br>
+      <input matInput placeholder="이름" value="{{user.uiName}}" ><br>
     </mat-form-field>
     </td>
   </tr>
@@ -117,7 +73,7 @@
           <td>
       <mat-form-field class="example-full-width">
         <input matInput placeholder="Email" [formControl]="emailFormControl"
-               [errorStateMatcher]="matcher">
+               [errorStateMatcher]="matcher" value="{{user.uiEmail}}">
         <mat-hint>이메일을 입력해주세요</mat-hint>
         <!-- <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
           Please enter a valid email address
@@ -135,7 +91,7 @@
       <td>
       <mat-form-field class="example-full-width">
           <span matPrefix>+1 &nbsp;</span>
-          <input type="tel" matInput placeholder="전화번호">
+          <input type="tel" matInput placeholder="전화번호" value="{{user.uiPhone}}">
           <mat-icon matSuffix>mode_edit</mat-icon>
       </mat-form-field>
       </td>
@@ -150,14 +106,14 @@
           <td>
   
     <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Address"></textarea>
+      <textarea matInput placeholder="Address">{{user.uiAddr}}</textarea>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Address 2"></textarea>
+      <textarea matInput placeholder="Address 2">{{user.uiAddr2}}</textarea>
     </mat-form-field>
  
           </td>
-    </tr>>
+    </tr>
 <tr>
     <th>
         <mat-label>주소2</mat-label>   
@@ -172,15 +128,52 @@
       <input matInput placeholder="State">
     </mat-form-field></td>
     <td><mat-form-field class="example-full-width">
-      <input matInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
-      <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+      <input matInput #postalCode maxlength="5" placeholder="Postal Code" value="{{user.uiZipcode}}">
+      <mat-hint align="end"> / 5</mat-hint>
     </mat-form-field></td>
   </tr>
 
 </table>
 
+  <!-- <tr>
+    <th>
+      <mat-label>우편번호</mat-label>
+    </th>
+    <td>
+      <mat-form-field class="example-full-width">
+        <textarea disabled matInput placeholder="zipCode" id="ssuiZipcode" [(ngModel)]="ss.uiZipcode">{{user.uiZipcode}}</textarea>
+      </mat-form-field>
+      &nbsp;&nbsp;&nbsp;
+      <btn-daum-address (result)="setDaumAddressApi($event)" [options]="daumAddressOptions"></btn-daum-address>
+    </td>
+  </tr>
+
+  <tr>
+    <th>
+      <mat-label>주소</mat-label>
+    </th>
+    <td>
+      <mat-form-field class="example-full-width">
+        <textarea disabled matInput placeholder="Address" id="ssuiAddr" [(ngModel)]="ss.uiAddr">{{user.uiAddr}}</textarea>
+      </mat-form-field>
+    </td>
+  </tr>
+
+  <tr>
+    <th>
+      <mat-label>상세주소</mat-label>
+    </th>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Address 2" id="ssuiAddr2" [(ngModel)]="ss.uiAddr2" value="{{user.uiAddr2}}">
+      </mat-form-field>
+    </td>
+  </tr> -->
+
+
+
 </table>
- 
+
  </form>
 </div>
 
