@@ -37,7 +37,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
+import { MatNativeDateModule, MatRippleModule, ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -131,7 +131,10 @@ import { WithdrawalComponent } from './user/mypage/withdrawal/withdrawal.compone
     // Directive,
     // Pipe,
   ],
-  providers: [ { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true } ],
+  providers: [ 
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
+    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -44,4 +44,11 @@ export class CommonService {
     return this._http.delete(url);
   }
 
+  put(url,params) {
+    url = baseUrl + url;
+    return this._http.put(url, params, httpJson);
+  }
+
+  
+
 }
