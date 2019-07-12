@@ -10,6 +10,7 @@ export class Product {
   pLarge: String;
   pMedium: String;
   pSmall: String;
+  pContent: String;
 
   constructor() {
 

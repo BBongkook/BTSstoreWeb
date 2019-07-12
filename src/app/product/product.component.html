@@ -26,12 +26,13 @@
           <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up" *ngFor="let pl of productList" >
             <div class="block-4 text-center border" >
               <figure class="block-4-image">
-                <a href="/product"><img src="{{imgurl}}{{pl.pimageUri}}" alt="Image placeholder" class="img-fluid"></a>
+                <a href="/product"><img src="{{pl.pimageUri}}" alt="Image placeholder" class="img-fluid"></a>
               </figure>
               <div class="block-4-text p-4">
                 <h3><a href="shop-single.html">{{pl.pname}}</a></h3>
-                <p class="mb-0">{{pl.plarge}} / {{pl.pmedium}}</p>
-                <p class="text-primary font-weight-bold">{{pl.pprice}}</p>
+                <p class="mb-0">분류 : {{pl.plarge}} / {{pl.pmedium}}</p>
+                <p class="mb-0">사양 : {{pl.pcontent}}</p>
+                <p class="text-primary font-weight-bold">가격 : {{pl.pprice}}</p>
               </div>
             </div>
           </div>
