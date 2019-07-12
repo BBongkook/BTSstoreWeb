@@ -29,6 +29,17 @@ export class MyInfoManagementComponent implements OnInit {
 
   constructor(private cs: CommonService) { }
 
+  daumAddressOptions = {
+    class: ['btn', 'mat-raised-button']
+  };
+
+  setDaumAddressApi(data) {
+    this.user.uiAddr = data.addr;
+    this.user.uiZipcode = data.zip;
+
+  }
+
+
   ngOnInit() {
     console.log(localStorage.getItem('id'));
     this.getMyInfo();

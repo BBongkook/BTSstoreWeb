@@ -102,31 +102,34 @@
       </tr>
       <tr>
         <th rowspan="2">
-          <mat-label>주소</mat-label>
+          <mat-label>우편번호</mat-label>
         </th>
         <td>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Address" [value]="user.uiAddr">
-          </mat-form-field>
-        </td>
+            <mat-form-field class="example-full-width">
+              <input matInput maxlength="5" placeholder="Postal Code" [value]="user.uiZipcode">
+              <mat-hint align="end"> / 5</mat-hint>
+            </mat-form-field>
+            <btn-daum-address (result)="setDaumAddressApi($event)" [options]="daumAddressOptions"></btn-daum-address>
+          </td>
+       
       </tr>
       <tr>
-        <td>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Address 2" [value]="user.uiAddr2">
-          </mat-form-field>
-        </td>
+          <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Address" [value]="user.uiAddr">
+              </mat-form-field>
+            </td>
+        
       </tr>
       <tr>
         <th>
-          <mat-label>주소2</mat-label>
+          <mat-label>상세주소</mat-label>
         </th>
         <td>
-          <mat-form-field class="example-full-width">
-            <input matInput maxlength="5" placeholder="Postal Code" [value]="user.uiZipcode">
-            <mat-hint align="end"> / 5</mat-hint>
-          </mat-form-field>
-        </td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Address 2" [value]="user.uiAddr2">
+            </mat-form-field>
+          </td>
     </table>
 
   </form>
