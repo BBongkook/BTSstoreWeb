@@ -1,0 +1,14 @@
+<div class=withdrawal>
+  <h1>회원 탈퇴</h1>
+  <h3>탈퇴 안내
+    회원탈퇴를 신청하기 전에 안내 사항을 꼭 확인해주세요.
+    사용하고 계신 아이디 <font color="red">"{{us.uiId}}"</font> 탈퇴할 경우 재사용 및 복구가 불가능합니다.
+    탈퇴한 아이디는 본인과 타인 모두 재사용 및 복구가 불가하오니 신중하게 선택하시기 바랍니다.</h3>
+
+<mat-form-field>
+<input matInput type="password" id="wd" [(ngModel)]="wd" placeholder="비밀번호">
+</mat-form-field>
+<div class="example-button-row">
+  <button mat-raised-button color="primary" (click)="doWithdrawal()">탈퇴</button>
+</div>
+</div>
