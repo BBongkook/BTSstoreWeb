@@ -17,19 +17,18 @@ export class MainComponent implements OnInit {
 
   //productvo 호출한후 제품리스트 생성. 즉, 화면에 대응하는 vo배열
   productList: Product[] = [];
-  constructor(private router: Router, private _common : CommonService, private _auservice : AuthInterceptorService) { }
+  constructor(private router: Router, private _cs : CommonService, private _auservice : AuthInterceptorService) {
+      this._cs.get('/productLists').subscribe(res=>{
+        this.product = <Product>res;
+      })
+   }
 
   ngOnInit() {
   }
 
   goPage() {
-    return this.router.navigateByUrl('/' + this.url);
+    //return this.router.navigateByUrl('/' + this.url);
   }
-
-  productLoad(){
-    return this._common.get('/productList');
-  }
-
 }
 
 

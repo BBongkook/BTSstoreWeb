@@ -17,7 +17,7 @@ export class AuthInterceptorService implements HttpInterceptor{
     var headers:HttpHeaders = new HttpHeaders();
     console.log(tokken);
     console.log(req);
-    if(req.url.indexOf('sign')!=-1 || req.url.indexOf('userId')!=-1){
+    if(req.url.indexOf('sign')!=-1 || req.url.indexOf('userId')!=-1 || req.url.indexOf('/')!=-1){
       return next.handle(req);
     }
     else if(req.url.indexOf('login')==-1 && !tokken){
