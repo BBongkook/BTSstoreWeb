@@ -15,7 +15,7 @@ export class SignComponent implements OnInit {
   uiPwd2: string = "";
   isUnique: boolean = false;
   pw_passed: boolean = true;
-  constructor(private _ss: SignService, private _cs:CommonService) { }
+  constructor(private _ss: SignService, private _cs: CommonService) { }
   daumAddressOptions = {
     class: ['btn', 'mat-raised-button']
   };
@@ -30,8 +30,8 @@ export class SignComponent implements OnInit {
 
   getErrorMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :
-        this.email.hasError('email') ? 'Not a valid email' :
-            '';
+      this.email.hasError('email') ? 'Not a valid email' :
+        '';
   }
 
 
@@ -116,10 +116,16 @@ export class SignComponent implements OnInit {
     this._ss.get(url).subscribe(
       res => {
         if (!res) {
-          alert(this.ss.uiId + '는 사용 가능한 아이디 입니다')
-          this.isUnique = true;
+          if (this.ss.uiId == null) {
+            alert('아이디를 입력해주세요.');
+          } else {
+            alert(this.ss.uiId + '는 사용 가능한 아이디 입니다.')
+            this.isUnique = true;
+
+          }
+
         } else {
-          alert(this.ss.uiId + '는 중복 아이디 입니다')
+          alert(this.ss.uiId + '는 중복 아이디 입니다.')
         }
       },
       err => {
@@ -150,3 +156,4 @@ export class SignComponent implements OnInit {
   }
 
 }
+

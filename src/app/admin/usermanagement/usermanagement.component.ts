@@ -46,7 +46,7 @@ export class UsermanagementComponent implements OnInit {
       },
       err => {
         console.log(err);
-        alert('Error!!!')
+        alert('사용자 권한이 없습니다.')
       })
   }
   /** Whether the number of selected elements matches the total number of rows. */
