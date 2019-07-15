@@ -13,6 +13,7 @@ export class MenuComponent implements OnInit {
   isButtonVisible: boolean = false;
   isButtonMyPage: boolean = false;
   user = new User;
+  searchProduct:string='';
 
   constructor(private _router: Router) { }
 
@@ -37,6 +38,9 @@ export class MenuComponent implements OnInit {
     localStorage.clear();
     location.href = '';
   }
-
+  searchAllProduct(searchProduct){
+    localStorage.setItem('searchprod',searchProduct);
+    location.href='product';
+  }
 
 }

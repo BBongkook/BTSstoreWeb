@@ -1,141 +1,58 @@
-<!-- <main class="app-content">
-  <div class="app-title">
-    <div>
-      <h1><i class="fa fa-th-list"></i> User Info Table</h1>
-      <p>Table to display analytical data effectively</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="tile">
-        <div class="tile-body">
-          <table border="1">
-            <thead>
-              <tr>
-                <th>CHECK</th>
-                <th>NO</th>
-                <th>NAME</th>
-                <th>ID</th>
-                <th>TRANS</th>
-                <th>EMAIL</th>
-                <th>ADDR</th>
-                <th>PHONE</th>
-              </tr>
-            </thead>
-            <tbody *ngFor="let user of userList">
-              <tr>
-                <td>
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input" name="deleteCheck" id="deleteCheck">
-                      {{user.uiNum}}
-                    </label>
-                  </div>
-                </td>
-                <td>{{user.uiNum}}</td>
-                <td>{{user.uiName}}</td>
-                <td>{{user.uiId}}</td>
-                <td>{{user.uiTrans}}</td>
-                <td>{{user.uiEmail}}</td>
-                <td>{{user.uiZipcode}} / {{user.uiAddr}} / {{user.uiAddr2}}</td>
-                <td>{{user.uiPhone}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div align="right">
-    <button (click)="deleteUser()" [(ngModel)]="user.uiNum" class="btn btn-secondary">삭제</button>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<div class="container">
+  <div class="title">
+    <h1><i class="fa fa-th-list"></i> User Info Table</h1>
 
   </div>
-</main>  -->
-<div class="all-div">
-<div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource" matSort>
-
-    <!-- Checkbox Column 체크박스 생성. -->
-    <ng-container matColumnDef="Select">
-      <th mat-header-cell *matHeaderCellDef>
-        <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
-          [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
-        </mat-checkbox>
-      </th>
-      <td mat-cell *matCellDef="let row">
-        <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
-          [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
-        </mat-checkbox>
-      </td>
-    </ng-container>
-    <!-- ng-container .... 각 열마다 값이 지정되어서 나옴 -->
-    <!-- uiNum Column -->
-    <ng-container matColumnDef="No">
-      <th mat-header-cell *matHeaderCellDef> No </th>
-      <td mat-cell *matCellDef="let row" (click)="goPage([row.uiId])"> {{row.uiNum}} </td>
-    </ng-container>
-
-    <!-- uiName Column -->
-    <ng-container matColumnDef="Name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let row"> {{row.uiName}} </td>
-    </ng-container>
-
-    <!-- uiId Column -->
-    <ng-container matColumnDef="ID">
-      <th mat-header-cell *matHeaderCellDef> ID </th>
-      <td mat-cell *matCellDef="let row"> {{row.uiId}} </td>
-    </ng-container>
-
-    <!-- uiPwd Column -->
-    <ng-container matColumnDef="PWD">
-      <th mat-header-cell *matHeaderCellDef> PWD </th>
-      <td mat-cell *matCellDef="let row"> {{row.uiPwd}} </td>
-    </ng-container>
-
-    <!-- uiTrans Column -->
-    <ng-container matColumnDef="Trans">
-      <th mat-header-cell *matHeaderCellDef> Trans </th>
-      <td mat-cell *matCellDef="let row"> {{row.uiTrans}} </td>
-    </ng-container>
-
-    <!-- uiEmail Column -->
-    <ng-container matColumnDef="Email">
-      <th mat-header-cell *matHeaderCellDef> Email </th>
-      <td mat-cell *matCellDef="let row"> {{row.uiEmail}} </td>
-    </ng-container>
-
-    <!-- uiZipcode Column -->
-    <ng-container matColumnDef="Zipcode">
-      <th mat-header-cell *matHeaderCellDef> Zipcode </th>
-      <td mat-cell *matCellDef="let row"> {{row.uiZipcode}} </td>
-    </ng-container>
-
-    <!-- uiAddr Column -->
-    <ng-container matColumnDef="Addr">
-      <th mat-header-cell *matHeaderCellDef> Addr </th>
-      <td mat-cell *matCellDef="let row"> {{row.uiAddr}} </td>
-    </ng-container>
-
-    <!-- uiAddr2 Column -->
-    <ng-container matColumnDef="Addr2">
-      <th mat-header-cell *matHeaderCellDef> Addr2 </th>
-      <td mat-cell *matCellDef="let row"> {{row.uiAddr2}} </td>
-    </ng-container>
-
-    <!-- uiPhone Column -->
-    <ng-container matColumnDef="Phone">
-      <th mat-header-cell *matHeaderCellDef> Phone </th>
-      <td mat-cell *matCellDef="let row"> {{row.uiPhone}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
-    </tr>
-  </table>
 </div>
-<div align="right">
-  <button class="normal" mat-raised-button (click)="doDelete()">삭제</button>
-  <!-- <button  type="button" (click)="deleteUser()" [(ngModel)]="user.uiNum" class="btn btn-secondary">삭제</button> -->
+
+
+<div class="container">
+  <div class="border">
+    <table border="1">
+      <thead>
+        <tr align="center">
+          <th>CHECK</th>
+          <th>NO</th>
+          <th>NAME</th>
+          <th>ID</th>
+          <th>TRANS</th>
+          <th>EMAIL</th>
+          <th>ADDR</th>
+          <th>PHONE</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let user of userList">
+        <tr align="center">
+          <td>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" name="deleteCheck" id="deleteCheck">
+              </label>
+            </div>
+          </td>
+          <td>{{user.uiNum}}</td>
+          <td>{{user.uiName}}</td>
+          <td>{{user.uiId}}</td>
+          <td>{{user.uiTrans}}</td>
+          <td>{{user.uiEmail}}</td>
+          <td>{{user.uiZipcode}} / {{user.uiAddr}} / {{user.uiAddr2}}</td>
+          <td>{{user.uiPhone}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
+
+<div class="container">
+  <div class="bottom" align="right">
+    <button (click)="delete()" [(ngModel)]="user.uiNum" class="btn btn-danger">삭제</button>
+  </div>
 </div>

@@ -1,18 +1,18 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <mat-icon aria-hidden="false" aria-label="shop_icon">shopping_cart</mat-icon><a href="/" id="logo">SHOP</a>
-    <span class="example-spacer"></span>
-    <div class="example-button-row">
-      <mat-form-field>
-        <input matInput>
-      </mat-form-field>
-      &nbsp;
-      <button mat-raised-button>SEARCH</button>
-      <button *ngIf=this.isLoginout mat-raised-button routerLink="/login">{{this.loginout}}</button>
-      <button *ngIf=!this.isLoginout mat-raised-button (click)="doLogout()">{{this.loginout}}</button>
-      <a mat-raised-button routerLink="/sign" *ngIf=this.isLoginout>SIGN UP</a>
-      <a mat-raised-button routerLink="/admin" *ngIf=isButtonVisible>MANAGE</a>
-      <a mat-raised-button routerLink="/mypage" *ngIf=isButtonMyPage>MyPage</a>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+    <mat-toolbar-row>
+      <mat-icon aria-hidden="false" aria-label="shop_icon">shopping_cart</mat-icon><a href="/" id="logo">SHOP</a>
+      <span class="example-spacer"></span>
+      <div class="example-button-row">
+        <mat-form-field>
+          <input matInput [(ngModel)]="searchProduct">
+        </mat-form-field>
+        &nbsp;
+        <button mat-raised-button (click)="searchAllProduct(searchProduct)">SEARCH</button>
+        <button *ngIf=this.isLoginout mat-raised-button routerLink="/login">{{this.loginout}}</button>
+        <button *ngIf=!this.isLoginout mat-raised-button (click)="doLogout()">{{this.loginout}}</button>
+        <a mat-raised-button routerLink="/sign" *ngIf=this.isLoginout>SIGN UP</a>
+        <a mat-raised-button routerLink="/admin" *ngIf=isButtonVisible>MANAGE</a>
+        <a mat-raised-button routerLink="/mypage" *ngIf=isButtonMyPage>MyPage</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
