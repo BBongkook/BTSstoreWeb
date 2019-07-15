@@ -1,86 +1,21 @@
-<!-- <div class="container">
 
-  <table class="table-full-width" cellspacing="0">
-    <tr>
-      <td>
-        <mat-label>이름</mat-label>
-      </td>
-      <td>
-        <mat-form-field class="table-full-width">
-          <input matInput placeholder="Product Name" [(ngModel)]="pd.pName">
-        </mat-form-field>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <mat-label>재고</mat-label>
-      </td>
-      <td>
-        <mat-form-field class="table-full-width">
-          <input matInput placeholder="Amount" [(ngModel)]="pd.pAmount">
-        </mat-form-field>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <mat-label>가격</mat-label>
-      </td>
-      <td>
-        <mat-form-field class="table-full-width">
-          <input matInput placeholder="Price" [(ngModel)]="pd.pPrice">
-        </mat-form-field>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <mat-label>이미지파일 업로드</mat-label>
-      </td>
-      <td>
-        <mat-form-field class="table-full-width">
-          <input type="file" (change)="setFile($event)" [(ngModel)]="pd.pImageFile" matInput placeholder="이미지 선택">
-        </mat-form-field>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <mat-label>대분류</mat-label>
-      </td>
-      <td>
-        <mat-form-field class="table-full-width">
-          <input matInput placeholder="대분류" [(ngModel)]="pd.pLarge">
-        </mat-form-field>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <mat-label>중분류</mat-label>
-      </td>
-      <td>
-        <mat-form-field class="table-full-width">
-          <input matInput placeholder="중분류" [(ngModel)]="pd.pMedium">
-        </mat-form-field>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <mat-label>소분류</mat-label>
-      </td>
-      <td>
-        <mat-form-field class="table-full-width">
-          <input matInput placeholder="소분류" [(ngModel)]="pd.pSmall">
-        </mat-form-field>
-      </td>
-    </tr>
-  </table>
-  <button mat-raised-button color="primary" (click)="insertProduct()">등록</button>
 
-</div>  -->
-<div class="Topcontainer">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<div class="all-div">
+
+  <div class="Topcontainer">
   <h2>상품 추가</h2>
 </div>
 
 <div class="container">
-  <table class="table-full-width" cellspacing="0">
+  <table class="table">
 
     <!-- 상품 이름 -->
     <tr>
@@ -175,5 +110,6 @@
 </div>
 <br>
 <div class="bottomcontainer">
-  <button mat-raised-button color="primary" (click)="insertProduct()">등록</button>
+  <button (click)="insertProduct()">등록</button>
+</div>
 </div>

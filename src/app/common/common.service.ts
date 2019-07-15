@@ -15,6 +15,10 @@ export class CommonService {
     url = baseUrl + url;
     return this._http.get(url);
   }
+  getProD(url,params?){
+    url = baseUrl + url;
+    return this._http.get(url);
+  }
 
   private makeFormData(obj): FormData {
     const formData = new FormData();
@@ -48,7 +52,4 @@ export class CommonService {
     url = baseUrl + url;
     return this._http.put(url, params, httpJson);
   }
-
-  
-
 }

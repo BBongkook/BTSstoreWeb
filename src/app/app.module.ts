@@ -9,7 +9,7 @@ import { SignComponent } from './sign/sign.component';
 import { FormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
 import { NgDaumAddressModule } from 'ng2-daum-address';
-import { ProductComponent } from './product/product.component';
+import { ProductComponent } from './productTable/product.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProductviewComponent } from './productview/productview.component';
 import { AdminComponent } from './admin/admin.component';

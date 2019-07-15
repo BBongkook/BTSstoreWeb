@@ -1,0 +1,93 @@
+<app-category></app-category>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+    <link rel="stylesheet" type="text/css" href="/src/font/icomoon/style.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/node_modules/jquery-ui/themes/base/all.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="/node_modules/owl.carousel/owl.carousel/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="/node_modules/aos/dist/aos.css">
+    <link rel="stylesheet"  type="text/css" href="/src/css/style.css"> -->
+
+  </head>
+
+
+<mat-grid-list cols = "4" rowHeight = "200px" *ngFor="let pl of product">
+    <mat-grid-tile 
+    [colspan] = "1"
+    [rowspan] = "2">
+
+    <figure class="block-4-image">
+      <a href="/product"><img src="{{pl.pimageUri}}" alt="Image placeholder" class="img-fluid"></a>
+    </figure>
+
+    </mat-grid-tile>
+    <mat-grid-tile 
+    [colspan] = "2"
+    [rowspan] = "1">
+
+
+    {{pl.pname}}<br>
+    사양 : {{pl.pcontent}}
+    </mat-grid-tile>
+    <mat-grid-tile
+    [colspan] = "1"
+    [rowspan] = "2"><button>구매하기</button><button>찜하기</button>
+    </mat-grid-tile>
+    <mat-grid-tile 
+    [colspan] = "2"
+    [rowspan] = "1"> 
+
+    분류 : {{pl.plarge}} / {{pl.pmedium}}  가격 : {{pl.pprice}}
+
+    </mat-grid-tile>
+    
+ </mat-grid-list>
+
+    <div class="row mb-5">
+      <div class="col-md-9 order-2">
+
+        <div class="row">
+          <div class="col-md-12 mb-5">
+            <div class="float-md-left mb-4"><h2 class="text-black h5">{{productDivideName}}</h2></div>
+          </div>
+        </div>
+        <div class="row mb-5" >
+          <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up" *ngFor="let pl of product" >
+            <div class="block-4 text-center border" >
+              <figure class="block-4-image">
+                <a href="/product"><img src="{{pl.pimageUri}}" alt="Image placeholder" class="img-fluid"></a>
+              </figure>
+              <div class="block-4-text p-4">
+                <h3><a href="shop-single.html">{{pl.pname}}</a></h3>
+                <p class="mb-0">분류 : {{pl.plarge}} / {{pl.pmedium}}</p>
+                <p class="mb-0">사양 : {{pl.pcontent}}</p>
+                <p class="text-primary font-weight-bold">가격 : {{pl.pprice}}</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+ <!-- <script src="/src/js/jquery-3.3.1.min.js"></script>
+  <script src="/src/js/popper.min.js"></script>
+  <script src="/src/js/bootstrap.min.js"></script>
+  <script src="/src/js/jquery.magnific-popup.min.js"></script>
+  <script src="/src/js/aos.js"></script>
+  <script src="/src/js/jquery-ui"></script>
+  <script src="/src/js/owl.carousel.min.js"></script>
+  <script src="/src/js/main.js"></script>
+  <script src="/src/js/slick.min.js"></script> -->
+
+
+  <html>

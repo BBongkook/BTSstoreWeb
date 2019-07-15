@@ -11,8 +11,8 @@ export class CategoryComponent implements OnInit {
   userId:string = localStorage.getItem('id');
   ngOnInit() {
   }
-  goPage(url: string) {
-    this._moverouter.navigate([url]);
+  goProd(prod:string, url:string) {
+    localStorage.setItem('prod',prod);
+    location.href='product'
   }
-
 }
