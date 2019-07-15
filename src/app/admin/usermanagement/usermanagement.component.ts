@@ -13,7 +13,7 @@ import { routerNgProbeToken } from '@angular/router/src/router_module';
   styleUrls: ['./usermanagement.component.css']
 })
 export class UsermanagementComponent implements OnInit {
-
+  p: number = 1;
   //uservo  호출.
   user: User = new User()
 

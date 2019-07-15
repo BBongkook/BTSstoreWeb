@@ -29,7 +29,7 @@
           <th>PHONE</th>
         </tr>
       </thead>
-      <tbody *ngFor="let user of userList">
+      <tbody *ngFor="let user of userList | paginate: { itemsPerPage: 10, currentPage: p }">
         <tr align="center">
           <td>
             <div class="form-check">
@@ -52,6 +52,7 @@
 </div>
 
 <div class="container">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   <div class="bottom" align="right">
     <button (click)="delete()" [(ngModel)]="user.uiNum" class="btn btn-danger">삭제</button>
   </div>
