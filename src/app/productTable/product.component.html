@@ -16,7 +16,7 @@
   </head>
 
 
-<mat-grid-list cols = "4" rowHeight = "200px" *ngFor="let pl of product">
+<mat-grid-list cols = "4" rowHeight = "200px" *ngFor="let pl of product | paginate: { itemsPerPage: 10, currentPage: p }">
     <mat-grid-tile 
     [colspan] = "1"
     [rowspan] = "2">
@@ -47,8 +47,8 @@
     </mat-grid-tile>
     
  </mat-grid-list>
-
-    <div class="row mb-5">
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <!-- <div class="row mb-5">
       <div class="col-md-9 order-2">
 
         <div class="row">
@@ -75,7 +75,7 @@
         </div>
 
       </div>
-    </div>
+    </div> -->
 
 
 

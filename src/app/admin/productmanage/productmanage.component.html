@@ -10,33 +10,34 @@
 <body>
 
 <div class="container">
-  <h2>Basic Table</h2>
+  <h2>상품관리</h2>
   <table class="table">
     <thead>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
+        <th>No.</th>
+        <th>Image</th>
+        <th>Name</th>
+        <th>대분류</th>
+        <th>중분류</th>
+        <th>소분류</th>
+        <th>Amount</th>
+        <th>Credat</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
+     <tr *ngFor="let pd of product | paginate: { itemsPerPage: 10, currentPage: p }">
+       <td>{{pd.pnum}}</td>
+       <td><img src="{{pd.pimageUri}}" width="50px"></td>
+       <td>{{pd.pname}}</td>
+       <td style="width: 100px">{{pd.plarge}}</td>
+       <td>{{pd.pmedium}}</td>
+       <td style="width: 100px">{{pd.psmall}}</td>
+       <td>{{pd.pamount}}</td>
+       <td>{{pd.pcredat}}</td>
+     </tr>
     </tbody>
   </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
 
 </body>

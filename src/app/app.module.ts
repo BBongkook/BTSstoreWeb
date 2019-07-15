@@ -19,6 +19,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatBadgeModule } from '@angular/material/badge';
@@ -128,6 +129,7 @@ import { WithdrawalComponent } from './user/mypage/withdrawal/withdrawal.compone
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    NgxPaginationModule
     // Directive,
     // Pipe,
   ],

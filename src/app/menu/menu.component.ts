@@ -26,7 +26,7 @@ export class MenuComponent implements OnInit {
     }
     if (localStorage.getItem('auth') === "1") {
       this.isButtonMyPage = true;
-    }
+    } 
 
   }
   goPage(url: string) {

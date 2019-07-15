@@ -1,139 +1,142 @@
-<div class="dd">
-  <div class="Topcontainer">
-    <h2>나의 정보 관리</h2>
-  </div>
-  <form class="example-form">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <table class="table-full-width" cellspacing="10">
-      <tr>
-        <th width="200px" nowrap>
-          <mat-label>아이디</mat-label>
-        </th>
-
-        <td width="100px" nowrap>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="ID" disabled [value]="user.uiId">
-          </mat-form-field>
-        </td>
-      </tr>
-      <tr>
-        <th>
-          <mat-label>현재 비밀번호</mat-label>
-        </th>
-        <td>
-          <mat-form-field class="example-full-width">
-            <input matInput type="password" placeholder="현재 비밀번호"
-            (input)="user.uiPwd = $event.target.value">
-          </mat-form-field>
-        </td>
-      </tr>
-
-      <tr>
-        <th rowspan="2">
-          <mat-label>새 비밀번호</mat-label>
-        </th>
-        <td>
-          <mat-form-field class="example-full-width">
-            <input matInput type="password" name="pass1" placeholder="새 비밀번호 " [value]=""
-            (input)="pass1 = $event.target.value">
-          </mat-form-field>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width">
-            <input matInput type="password" name="pass2" placeholder="새 비밀번호 확인" [value]=""
-            (input)="pass2 = $event.target.value">
-          </mat-form-field>
-        </td>
-      </tr>
-      <tr>
-        <th>
-          <mat-label>이름</mat-label>
-        </th>
-        <td>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="이름" id="uiName" [value]="user.uiName"
-              (input)="user.uiName = $event.target.value"><br>
-          </mat-form-field>
-        </td>
-      </tr>
-
-      <tr>
-        <th>
-          <mat-label>성별</mat-label>
-        </th>
-        <td>
-          <mat-radio-group aria-label="Select an option" (change)="changeTrans($event)">
-            <mat-radio-button [value]="1" [checked]="1==user.uiTrans">남자</mat-radio-button>
-            <mat-radio-button [value]="2" [checked]="2==user.uiTrans">여자</mat-radio-button>
-          </mat-radio-group>
-        </td>
-      </tr>
-      <tr>
-        <th>
-          <mat-label>이메일</mat-label>
-        </th>
-        <td>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-              [value]="user.uiEmail">
-            <mat-hint>이메일을 입력해주세요</mat-hint>
-            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-              Please enter a valid email address
-            </mat-error>
-            <mat-error *ngIf="emailFormControl.hasError('required')">
-              Email is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-        </td>
-      </tr>
-      <tr>
-        <th>
-          <mat-label>전화번호</mat-label>
-        </th>
-        <td>
-          <mat-form-field class="example-full-width">
-            <span matPrefix>+1 &nbsp;</span>
-            <input type="tel" matInput placeholder="전화번호" [value]="user.uiPhone">
-            <mat-icon matSuffix>mode_edit</mat-icon>
-          </mat-form-field>
-        </td>
-      </tr>
-      <tr>
-        <th rowspan="2">
-          <mat-label>우편번호</mat-label>
-        </th>
-        <td>
-            <mat-form-field class="example-full-width">
-              <input matInput maxlength="5" placeholder="Postal Code" [value]="user.uiZipcode">
-              <mat-hint align="end"> / 5</mat-hint>
-            </mat-form-field>
-            <btn-daum-address (result)="setDaumAddressApi($event)" [options]="daumAddressOptions"></btn-daum-address>
-          </td>
-       
-      </tr>
-      <tr>
-          <td>
-              <mat-form-field class="example-full-width">
-                <input matInput placeholder="Address" [value]="user.uiAddr">
-              </mat-form-field>
-            </td>
-        
-      </tr>
-      <tr>
-        <th>
-          <mat-label>상세주소</mat-label>
-        </th>
-        <td>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Address 2" [value]="user.uiAddr2">
-            </mat-form-field>
-          </td>
-    </table>
-
-  </form>
+<div class="Topcontainer">
+  <h2>나의 정보 관리</h2>
 </div>
+
+<table class="table-full-width" cellspacing="10">
+  <tr>
+    <th width="200px" nowrap>
+      <mat-label>아이디</mat-label>
+    </th>
+
+    <td width="100px" nowrap>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="ID" disabled [value]="user.uiId">
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <mat-label>현재 비밀번호</mat-label>
+    </th>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput type="password" placeholder="현재 비밀번호" (input)="user.uiPwd = $event.target.value">
+      </mat-form-field>
+    </td>
+  </tr>
+
+  <tr>
+    <th rowspan="2">
+      <mat-label>새 비밀번호</mat-label>
+    </th>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput type="password" name="pass1" placeholder="새 비밀번호 " [value]=""
+          (input)="pass1 = $event.target.value">
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput type="password" name="pass2" placeholder="새 비밀번호 확인" [value]=""
+          (input)="pass2 = $event.target.value">
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <mat-label>이름</mat-label>
+    </th>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="이름" id="uiName" [value]="user.uiName"
+          (input)="user.uiName = $event.target.value"><br>
+      </mat-form-field>
+    </td>
+  </tr>
+
+  <tr>
+    <th>
+      <mat-label>성별</mat-label>
+    </th>
+    <td>
+      <mat-radio-group aria-label="Select an option" (change)="changeTrans($event)">
+        <mat-radio-button [value]="1" [checked]="1==user.uiTrans">남자</mat-radio-button>
+        <mat-radio-button [value]="2" [checked]="2==user.uiTrans">여자</mat-radio-button>
+      </mat-radio-group>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <mat-label>이메일</mat-label>
+    </th>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+          [value]="user.uiEmail">
+        <mat-hint>이메일을 입력해주세요</mat-hint>
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <mat-label>전화번호</mat-label>
+    </th>
+    <td>
+      <mat-form-field class="example-full-width">
+        <span matPrefix>+1 &nbsp;</span>
+        <input type="tel" matInput placeholder="전화번호" [value]="user.uiPhone">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+    </td>
+  </tr>
+  <tr>
+    <th rowspan="2">
+      <mat-label>우편번호</mat-label>
+    </th>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput maxlength="5" placeholder="Postal Code" [value]="user.uiZipcode">
+        <mat-hint align="end"> / 5</mat-hint>
+      </mat-form-field>
+      <btn-daum-address (result)="setDaumAddressApi($event)" [options]="daumAddressOptions"></btn-daum-address>
+    </td>
+
+  </tr>
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Address" [value]="user.uiAddr">
+      </mat-form-field>
+    </td>
+
+  </tr>
+  <tr>
+    <th>
+      <mat-label>상세주소</mat-label>
+    </th>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Address 2" [value]="user.uiAddr2">
+      </mat-form-field>
+    </td>
+</table>
+
+
 
 <div class="bottomcontainer">
   <button mat-raised-button color="primary" (click)="modifyMyinfo()">수정</button>
