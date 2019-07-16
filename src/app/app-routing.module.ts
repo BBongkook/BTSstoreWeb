@@ -11,7 +11,6 @@ import { CategoryComponent } from './category/category.component';
 import { ProductinsertComponent } from './admin/productinsert/productinsert.component';
 import { MypageComponent } from './user/mypage/mypage.component';
 import { RouterGuardService } from './auth/router-guard.service';
-import { OrderComponent } from './user/order/order.component';
 import { MyInfoManagementComponent } from './user/mypage/my-info-management/my-info-management.component';
 import { WithdrawalComponent } from './user/mypage/withdrawal/withdrawal.component';
 
@@ -71,11 +70,6 @@ const routes: Routes = [
     path: 'mypage',
     component: MypageComponent
   },
-  {
-    path: 'order',
-    component: OrderComponent,
-    canActivate: [RouterGuardService]
-  }
 ];
 
 @NgModule({

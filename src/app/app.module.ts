@@ -58,9 +58,9 @@ import { ProductmanageComponent } from './admin/productmanage/productmanage.comp
 import { ProductinsertComponent } from './admin/productinsert/productinsert.component';
 import { MypageComponent } from './user/mypage/mypage.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
-import { OrderComponent } from './user/order/order.component';
 import { MyInfoManagementComponent } from './user/mypage/my-info-management/my-info-management.component';
 import { WithdrawalComponent } from './user/mypage/withdrawal/withdrawal.component';
+import { OrderComponent } from './user/mypage/order/order.component';
 // import { Directive, Pipe } from '@angular/core';
 
 @NgModule({
@@ -78,9 +78,9 @@ import { WithdrawalComponent } from './user/mypage/withdrawal/withdrawal.compone
     ProductmanageComponent,
     ProductinsertComponent,
     MypageComponent,
-    OrderComponent,
     MyInfoManagementComponent,
     WithdrawalComponent,
+    OrderComponent,
 
 
   ],

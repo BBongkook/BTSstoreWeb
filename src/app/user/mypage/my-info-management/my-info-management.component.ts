@@ -17,8 +17,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./my-info-management.component.css']
 })
 export class MyInfoManagementComponent implements OnInit {
-  pass1:string = "";
-  pass2:string = "";
+  pass1: string = "";
+  pass2: string = "";
 
   emailFormControl = new FormControl('', [
     Validators.required,
@@ -45,43 +45,34 @@ export class MyInfoManagementComponent implements OnInit {
     this.getMyInfo();
   }
   modifyMyinfo() {
+    //유저정보 콘솔.
     console.log(this.user)
-    if(this.user.uiPwd==""){
-      alert('현재 비밀번호를 입력해주세요');
-      return;
-    }else{
-      this.cs.post(this.user).subscribe(res => {
-          
-          if(res){
-            if(this.pass1!=''&&this.pass2!=''){
-              if(this.pass1==this.pass2){
-                this.user.uiPwd=this.pass1;
-                this.cs.put('/updateUser',this.user).subscribe(res=>{
-                  if(res){
-                    alert('회원정보가 수정되었습니다.');
-                    location.href='/mypage';
-                    return;
-                  }
-                })
-              }else{
-                alert('새 비밀번호를 확인해주세요');
-                return;
-              }           
-            }
-            this.cs.put('/updateUser',this.user).subscribe(res=>{
-              if(res){
+
+    this.cs.post(this.user).subscribe(res => {
+      if (res) {
+        if (this.pass1 != '' && this.pass2 != '') {
+          if (this.pass1 == this.pass2) {
+            this.user.uiPwd = this.pass1;
+            this.cs.put('/updateUser', this.user).subscribe(res => {
+              if (res) {
                 alert('회원정보가 수정되었습니다.');
-                location.href='/mypage';
+                location.href = '/mypage';
                 return;
               }
             })
-          }else{
-            alert('비밀번호를 확인해주세요');
+          } else {
+            alert('새 비밀번호를 확인해주세요');
+            return;
           }
-        })
-    }
-    
-    
+        }
+        
+      } else {
+        alert('비밀번호를 확인해주세요');
+      }
+    })
+
+
+
   }
   getMyInfo() {
     this.cs.get('/userId/' + localStorage.getItem('id')).subscribe(
@@ -91,7 +82,7 @@ export class MyInfoManagementComponent implements OnInit {
       }
     )
   }
-  changeTrans(evt){
+  changeTrans(evt) {
     this.user.uiTrans = evt.value;
     console.log(this.user.uiTrans);
   }

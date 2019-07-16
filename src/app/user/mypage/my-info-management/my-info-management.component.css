@@ -1,37 +1,3 @@
-.Topcontainer{
-  display: flex;
-  /* margin-left: 10%; */
+.red{
   background-color: red;
-}
-
-.container{
-  display: flex;
-}
-
-
-.bottomcontainer{
-  display: flex;
-  margin-top:10px;
-  text-align: center; 
-  background-color: red;
-}
-
-.table-full-width {
-  width: 80%;
-}
-
-th{
-  text-align: center;
-}
-
-td {
-  padding-right: 10px;
-}
-
-.radio-container > * {
-  width: 100%;
-}
-.all-div{
-  margin-left: 100px;
-  margin-right: 100px;
 }

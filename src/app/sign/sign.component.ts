@@ -116,7 +116,7 @@ export class SignComponent implements OnInit {
     this._ss.get(url).subscribe(
       res => {
         if (!res) {
-          if (this.ss.uiId == null) {
+          if (this.ss.uiId == null || this.ss.uiId == '') {
             alert('아이디를 입력해주세요.');
           } else {
             alert(this.ss.uiId + '는 사용 가능한 아이디 입니다.')
