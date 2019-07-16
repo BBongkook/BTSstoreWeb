@@ -93,7 +93,8 @@
         </th>
         <td>
           <mat-form-field class="example-full-width">
-            <input type="tel" matInput placeholder="전화번호" [value]="user.uiPhone">
+            <input type="tel" matInput placeholder="전화번호" [value]="user.uiPhone"
+            (input)="user.uiPhone = $event.target.value">
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
         </td>
