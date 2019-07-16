@@ -19,7 +19,8 @@
 <mat-grid-list cols = "4" rowHeight = "200px" *ngFor="let pl of product | paginate: { itemsPerPage: 10, currentPage: p }">
     <mat-grid-tile 
     [colspan] = "1"
-    [rowspan] = "2">
+    [rowspan] = "2"
+    >
 
     <figure class="block-4-image">
       <a href="/product"><img src="{{pl.pimageUri}}" alt="Image placeholder" class="img-fluid"></a>

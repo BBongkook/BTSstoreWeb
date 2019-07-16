@@ -28,7 +28,7 @@
       </tr>
 
       <tr>
-        <th rowspan="2">
+        <th >
           <mat-label>새 비밀번호</mat-label>
         </th>
         <td>
@@ -37,8 +37,7 @@
             (input)="pass1 = $event.target.value">
           </mat-form-field>
         </td>
-      </tr>
-      <tr>
+    
         <td>
           <mat-form-field class="example-full-width">
             <input matInput type="password" name="pass2" placeholder="새 비밀번호 확인" [value]=""
@@ -93,8 +92,7 @@
         </th>
         <td>
           <mat-form-field class="example-full-width">
-            <input type="tel" matInput placeholder="전화번호" [value]="user.uiPhone"
-            (input)="user.uiPhone = $event.target.value">
+            <input type="tel" matInput placeholder="전화번호" [value]="user.uiPhone">
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
         </td>
