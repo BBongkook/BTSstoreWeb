@@ -64,8 +64,15 @@ export class MyInfoManagementComponent implements OnInit {
             alert('새 비밀번호를 확인해주세요');
             return;
           }
+        }else{
+          this.cs.put('/updateUser', this.user).subscribe(res => {
+            if (res) {
+              alert('회원정보가 수정되었습니다.');
+              location.href = '/mypage';
+              return;
+            }
+          })
         }
-        
       } else {
         alert('비밀번호를 확인해주세요');
       }
