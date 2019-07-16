@@ -21,6 +21,7 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
     if(localStorage.getItem('searchprod')!=null){
       this.pName=localStorage.getItem('searchprod');
+      this.pLargeName = this.pName+" 검색 결과";
       this._cs.getProD('/productSearch/'+this.pName).subscribe(res=>{
         this.product = <Product>res;
         console.log(this.product);
