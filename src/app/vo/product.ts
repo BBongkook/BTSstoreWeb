@@ -11,6 +11,7 @@ export class Product {
   pMedium: String;
   pSmall: String;
   pContent: String;
+  pCount: number;
 
   constructor() {
 

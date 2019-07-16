@@ -20,6 +20,7 @@ export class MainComponent implements OnInit {
   constructor(private router: Router, private _cs : CommonService, private _auservice : AuthInterceptorService) {
       this._cs.get('/productListsBypCount').subscribe(res=>{
         this.product = <Product>res;
+        console.log(this.product);
       })
    }
 
