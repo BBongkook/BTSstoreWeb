@@ -1,3 +1,101 @@
-<p>
-  {{product}}
-</p>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- 전체를 감싸는 DIV -->
+<div class="allDiv" *ngFor="let pl of product">
+
+  <!-- name DIV -->
+  <div class="topDIV">
+    <h2 class="topDivName">{{pl.pname}}</h2>
+    <span class="pspan">{{pl.plarge}}/{{pl.pmedium}}</span>
+  </div>
+  <!-- name DIV 끝-->
+
+  <!-- 상품 DIV -->
+  <div class="productDiv" style="width:80%;">
+    <!-- grid DIV -->
+    <div class="row">
+
+      <!-- 왼쪽 이미지 상품란 DIV-->
+      <div class="col-5" align="center">
+        <img src="{{pl.pimageUri}}" width="400px">
+      </div>
+      <!-- 왼쪽 이미지 상품란 DIV 끝 -->
+
+      <!-- 오른쪽 설명란 DIV -->
+      <div class="col-7" align="center">
+
+        <!-- 상품 설명 테이블 -->
+        <table class="table table-hover" style="width:80%">
+          <tr>
+            <th>판매가</th>
+            <td>{{pl.pprice}}</td>
+          </tr>
+          <tr>
+            <th>남은수량</th>
+            <td>{{pl.pamount}}</td>
+          </tr>
+          <tr>
+            <th>사양</th>
+            <td>{{pl.pcontent}}</td>
+          </tr>
+          <tr>
+            <th>배송정보</th>
+            <td><span>기본배송</span> | <span class="today">당일발송</span></td>
+          </tr>
+          <tr>
+            <th>배송비</th>
+            <td>2,500원(1박스)</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <!-- 상품 설명 테이블 끝 -->
+        <!-- 수량 -->
+        <div class="seleted_list" style="width:80%">
+          <mat-grid-list cols="1" rowHeight="2:0.2">
+            <mat-grid-tile>
+              <p class="prod_area">
+                <span id="colorOptionText">수량 </span>
+              </p>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-grid-list cols="2" rowHeight="2:0.3">
+            <mat-grid-tile>
+              <span class="num_ctrl_option">
+                <button type="button">
+                  <span class="blind">-</span>
+                </button>
+                <input name="last_ea1" id="last_ea1" type="text" maxlength="5" title="수량" value="1"
+                  style="text-align: center;width:30px;">
+                <button type="button">
+                  <span class="blind">+</span>
+                </button>
+              </span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <strong class="result_price" align="right">
+                {{pl.pprice}}
+              </strong>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+        <!-- 수량 끝 -->
+      </div>
+      <!-- 오른쪽 설명란 DIV 끝 -->
+
+      <!-- 구매 수량 -->
+    </div>
+    <!-- grid DIV 끝 -->
+  </div>
+  <!-- 상품 DIV 끝 -->
+  <!-- 상품 DIV 아래쪽 -->
+  <div class="bottomDIV" align="center" style=" width:80%;">
+    <img src="http://ai.esmplus.com/hpcd/TAKARA/toy4_woody_spec.jpg">
+  </div>
+</div>

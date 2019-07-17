@@ -1,0 +1,58 @@
+.allDiv{
+  margin-left: 15%;
+  margin-top: 3%
+}
+.topDivName{
+  font-size: 24px;
+  color: #000;
+  font-weight: 500;
+  margin-bottom: 13px;
+  font-family: 'spoqa B';
+  width: 1068px;
+}
+.pspan{
+  font-size: 13px;
+  color: #707070;
+  display: inline-block;
+  font-family: 'noto-R';
+}
+.productDiv{
+  margin-top: 3%;
+  border-top: 1px solid black;
+  border-bottom:1px solid black;
+}
+.col-5{
+  padding: 5%;
+}
+.col-7{
+  padding-top: 5%;
+}
+th{
+  width: 100px;
+}
+.today{
+  color: #3879cd;
+}
+.bottomDIV{
+  padding: 3%;
+}
+.prod_area{
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+ul{
+  list-style: none;
+}
+.seleted_list{
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+  background: #f7f7f7;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+.num_ctrl_option{
+  position: relative;
+  display: inline-block;
+}

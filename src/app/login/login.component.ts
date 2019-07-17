@@ -2,21 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../vo/user';
 import { Router } from '@angular/router';
 import { CommonService } from '../common/common.service';
+import { naver_id_login } from
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
+
 export class LoginComponent implements OnInit {
   us: User = new User();
   isLoginout: boolean = true;
-  token:any ="";
+  token: any = "";
+
+
   constructor(private _cs: CommonService, private _router: Router) {
 
 
   }
   ngOnInit() {
-    if(sessionStorage.getItem('id')){
+    if (localStorage.getItem('id')) {
       this._router.navigate(['/']);
     }
 
@@ -35,10 +40,10 @@ export class LoginComponent implements OnInit {
       if (res) {
         this.us = <User>res;
         alert('로그인이 성공하였습니다.');
-        sessionStorage.setItem('id', this.us.uiId);
-        sessionStorage.setItem('auth', this.us.uiAuth);
-        sessionStorage.setItem('token', this.us.uiToken);
-        console.log(sessionStorage.getItem('token'));
+        localStorage.setItem('id', this.us.uiId);
+        localStorage.setItem('auth', this.us.uiAuth);
+        localStorage.setItem('token', this.us.uiToken);
+        console.log(localStorage.getItem('token'));
         location.href = '';
       } else {
         alert('아이디나 비밀번호를 확인하세요.');
