@@ -46,7 +46,7 @@
               <mat-card-header>
                 <mat-card-title class="example-name">{{pd.pname}}</mat-card-title>
               </mat-card-header>
-                <img mat-card-image (click)="goViewPage(pd.pnum)" src="{{pd.pimageUri}}">
+                <img mat-card-image onmouseover="" style="cursor: pointer" (click)="goViewPage(pd.pnum)" src="{{pd.pimageUri}}">
               <mat-card-content>
                 <p>
                  {{pd.pcontent}}
@@ -68,7 +68,7 @@
                 <mat-card-header>
                   <mat-card-title class="example-name">{{pd.pname}}</mat-card-title>
                 </mat-card-header>
-                <img mat-card-image src="{{pd.pimageUri}}">
+                <img mat-card-image onmouseover="" style="cursor: pointer" (click)="goViewPage(pd.pnum)" src="{{pd.pimageUri}}">
                 <mat-card-content>
                   <p>
                    {{pd.pcontent}}

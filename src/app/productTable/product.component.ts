@@ -38,4 +38,8 @@ export class ProductComponent implements OnInit {
     })
   }
   }
+  goViewPage(pNum){
+    sessionStorage.setItem('pNum',pNum);
+    location.href='productview';
+  }
 }
