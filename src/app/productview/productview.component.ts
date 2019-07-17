@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../common/common.service';
+import { Product } from '../vo/product';
 
 @Component({
   selector: 'app-productview',
@@ -6,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./productview.component.css']
 })
 export class ProductviewComponent implements OnInit {
-
-  constructor() { }
+  pNum:string;
+  product:Product= new Product();
+  constructor(private _cs:CommonService) {
+    this.pNum=sessionStorage.getItem('pNum');
+    this._cs.get('/productViewPage/'+this.pNum).subscribe(res=>{
+        this.product = <Product>res;
+        console.log(this.product);
+    })
+   }
 
   ngOnInit() {
   }

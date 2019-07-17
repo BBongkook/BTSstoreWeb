@@ -17,7 +17,7 @@
 
 <h1>{{pLargeName}}</h1>
 <mat-grid-list cols = "4" rowHeight = "200px" *ngFor="let pl of product | paginate: { itemsPerPage: 10, currentPage: p }">
-    <mat-grid-tile 
+    <mat-grid-tile
     [colspan] = "1"
     [rowspan] = "2"
     >

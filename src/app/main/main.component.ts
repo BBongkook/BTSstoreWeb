@@ -12,6 +12,7 @@ import { AuthInterceptorService } from '../auth/auth-interceptor.service';
 })
 export class MainComponent implements OnInit {
   url = '';
+  pNum:number;
   //productvo  호출.
   product: Product = new Product()
 
@@ -29,6 +30,10 @@ export class MainComponent implements OnInit {
 
   goPage() {
     //return this.router.navigateByUrl('/' + this.url);
+  }
+  goViewPage(pNum){
+    sessionStorage.setItem('pNum',pNum);
+    location.href='productview';
   }
 }
 
