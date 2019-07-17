@@ -61,6 +61,7 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { MyInfoManagementComponent } from './user/mypage/my-info-management/my-info-management.component';
 import { WithdrawalComponent } from './user/mypage/withdrawal/withdrawal.component';
 import { OrderComponent } from './user/mypage/order/order.component';
+import { NoticepageComponent } from './noticepage/noticepage.component';
 // import { Directive, Pipe } from '@angular/core';
 
 @NgModule({
@@ -81,6 +82,7 @@ import { OrderComponent } from './user/mypage/order/order.component';
     MyInfoManagementComponent,
     WithdrawalComponent,
     OrderComponent,
+    NoticepageComponent
 
 
   ],

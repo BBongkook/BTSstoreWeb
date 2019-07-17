@@ -14,6 +14,7 @@ export class MenuComponent implements OnInit {
   isButtonMyPage: boolean = false;
   user = new User;
   searchProduct:string='';
+  userId = sessionStorage.getItem('id');
 
   constructor(private _router: Router) { }
 

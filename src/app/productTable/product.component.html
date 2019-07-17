@@ -16,29 +16,39 @@
   </head>
 
 <h1>{{pLargeName}}</h1>
+<div class="dkdk"  >
 <mat-grid-list cols = "4" rowHeight = "200px" *ngFor="let pl of product | paginate: { itemsPerPage: 10, currentPage: p }">
-    <mat-grid-tile
+  
+  <mat-grid-tile 
     [colspan] = "1"
     [rowspan] = "2"
     >
 
     <figure class="block-4-image">
-      <img (click)="goViewPage(pl.pnum)" onmouseover="" style="cursor: pointer" src="{{pl.pimageUri}}" alt="Image placeholder" class="img-fluid">
+      <a href="/product"><img src="{{pl.pimageUri}}" alt="Image placeholder" class="img-fluid"></a>
     </figure>
 
     </mat-grid-tile>
+  
     <mat-grid-tile 
     [colspan] = "2"
     [rowspan] = "1">
-
-
     {{pl.pname}}<br>
     사양 : {{pl.pcontent}}
     </mat-grid-tile>
+    
     <mat-grid-tile
     [colspan] = "1"
-    [rowspan] = "2"><button>구매하기</button><button>찜하기</button>
+    [rowspan] = "2"> 
+
+
+   <div class="example-button-row">
+    &emsp; {{pl.pprice}} <br>
+   <br>
+    <button mat-raised-button>바로구매</button> <button mat-raised-button>장바구니</button>
+  </div>
     </mat-grid-tile>
+
     <mat-grid-tile 
     [colspan] = "2"
     [rowspan] = "1"> 
@@ -46,8 +56,9 @@
     분류 : {{pl.plarge}} / {{pl.pmedium}}  가격 : {{pl.pprice}}
 
     </mat-grid-tile>
-    
+
  </mat-grid-list>
+</div>
 <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
 

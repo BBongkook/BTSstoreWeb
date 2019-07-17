@@ -13,6 +13,7 @@ import { MypageComponent } from './user/mypage/mypage.component';
 import { RouterGuardService } from './auth/router-guard.service';
 import { MyInfoManagementComponent } from './user/mypage/my-info-management/my-info-management.component';
 import { WithdrawalComponent } from './user/mypage/withdrawal/withdrawal.component';
+import { NoticepageComponent } from './noticepage/noticepage.component';
 
 const routes: Routes = [
   {
@@ -43,7 +44,10 @@ const routes: Routes = [
     path: 'usermanagement',
     component: UsermanagementComponent
   },
-  
+  {
+    path : 'noticepage',
+    component: NoticepageComponent
+  },
   {
     path: 'category',
     component: CategoryComponent

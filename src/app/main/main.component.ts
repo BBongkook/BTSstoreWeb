@@ -1,15 +1,16 @@
 import { Component, OnInit, } from '@angular/core';
 import { Router } from '@angular/router';
-import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { Product } from '../vo/product';
 import { CommonService } from '../common/common.service';
 import { AuthInterceptorService } from '../auth/auth-interceptor.service';
+
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
+
 export class MainComponent implements OnInit {
   url = '';
   pNum:number;
@@ -21,13 +22,11 @@ export class MainComponent implements OnInit {
   constructor(private router: Router, private _cs : CommonService, private _auservice : AuthInterceptorService) {
       this._cs.get('/productListsBypCount').subscribe(res=>{
         this.product = <Product>res;
-        console.log(this.product);
+        console.log(this.product)
       })
-   }
-
+  }      
   ngOnInit() {
   }
-
   goPage() {
     //return this.router.navigateByUrl('/' + this.url);
   }
