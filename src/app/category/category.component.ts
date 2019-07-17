@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
 })
 export class CategoryComponent implements OnInit {
   constructor(private _moverouter: Router) { }
-  userId:string = localStorage.getItem('id');
+  userId:string = sessionStorage.getItem('id');
   ngOnInit() {
   }
   goProd(prod:string, url:string) {
-    localStorage.setItem('prod',prod);
+    sessionStorage.setItem('prod',prod);
     location.href='product'
   }
 }

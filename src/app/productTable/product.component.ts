@@ -19,22 +19,22 @@ export class ProductComponent implements OnInit {
   constructor(private _cs:CommonService) { }
   
   ngOnInit() {
-    if(localStorage.getItem('searchprod')!=null){
-      this.pName=localStorage.getItem('searchprod');
+    if(sessionStorage.getItem('searchprod')!=null){
+      this.pName=sessionStorage.getItem('searchprod');
       this.pLargeName = this.pName+" 검색 결과";
       this._cs.getProD('/productSearch/'+this.pName).subscribe(res=>{
         this.product = <Product>res;
         console.log(this.product);
-        localStorage.removeItem('searchprod');
+        sessionStorage.removeItem('searchprod');
       })
     }else{
-    this.productDivideName = localStorage.getItem('prod');
+    this.productDivideName = sessionStorage.getItem('prod');
     console.log(this.productDivideName);
     this.pLargeName=this.productDivideName;
     this._cs.getProD('/productDivide/'+this.pLargeName).subscribe(res=>{
         this.product = <Product>res;
         console.log(this.product);
-        localStorage.removeItem('prod');
+        sessionStorage.removeItem('prod');
     })
   }
   }

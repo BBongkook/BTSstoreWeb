@@ -12,7 +12,7 @@ export class WithdrawalComponent implements OnInit {
   us:User = new User();
   wd:string = '';
   constructor(private _cs:CommonService) { 
-    this._cs.get("/userId/"+localStorage.getItem('id')).subscribe(res=>{
+    this._cs.get("/userId/"+sessionStorage.getItem('id')).subscribe(res=>{
       if(res){
         this.us.uiId = res['uiId'];
         this.us.uiNum = res['uiNum'];
@@ -31,7 +31,7 @@ export class WithdrawalComponent implements OnInit {
         this._cs.delete('/deluser/'+this.us.uiNum).subscribe(res=>{
           if(res){
             alert('회원 탈퇴 성공')
-            localStorage.clear();
+            sessionStorage.clear();
             location.href='';
           }else{
             alert('회원 탈퇴 실패');

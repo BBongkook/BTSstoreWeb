@@ -18,14 +18,14 @@ export class MenuComponent implements OnInit {
   constructor(private _router: Router) { }
 
   ngOnInit() {
-    if (localStorage.getItem('id')) {
+    if (sessionStorage.getItem('id')) {
       this.loginout = 'LOGOUT';
       this.isLoginout = false;
     }
-    if (localStorage.getItem('auth') === "0") {
+    if (sessionStorage.getItem('auth') === "0") {
       this.isButtonVisible = true;
     }
-    if (localStorage.getItem('auth') === "1") {
+    if (sessionStorage.getItem('auth') === "1") {
       this.isButtonMyPage = true;
     } 
 
@@ -35,11 +35,11 @@ export class MenuComponent implements OnInit {
   }
   doLogout() {
     alert('로그아웃 되었습니다.');
-    localStorage.clear();
+    sessionStorage.clear();
     location.href = '';
   }
   searchAllProduct(searchProduct){
-    localStorage.setItem('searchprod',searchProduct);
+    sessionStorage.setItem('searchprod',searchProduct);
     location.href='product';
   }
 

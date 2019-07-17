@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   }
   ngOnInit() {
-    if(localStorage.getItem('id')){
+    if(sessionStorage.getItem('id')){
       this._router.navigate(['/']);
     }
 
@@ -35,10 +35,10 @@ export class LoginComponent implements OnInit {
       if (res) {
         this.us = <User>res;
         alert('로그인이 성공하였습니다.');
-        localStorage.setItem('id', this.us.uiId);
-        localStorage.setItem('auth', this.us.uiAuth);
-        localStorage.setItem('token', this.us.uiToken);
-        console.log(localStorage.getItem('token'));
+        sessionStorage.setItem('id', this.us.uiId);
+        sessionStorage.setItem('auth', this.us.uiAuth);
+        sessionStorage.setItem('token', this.us.uiToken);
+        console.log(sessionStorage.getItem('token'));
         location.href = '';
       } else {
         alert('아이디나 비밀번호를 확인하세요.');

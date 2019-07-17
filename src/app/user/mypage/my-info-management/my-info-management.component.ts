@@ -41,7 +41,7 @@ export class MyInfoManagementComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log(localStorage.getItem('id'));
+    console.log(sessionStorage.getItem('id'));
     this.getMyInfo();
   }
   modifyMyinfo() {
@@ -82,7 +82,7 @@ export class MyInfoManagementComponent implements OnInit {
 
   }
   getMyInfo() {
-    this.cs.get('/userId/' + localStorage.getItem('id')).subscribe(
+    this.cs.get('/userId/' + sessionStorage.getItem('id')).subscribe(
       res => {
         console.log(res);
         this.user = <User>res;
