@@ -9,6 +9,9 @@
 .example-name{
   height: 100px;
 }
+.pp{
+  height: 130px;
+}
 .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;

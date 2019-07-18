@@ -1,65 +1,137 @@
 <app-category></app-category>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
 
-    <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
-    <link rel="stylesheet" type="text/css" href="/src/font/icomoon/style.css">
-    <link rel="stylesheet" type="text/css" href="/src/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/node_modules/jquery-ui/themes/base/all.css">
-    <link rel="stylesheet" type="text/css" href="/src/css/magnific-popup.css">
-    <link rel="stylesheet" type="text/css" href="/node_modules/owl.carousel/owl.carousel/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="/src/css/owl.theme.default.min.css">
-    <link rel="stylesheet" type="text/css" href="/node_modules/aos/dist/aos.css">
-    <link rel="stylesheet"  type="text/css" href="/src/css/style.css"> -->
+<head>
+  <meta charset="utf-8">
 
-  </head>
-
-<h1>{{pLargeName}}</h1>
-<div class="dkdk"  >
-<mat-grid-list cols = "4" rowHeight = "200px" *ngFor="let pl of product | paginate: { itemsPerPage: 10, currentPage: p }">
-  
-  <mat-grid-tile 
-    [colspan] = "1"
-    [rowspan] = "2"
-    >
-
-    <figure class="block-4-image">
-      <a href="/product"><img src="{{pl.pimageUri}}" alt="Image placeholder" class="img-fluid"></a>
-    </figure>
-
-    </mat-grid-tile>
-  
-    <mat-grid-tile 
-    [colspan] = "2"
-    [rowspan] = "1">
-    {{pl.pname}}<br>
-    사양 : {{pl.pcontent}}
-    </mat-grid-tile>
-    
-    <mat-grid-tile
-    [colspan] = "1"
-    [rowspan] = "2"> 
-
-
-   <div class="example-button-row">
-    &emsp; {{pl.pprice}} <br>
-   <br>
-    <button mat-raised-button>바로구매</button> <button mat-raised-button>장바구니</button>
+</head>
+<!-- 카테고리를 전체를 감싸는 DIV -->
+<div align="center">
+  <!-- 카테고리 DIV -->
+  <div class="Category_area" align="left">
+    <h2>카테고리 <span style="font-family:noto-L">바로가기</span></h2>
+    <!-- 카테고리 안에  ul을 감싸는 DIV -->
+    <div class="category_wrap">
+      <ul>
+        <li><a href="../product/product_list.htm?BigDivNo=2&MediumDivNo=1007"><span class="circle cate_img"><img
+                src="//image5.compuzone.co.kr/img/images/main2014/mid_category_img/category_1007.jpg"></span><span
+              class="cate_name">Samsung</span></a></li>
+        <li><a href="../product/product_list.htm?BigDivNo=2&MediumDivNo=1205"><span class="circle cate_img"><img
+                src="//image5.compuzone.co.kr/img/images/main2014/mid_category_img/category_1205.jpg"></span><span
+              class="cate_name">LG</span></a></li>
+        <li><a href="../product/product_list.htm?BigDivNo=2&MediumDivNo=1076"><span class="circle cate_img"><img
+                src="//image5.compuzone.co.kr/img/images/main2014/mid_category_img/category_1076.jpg"></span><span
+              class="cate_name">ASUS</span></a></li>
+        <li><a href="../product/product_list.htm?BigDivNo=2&MediumDivNo=1078"><span class="circle cate_img"><img
+                src="//image5.compuzone.co.kr/img/images/main2014/mid_category_img/category_1078.jpg"></span><span
+              class="cate_name">DELL</span></a></li>
+        <li><a href="../product/product_list.htm?BigDivNo=2&MediumDivNo=1077"><span class="circle cate_img"><img
+                src="//image5.compuzone.co.kr/img/images/main2014/mid_category_img/category_1077.jpg"></span><span
+              class="cate_name">레노버</span></a></li>
+        <li><a href="../product/product_list.htm?BigDivNo=2&MediumDivNo=1258"><span class="circle cate_img"><img
+                src="//image5.compuzone.co.kr/img/images/main2014/mid_category_img/category_1258.jpg"></span><span
+              class="cate_name">태블릿PC 케이스</span></a></li>
+        <li><a href="../product/product_list.htm?BigDivNo=2&MediumDivNo=1259"><span class="circle cate_img"><img
+                src="//image5.compuzone.co.kr/img/images/main2014/mid_category_img/category_1259.jpg"></span><span
+              class="cate_name">태블릿PC 보호필름</span></a></li>
+      </ul>
+    </div>
   </div>
+</div>
+<!-- 카테고리 DIV 끝 -->
+
+<div align="center">
+  <div class="productList_area" id="ProductList" >
+    <div class="productList_title">
+      <h2>노트북ㆍ태블릿</h2>
+      <div class="option_box">
+        <b style="padding-right:6px;">분류별 보기</b>
+        <span class="select_comm_small" style="width:110px;">
+          <select name="sel_mediumdiv" id="sel_mediumdiv"
+            onChange="div_send(this,this.name,this.value,'sel_div','medium_div_compatibility',true)">
+            <option>중분류</option>
+            <option value="1007">노트북존</option>
+            <option value="1205">태블릿/2in1 PC</option>
+            <option value="1076">노트북용 가방</option>
+            <option value="1078">노트북액세서리</option>
+            <option value="1077">키스킨/보안기/보호필름</option>
+            <option value="1258">태블릿PC 케이스</option>
+            <option value="1259">태블릿PC 보호필름</option>
+          </select>
+        </span>
+        <span class="select_comm_small" style="width:110px;">
+          <select name="sel_div" id="sel_div">
+            <option>소분류</option>
+          </select>
+        </span>
+        <span class="ui_selectbox">
+          <button type="button" class="submit_btn" onClick="go_list_page()">확인</button>
+        </span>
+
+      </div>
+    </div>
+
+    <div class="top_tab_area">
+      <div class="tab_menu">
+        <ul>
+          <li class="tab_on"><a href="javascript:void(0);" class="tab_M"
+              onClick="setProductListVal('PreOrder','recommand','M');">추천상품순</a><i></i></li>
+          <li class=""><a href="javascript:void(0);" class="tab_M"
+              onClick="setProductListVal('PreOrder','low_price','M');">낮은가격순</a><i></i></li>
+          <li class=""><a href="javascript:void(0);" class="tab_M"
+              onClick="setProductListVal('PreOrder','hi_price','M');">높은가격순</a><i></i></li>
+          <li class=""><a href="javascript:void(0);" class="tab_M"
+              onClick="setProductListVal('PreOrder','page_view','M');">관심높은순</a></li>
+          <li class=""><a href="javascript:void(0);" class="tab_M"
+              onClick="setProductListVal('PreOrder','sale_order','M');">인기상품순</a><i></i></li>
+          <li class=""><a href="javascript:void(0);" class="tab_M"
+              onClick="setProductListVal('PreOrder','new','M');">신규등록순</a><i></i></li>
+          <li class=""><a href="javascript:void(0);" class="tab_M"
+              onClick="setProductListVal('PreOrder','used_count','M');">구매후기많은순</a><i></i></li>
+          </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- 상품 테이블 -->
+<div align="center">
+<!-- 글씨 아래쪽 그리드를 감싸는 DIV -->
+ <div class="Product_table">
+
+<div class="dkdk">
+  <mat-grid-list cols="4" rowHeight="200px" *ngFor="let pl of product | paginate: { itemsPerPage: 10, currentPage: p }">
+
+    <mat-grid-tile [colspan]="1" [rowspan]="2">
+
+      <figure>
+        <a href="/product"><img src="{{pl.pimageUri}}" alt="Image placeholder" class="img-fluid"></a>
+      </figure>
+
     </mat-grid-tile>
 
-    <mat-grid-tile 
-    [colspan] = "2"
-    [rowspan] = "1"> 
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      {{pl.pname}}<br>
+      사양 : {{pl.pcontent}}
+    </mat-grid-tile>
 
-    분류 : {{pl.plarge}} / {{pl.pmedium}}  가격 : {{pl.pprice}}
+    <mat-grid-tile [colspan]="1" [rowspan]="2">
+
+
+      <div class="example-button-row">
+        &emsp; {{pl.pprice}} <br>
+        <br>
+        <button mat-raised-button>바로구매</button> <button mat-raised-button>장바구니</button>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+
+      분류 : {{pl.plarge}} / {{pl.pmedium}} 가격 : {{pl.pprice}}
 
     </mat-grid-tile>
 
- </mat-grid-list>
+  </mat-grid-list>
+</div>
 </div>
 <pagination-controls (pageChange)="p = $event"></pagination-controls>
-
-
-  <html>
+</div> 

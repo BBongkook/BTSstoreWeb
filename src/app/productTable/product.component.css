@@ -5,3 +5,111 @@
 .example-button-row button{
     font-weight: bold;
 }
+ul{
+    list-style: none;
+}
+
+div{
+    display: block;
+}
+.productList_area .productList_title h2 {
+    font-size: 24px;
+    font-family: noto-B;
+    letter-spacing: -1px;
+    float: left;
+    text-align: left;
+}
+
+.productList_area {
+    margin-bottom: 60px;
+    float: center;
+    width: 1085px;
+}
+
+.productList_area .productList_title .option_box {
+    color: #666;
+    font-size: 14px;
+    float: right;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.top_tab_area {
+    width: 1070px;
+    float: center;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.tab_menu {
+    position: relative;
+    width: 100%;
+    height: 56px;
+    float: left;
+    background: #f7f7f7;
+}
+
+.tab_right {
+    float: right;
+    margin: 13px 16px 0 0;
+}
+
+.tab_menu li{
+    float: left;
+    line-height: 15px;
+    box-sizing: border-box;
+    display: list-item;
+}
+
+.productList_title {
+    width: 100%;
+    float: left;
+    padding-bottom: 14px;
+}
+
+.Category_area {
+    margin-bottom: 60px;
+    font-family: 'spoqa M';
+    width: 1085px;
+}
+
+.Product_table{
+    margin-top: 200px;
+    width: 1085px;
+}
+
+.category_wrap{
+    margin-top: 34px;
+    width: 1085px;
+}
+
+a:link{
+    color: #222;
+    text-decoration: none;
+}
+
+li{
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    width: 120px;
+    margin: 0 15px 15px 0;
+}
+.circle{
+    position: relative;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.cate_img{
+    width: 120px;
+    height: 120px;
+    vertical-align: middle;
+    font-size: 0;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.img-fluid{
+    width: 250px;
+
+}

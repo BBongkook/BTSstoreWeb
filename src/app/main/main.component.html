@@ -49,11 +49,11 @@
               </mat-card-header>
                 <img mat-card-image onmouseover="" style="cursor: pointer" (click)="goViewPage(pd.pnum)" src="{{pd.pimageUri}}">
               <mat-card-content>
-                <p>
-                 {{pd.pcontent}}
-                </p>
+                  <div class="pp">
+                      {{pd.pcontent}}
+                  </div>
               </mat-card-content>
-              <mat-card-actions>
+              <mat-card-actions align="end">
                 <button mat-button>{{pd.pcount}}</button>
                 <button mat-button>SHARE</button>
               </mat-card-actions>
@@ -71,11 +71,11 @@
                 </mat-card-header>
                 <img mat-card-image onmouseover="" style="cursor: pointer" (click)="goViewPage(pd.pnum)" src="{{pd.pimageUri}}">
                 <mat-card-content>
-                  <p>
-                   {{pd.pcontent}}
-                  </p>
+                  <div class="pp">
+                      {{pd.pcontent}}
+                  </div>
                 </mat-card-content>
-                <mat-card-actions>
+                <mat-card-actions align="end" >
                   <button mat-button>{{pd.pcount}}</button>
                   <button mat-button>SHARE</button>
                 </mat-card-actions>

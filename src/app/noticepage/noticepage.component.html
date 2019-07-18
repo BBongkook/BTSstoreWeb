@@ -3,7 +3,7 @@
 <table class="table" >
   <thead class="thead-light">
     
-      <h2>공지사항</h2>
+      <h2>공지사항</h2> <br>
    
     <tr>
       <th scope="col">번호</th>
@@ -22,9 +22,11 @@
       <td>{{nt.ntCount}}</td>
     </tr>
   </tbody>
-  <br>
-  <tr aria-colspan="5" align="right">
-        <button mat-raised-button  color="primary" *ngIf=this.isWriteNotice data-toggle="modal" data-target="#noticeModal" (click)="showModal()">작성하기</button>
+  <tr >
+    <td colspan="5" align="end">
+      <button mat-raised-button  color="primary" *ngIf=this.isWriteNotice data-toggle="modal" data-target="#noticeModal" (click)="showModal()">작성하기</button>
+    </td>
+        
   </tr>
   
 </table>

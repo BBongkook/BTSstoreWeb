@@ -84,7 +84,6 @@ export class NoticepageComponent implements OnInit {
     this._cs.delete('/deleteNotice/'+this.ntNum).subscribe(res=>{
       if(res){
         alert('삭제되었습니다');
-       
       }
     });
     this.hideModal();
