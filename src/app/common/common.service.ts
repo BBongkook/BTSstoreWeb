@@ -35,8 +35,9 @@ export class CommonService {
     const data = this.makeFormData(obj);
     return this._http.post(baseUrl + '/login', data);
   }
-  post(params) {
-    return this._http.post(baseUrl + '/login', params, httpJson);
+  post(url,params) {
+    url = baseUrl+ url;
+    return this._http.post(url, params, httpJson);
   }
 
   sign(params) {

@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       alert('비밀번호 입력해주세요.');
       return;
     }
-    this._cs.post(this.us).subscribe(res => {
+    this._cs.post('/login',this.us).subscribe(res => {
       if (res) {
         this.us = <User>res;
         alert('로그인이 성공하였습니다.');

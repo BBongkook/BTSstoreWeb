@@ -26,7 +26,7 @@ export class WithdrawalComponent implements OnInit {
 
   doWithdrawal(){
     this.us.uiPwd=this.wd;
-    this._cs.post(this.us).subscribe(res=>{
+    this._cs.post('/login',this.us).subscribe(res=>{
       if(res){
         this._cs.delete('/deluser/'+this.us.uiNum).subscribe(res=>{
           if(res){

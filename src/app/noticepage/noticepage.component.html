@@ -6,7 +6,7 @@
 <table class="table">
   <thead class="thead-light">
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">번호</th>
       <th scope="col">제목</th>
       <th scope="col">작성일</th>
       <th scope="col">작성자</th>
@@ -23,3 +23,36 @@
     </tr>
   </tbody>
 </table>
+<button mat-raised-button  color="primary" *ngIf=this.isWriteNotice data-toggle="modal" data-target="#noticeModal" (click)="showModal()">작성하기</button>
+     
+  
+  <!-- The Modal -->
+  <div class="modal fade" id="noticeModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">공지사항 작성</h4>
+            <button type="button" class="close" (click)="hideModal()">&times;</button>
+          </div>
+    
+          <!-- Modal body -->
+          <div class="modal-body mb-3">
+            <label>제목</label>
+            <input type="text" name="lectureName" class="form-control mt-2 mb-3" maxlength="20"  id="ntTitle" [(ngModel)]="n.ntTitle" >
+            <label>내용</label>
+            <textarea name="evaluationContent" class="form-control mt-2" maxlength="2048" style="height:300px;" id="ntcontent" [(ngModel)]="n.ntContent" ></textarea>   
+          </div>
+    
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" (click)="sendModal()" >등록</button>
+            <button type="button" class="btn btn-outline-danger" (click)="hideModal()">취소</button>
+    
+            <!-- this button is hidden, used to close from typescript -->
+            <button type="button" id="close-modal" data-dismiss="modal" style="display: none">Close</button>
+          </div>
+        </div>
+      </div>
+  </div>

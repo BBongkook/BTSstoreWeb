@@ -48,7 +48,7 @@ export class MyInfoManagementComponent implements OnInit {
     //유저정보 콘솔.
     console.log(this.user)
 
-    this.cs.post(this.user).subscribe(res => {
+    this.cs.post('/login',this.user).subscribe(res => {
       if (res) {
         if (this.pass1 != '' && this.pass2 != '') {
           if (this.pass1 == this.pass2) {
