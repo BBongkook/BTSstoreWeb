@@ -16,6 +16,7 @@ export class NoticepageComponent implements OnInit {
   isWriteNotice:boolean=false;
   title:string;
   content:string;
+  ntNum:number;
 
   constructor(private _cs:CommonService) { 
     this._cs.get('/noticeList').subscribe(res => {
@@ -39,6 +40,7 @@ export class NoticepageComponent implements OnInit {
 
   showModalView(nt):void {
     console.log(nt);
+   this.ntNum=nt.ntNum;
    this.title=nt.ntTitle;
    this.content=nt.ntContent;
     $("#myModal").modal('show');
@@ -49,6 +51,7 @@ export class NoticepageComponent implements OnInit {
   sendModal(): void {
     this.insertNotice();
     this.hideModal();
+    location.href='noticepage';
   }
   hideModal():void {
     document.getElementById('close-modal').click();
@@ -62,7 +65,6 @@ export class NoticepageComponent implements OnInit {
     this._cs.post("/insertNotice",this.n).subscribe(res=>{
       if(res){
         alert('공지가 등록되었습니다.');
-        location.href='noticepage';
       }else{
         alert('등록실패');
       }
@@ -70,8 +72,17 @@ export class NoticepageComponent implements OnInit {
       )
   }
 
-  GetNotice(ntNum){
-    this._cs.get('/notice/'+ntNum);
+  deleteNotice(){
+    console.log(this.ntNum);
+    this._cs.delete('/deleteNotice/'+this.ntNum).subscribe(res=>{
+      if(res){
+        alert('삭제되었습니다');
+       
+      }
+    });
+    this.hideModal();
+    location.href='noticepage';
   }
+
 
 }

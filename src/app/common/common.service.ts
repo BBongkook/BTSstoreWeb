@@ -15,7 +15,7 @@ export class CommonService {
     url = baseUrl + url;
     return this._http.get(url);
   }
-  
+
   getProD(url,params?){
     url = baseUrl + url;
     return this._http.get(url);
@@ -49,7 +49,7 @@ export class CommonService {
 
   delete(url, param?) {
     url = baseUrl + url;
-    return this._http.delete(url);
+    return this._http.delete(url,param);
   }
 
   put(url,params) {
