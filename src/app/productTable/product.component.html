@@ -2,6 +2,16 @@
 
 <head>
   <meta charset="utf-8">
+  <!-- 이거 쓰는거야 안쓰는거야 필요없으면 지우자 -->
+  <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+    <link rel="stylesheet" type="text/css" href="/src/font/icomoon/style.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/node_modules/jquery-ui/themes/base/all.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="/node_modules/owl.carousel/owl.carousel/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="/node_modules/aos/dist/aos.css">
+    <link rel="stylesheet"  type="text/css" href="/src/css/style.css"> -->
 
 </head>
 <!-- 카테고리를 전체를 감싸는 DIV -->
@@ -40,7 +50,7 @@
 <!-- 카테고리 DIV 끝 -->
 
 <div align="center">
-  <div class="productList_area" id="ProductList" >
+  <div class="productList_area" id="ProductList">
     <div class="productList_title">
       <h2>노트북ㆍ태블릿</h2>
       <div class="option_box">
@@ -87,51 +97,134 @@
               onClick="setProductListVal('PreOrder','new','M');">신규등록순</a><i></i></li>
           <li class=""><a href="javascript:void(0);" class="tab_M"
               onClick="setProductListVal('PreOrder','used_count','M');">구매후기많은순</a><i></i></li>
-          </ul>
+        </ul>
       </div>
 
     </div>
   </div>
 </div>
-<!-- 상품 테이블 -->
-<div align="center">
-<!-- 글씨 아래쪽 그리드를 감싸는 DIV -->
- <div class="Product_table">
-
-<div class="dkdk">
-  <mat-grid-list cols="4" rowHeight="200px" *ngFor="let pl of product | paginate: { itemsPerPage: 10, currentPage: p }">
-
-    <mat-grid-tile [colspan]="1" [rowspan]="2">
-
-      <figure>
-        <a href="/product"><img src="{{pl.pimageUri}}" alt="Image placeholder" class="img-fluid"></a>
-      </figure>
-
-    </mat-grid-tile>
-
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
-      {{pl.pname}}<br>
-      사양 : {{pl.pcontent}}
-    </mat-grid-tile>
-
-    <mat-grid-tile [colspan]="1" [rowspan]="2">
-
-
-      <div class="example-button-row">
-        &emsp; {{pl.pprice}} <br>
-        <br>
-        <button mat-raised-button>바로구매</button> <button mat-raised-button>장바구니</button>
+<!-- test data -->
+<div class="product_list_wrap viewType_L" align="center">
+  <ul class="product_list">
+    <li class="" style="position:relative;">
+      <input type="hidden" class="CProductDivNo" value="2575" />
+      <input type="checkbox" name="CheckProductNo[]" class="CSelectedProductNo prd_checkBox leftchk"
+        id="prd_list_chk_535587" pno="535587" title="비교하기/문의하기/장바구니" value="535587">
+      <label for="prd_list_chk_535587" class="leftchk"><i></i></label>
+      <div id="CompareLayer_535587" class="checkBox_layer" style="position:absolute;z-index:1000;display:none;">
+        <a href="javascript:;" onclick="OpenProductCompare();" class="cb_tx1">비교하기</a>
+        <a href="javascript:;" onclick="GoConsultPage();" class="cb_tx2">문의하기</a>
+        <a href="javascript:;" onclick="OpenBskLayer();" class="cb_tx3"
+          style="border-bottom:1px solid #e8eaed;">장바구니</a>
+        <a href="javascript:;" onclick="all_chk_none();" class="cb_tx3" style='color:#929292;'>체크해제</a>
       </div>
-    </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <div class="prdbx">
+        <div class="prd_img">
+          <a href="javascript:void(0)" onclick="gotoDetail(event,'535587','2','1007','2575','','')">
+            <img src='http://image3.compuzone.co.kr/img/product_img/2019/0131/535587/535587_350.jpg' align='absmiddle'
+              border='0' width='350' height='350'> </a>
+        </div>
+        <div class="prd_info">
+          <a href="javascript:void(0)" onclick="gotoDetail(event,'535587','2','1007','2575','','')"
+            class="prd_info_name prdTxt">[삼성전자] 삼성 노트북9 Always 2019 NT950XBV-A28A [라이트 티탄] </a>
+          <div class="prd_subTxt">
+            <a href="javascript:void(0)" onclick="gotoDetail(event,'535587','2','1007','2575','','')">
+              위스키레이크 / 인텔 펜티엄 골드 5405U (2.3GHz) / 8GB RAM / 256GB SSD / 리눅스 / 15형 / 1920x1080 (FHD) / HDMI / THUNDERBOLT
+              / USB2.0 / USB3.0 / UFS / 실버 / 1.1~1.5Kg / M.2(NVMe) / 키보드 라이트 / 광시야각 / ODD 미포함 </a>
+          </div>
+          <div class="prd_event">
+            <p>
+              <span class='evtIco_obj' style='color:#449c84; border-color:#449c84;'>무료배송</span> </p>
+            <p class="event_list"><span class='evtIco_obj' style='color:#55b4a5; border-color:#55b4a5;'>댓글</span>
+              &nbsp;<a href='../event_zone/eventzone_view.htm?EventNo=20914' target='_blank'>SNS에 구매 인증하고 5만원 해피머니 상품권
+                신청하세요 (*행사페이지 참고) (06.03~12.31)</a></p>
+            <p class="event_list"><span class='evtIco_obj' style='color:#96b03e; border-color:#96b03e;'>후기</span>
+              &nbsp;<a href='../event_zone/eventzone_view.htm?EventNo=20914' target='_blank'>삼성 노트북 행사제품 후기 작성하고 최대 1만원
+                적립금 받으세요(*행사페이지 참고) (06.03~12.31)</a></p>
+          </div>
+        </div>
+        <div class="right_bx">
+          <div class="prd_price">
+            <a href="javascript:void(0)" onclick="gotoDetail(event,'535587','2','1007','2575','','')"
+              class="prd_info_name">
+              <span class="won"><strong class="number">&#56;&#52;&#57;,&#48;&#48;&#48;</strong><em>원</em></span>
+            </a>
+          </div>
+          <div class="prd_action">
+            <div class="rating">
+              <span class="Product_star"><span class="Product_starIco" style="width:82%;"></span></span>
+              <b>4.1</b>(8건)
+            </div>
+          </div>
+          <div class="prd_btn_box ">
+            <!-- 판매중일때 -->
+            <div class="prd_btn_list" style="">
+              <a href='javascript:void(0);'
+                onclick="buy_direct('535587','옵션',1,0,'option_insert','0',event,'p_new_list','0','prlist','N');"
+                style="cursor:pointer" class="">
+                <div class='prd_ico3'><span>장바구니</span></div>
+              </a><a href='javascript:void(0);'
+                onclick="buy_direct('535587','옵션',1,0,'option_insert_direct2','0',event,'p_new_list','0','prlist','N');"
+                style="cursor:pointer;margin-left:-4px;" class="">
+                <div class='prd_ico4'><span>구매하기</span></div>
+              </a> </div>
+            <div class="prd_btn_icon">
+              <a href="javascript:void(0)" onclick="gotoDetail(event,'535587','2','1007','2575','','Y')"
+                class="icon_blank"><span>새창</span></a>
+              <a href="javascript:javascript:login();" id="wish_prd_535587" class="icon_heart "><span>관심상품</span></a>
+            </div>
 
-      분류 : {{pl.plarge}} / {{pl.pmedium}} 가격 : {{pl.pprice}}
 
-    </mat-grid-tile>
+          </div>
 
-  </mat-grid-list>
-</div>
-</div>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
-</div> 
+        </div>
+      </div>
+
+      
+      <!-- test data 끝 -->
+
+
+      <!-- 상품 테이블 -->
+      <div align="center">
+        <!-- 글씨 아래쪽 그리드를 감싸는 DIV -->
+        <div class="Product_table">
+
+          <div class="dkdk">
+            <mat-grid-list cols="4" rowHeight="200px"
+              *ngFor="let pl of product | paginate: { itemsPerPage: 10, currentPage: p }">
+
+              <mat-grid-tile [colspan]="1" [rowspan]="2">
+
+                <figure>
+                  <a href="/product"><img src="{{pl.pimageUri}}" alt="Image placeholder" class="img-fluid"></a>
+                </figure>
+
+              </mat-grid-tile>
+
+              <mat-grid-tile [colspan]="2" [rowspan]="1">
+                {{pl.pname}}<br>
+                사양 : {{pl.pcontent}}
+              </mat-grid-tile>
+
+              <mat-grid-tile [colspan]="1" [rowspan]="2">
+
+
+                <div class="example-button-row">
+                  &emsp; {{pl.pprice}} <br>
+                  <br>
+                  <button mat-raised-button>바로구매</button> <button mat-raised-button>장바구니</button>
+                </div>
+              </mat-grid-tile>
+
+              <mat-grid-tile [colspan]="2" [rowspan]="1">
+
+                분류 : {{pl.plarge}} / {{pl.pmedium}} 가격 : {{pl.pprice}}
+
+              </mat-grid-tile>
+
+            </mat-grid-list>
+          </div>
+        </div>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
