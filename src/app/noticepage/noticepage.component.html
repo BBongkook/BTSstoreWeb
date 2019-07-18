@@ -1,7 +1,10 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<table class="table">
+<table class="table" >
   <thead class="thead-light">
+    
+      <h2>공지사항</h2>
+   
     <tr>
       <th scope="col">번호</th>
       <th scope="col">제목</th>
@@ -19,8 +22,13 @@
       <td>{{nt.ntCount}}</td>
     </tr>
   </tbody>
+  <br>
+  <tr aria-colspan="5" align="right">
+        <button mat-raised-button  color="primary" *ngIf=this.isWriteNotice data-toggle="modal" data-target="#noticeModal" (click)="showModal()">작성하기</button>
+  </tr>
+  
 </table>
-<button mat-raised-button  color="primary" *ngIf=this.isWriteNotice data-toggle="modal" data-target="#noticeModal" (click)="showModal()">작성하기</button>
+
      
   
   <!-- The Modal : INSERT NOTICE-->
@@ -78,9 +86,8 @@
     
           <!-- Modal footer -->
           <div class="modal-footer">
-            <button type="button" *ngIf=this.isWriteNotice class="btn btn-outline-primary" (click)="sendModal()" >수정</button>
-            <button type="button" *ngIf=this.isWriteNotice class="btn btn-outline-primary" (click)="deleteNotice()" >삭제</button>
-            <button type="button" class="btn btn-outline-danger" (click)="hideModal()">취소</button>
+            <button type="button"  *ngIf=this.isWriteNotice class="btn btn-outline-primary" (click)="deleteNotice()" >삭제</button>
+            <button type="button"  class="btn btn-outline-danger" (click)="hideModal()">취소</button>
             
             
     

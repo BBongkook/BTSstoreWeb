@@ -33,6 +33,7 @@ export class NoticepageComponent implements OnInit {
 
 
   showModal():void {
+    
     $("#myModal").modal('show');
   
 
@@ -43,9 +44,14 @@ export class NoticepageComponent implements OnInit {
    this.ntNum=nt.ntNum;
    this.title=nt.ntTitle;
    this.content=nt.ntContent;
+   // 조회수 증가 
+   this._cs.put("/updateNtCount/"+this.ntNum).subscribe(res=>{
+     console.log(res);
+   });
     $("#myModal").modal('show');
-    
-
+  
+   
+   
   }
 
   sendModal(): void {
@@ -56,6 +62,7 @@ export class NoticepageComponent implements OnInit {
   hideModal():void {
     document.getElementById('close-modal').click();
     document.getElementById('close-modal1').click();
+
   }
 
   //공지등록
