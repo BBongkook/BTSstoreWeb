@@ -15,9 +15,15 @@ export class CommonService {
     url = baseUrl + url;
     return this._http.get(url);
   }
+  
   getProD(url,params?){
     url = baseUrl + url;
     return this._http.get(url);
+  }
+
+  post(url,params) {
+    url = baseUrl+ url;
+    return this._http.post(url, params, httpJson);
   }
 
   private makeFormData(obj): FormData {
@@ -35,10 +41,7 @@ export class CommonService {
     const data = this.makeFormData(obj);
     return this._http.post(baseUrl + '/login', data);
   }
-  post(url,params) {
-    url = baseUrl+ url;
-    return this._http.post(url, params, httpJson);
-  }
+  
 
   sign(params) {
     return this._http.post(baseUrl + '/signup', params, httpJson);

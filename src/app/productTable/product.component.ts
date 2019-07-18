@@ -14,7 +14,7 @@ export class ProductComponent implements OnInit {
   pLargeName:string='';
   pName:string='';
   productDivideName:string;
-  product: Product = new Product();
+  product: Product[]
 
   constructor(private _cs:CommonService) { }
   
@@ -23,7 +23,7 @@ export class ProductComponent implements OnInit {
       this.pName=sessionStorage.getItem('searchprod');
       this.pLargeName = this.pName+" 검색 결과";
       this._cs.getProD('/productSearch/'+this.pName).subscribe(res=>{
-        this.product = <Product>res;
+        this.product = <Product[]>res;
         console.log(this.product);
         sessionStorage.removeItem('searchprod');
       })
@@ -32,7 +32,7 @@ export class ProductComponent implements OnInit {
     console.log(this.productDivideName);
     this.pLargeName=this.productDivideName;
     this._cs.getProD('/productDivide/'+this.pLargeName).subscribe(res=>{
-        this.product = <Product>res;
+        this.product = <Product[]>res;
         console.log(this.product);
         sessionStorage.removeItem('prod');
     })

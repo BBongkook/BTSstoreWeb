@@ -9,11 +9,11 @@ import { Product } from '../vo/product';
 })
 export class ProductviewComponent implements OnInit {
   pNum:string;
-  product:Product= new Product();
+  product:Product[];
   constructor(private _cs:CommonService) {
     this.pNum=sessionStorage.getItem('pNum');
     this._cs.get('/productViewPage/'+this.pNum).subscribe(res=>{
-        this.product = <Product>res;
+        this.product = <Product[]>res;
         console.log(this.product);
     })
    }

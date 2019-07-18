@@ -14,9 +14,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let nt of notice">
+    <tr *ngFor="let nt of notice" >
       <td>{{nt.ntNum}}</td>
-      <td>{{nt.ntTitle}}</td>
+      <td  data-toggle="modal" data-target="#noticeView" (click)="showModalView(nt)" onmouseover="" style="cursor: pointer">{{nt.ntTitle}}</td>
       <td>{{nt.ntCredat}}</td>
       <td>{{nt.ntWriter}}</td>
       <td>{{nt.ntCount}}</td>
@@ -26,7 +26,7 @@
 <button mat-raised-button  color="primary" *ngIf=this.isWriteNotice data-toggle="modal" data-target="#noticeModal" (click)="showModal()">작성하기</button>
      
   
-  <!-- The Modal -->
+  <!-- The Modal : INSERT NOTICE-->
   <div class="modal fade" id="noticeModal">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -52,6 +52,42 @@
     
             <!-- this button is hidden, used to close from typescript -->
             <button type="button" id="close-modal" data-dismiss="modal" style="display: none">Close</button>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+
+    <!-- The Modal : NOTICE VIEW -->
+    <div class="modal fade" id="noticeView">
+      <div class="modal-dialog">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">공지사항</h4>
+            <button type="button" class="close" (click)="hideModal()">&times;</button>
+          </div>
+    
+          <!-- Modal body -->
+          <div class="modal-body mb-3">
+            <label>제목</label>
+            <input disabled type="text" name="lectureName" class="form-control mt-2 mb-3" maxlength="20"  id="ntTitle" value="{{title}}">
+            <label>내용</label>
+            <textarea disabled name="evaluationContent" class="form-control mt-2" maxlength="2048" style="height:300px;" id="ntcontent">{{content}}</textarea>   
+          </div>
+    
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" *ngIf=this.isWriteNotice class="btn btn-outline-primary" (click)="sendModal()" >수정</button>
+            <button type="button" *ngIf=this.isWriteNotice class="btn btn-outline-primary" (click)="sendModal()" >삭제</button>
+            <button type="button" class="btn btn-outline-danger" (click)="hideModal()">취소</button>
+            
+            
+    
+            <!-- this button is hidden, used to close from typescript -->
+            <button type="button" id="close-modal1" data-dismiss="modal" style="display: none">Close</button>
           </div>
         </div>
       </div>

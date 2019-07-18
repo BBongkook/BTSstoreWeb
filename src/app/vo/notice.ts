@@ -1,5 +1,5 @@
 export class Notice {
-    ntNum:number
+   ntNum:number
    ntTitle:string
    ntContent:string
    ntWriter:string

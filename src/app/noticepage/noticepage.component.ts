@@ -10,13 +10,17 @@ declare var $: any;
   styleUrls: ['./noticepage.component.css']
 })
 export class NoticepageComponent implements OnInit {
-  notice:Notice = new Notice();
+  notice:Notice[];
   n:Notice = new Notice();
+  noticeView:Notice = new Notice();
   isWriteNotice:boolean=false;
+  title:string;
+  content:string;
 
   constructor(private _cs:CommonService) { 
     this._cs.get('/noticeList').subscribe(res => {
-      this.notice = <Notice>res;
+      this.notice = <Notice[]>res;
+      console.log(this.notice);
     })
   }
 
@@ -29,13 +33,26 @@ export class NoticepageComponent implements OnInit {
 
   showModal():void {
     $("#myModal").modal('show');
+  
+
   }
+
+  showModalView(nt):void {
+    console.log(nt);
+   this.title=nt.ntTitle;
+   this.content=nt.ntContent;
+    $("#myModal").modal('show');
+    
+
+  }
+
   sendModal(): void {
     this.insertNotice();
     this.hideModal();
   }
   hideModal():void {
     document.getElementById('close-modal').click();
+    document.getElementById('close-modal1').click();
   }
 
   //공지등록
@@ -51,6 +68,10 @@ export class NoticepageComponent implements OnInit {
       }
     }
       )
+  }
+
+  GetNotice(ntNum){
+    this._cs.get('/notice/'+ntNum);
   }
 
 }
