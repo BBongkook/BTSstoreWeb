@@ -3,7 +3,7 @@ export class Product {
   pNum: number;
   pName: string;
   pAmount: number;
-  pPrice: string;
+  pPrice: number;
   pImageUrl: String;
   pImageFile:File;
   pCredat: String;
