@@ -10,6 +10,7 @@ declare var $: any;
   styleUrls: ['./noticepage.component.css']
 })
 export class NoticepageComponent implements OnInit {
+  p: number = 1;
   notice:Notice[];
   n:Notice = new Notice();
   noticeView:Notice = new Notice();

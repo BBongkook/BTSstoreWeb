@@ -14,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let nt of notice" >
+    <tr *ngFor="let nt of notice | paginate: { itemsPerPage: 10, currentPage: p }" >
       <td>{{nt.ntNum}}</td>
       <td  data-toggle="modal" data-target="#noticeView" (click)="showModalView(nt)" onmouseover="" style="cursor: pointer">{{nt.ntTitle}}</td>
       <td>{{nt.ntCredat}}</td>
@@ -23,12 +23,13 @@
     </tr>
   </tbody>
   <tr >
-    <td colspan="5" align="end">
+    <td colspan="4" align="center">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+   </td>
+    <td colspan="1" align="end">
       <button mat-raised-button  color="primary" *ngIf=this.isWriteNotice data-toggle="modal" data-target="#noticeModal" (click)="showModal()">작성하기</button>
     </td>
-        
   </tr>
-  
 </table>
 
      
