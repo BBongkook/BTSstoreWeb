@@ -1,5 +1,5 @@
 <app-category></app-category>
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <div class="site-wrap">
 
   <!-- 메인화면 이미지 div -->
@@ -35,6 +35,41 @@
   </div>
   <!-- 위에까지가 메인화면 div 이미지입니다. -->
 
+  <!-- The Modal : INSERT NOTICE-->
+  <div class="modal fade" id="selectCart">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">장바구니에 추가하기</h4>
+          <button type="button" class="close" (click)="hideModal()">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body mb-3">
+            <img mat-card-image onmouseover="" style="cursor: pointer" (click)="goViewPage(pd.pnum)" src="{{pimageUri}}">
+          <label>상품명 : </label>
+          {{pname}}
+          <label>수량 선택</label>
+          <input type="number" name="evaluationContent" class="form-control mt-2 mb-3" maxlength="20"  id="ntcontent"  >
+          <input type="hidden" id="pNum" value="pNum">
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" (click)="sendModal()" >등록</button>
+          <button type="button" class="btn btn-outline-danger" (click)="hideModal()">취소</button>
+  
+          <!-- this button is hidden, used to close from typescript -->
+          <button type="button" id="close-modal" data-dismiss="modal" style="display: none">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
   <!-- 아래는 메인페이지 상품란 입니다. -->
 <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;인기 상품</h1>
 <div align="center">
@@ -54,8 +89,11 @@
                   </div>
               </mat-card-content>
               <mat-card-actions align="end">
-                <button mat-button>{{pd.pcount}}</button>
-                <button mat-button>SHARE</button>
+                <button mat-raised-button onmouseover="" style="cursor: pointer" >바로구매</button> 
+                <button mat-raised-button 
+                data-toggle="modal" 
+                data-target="#selectCart" 
+                (click)="showModal(pd)" onmouseover="" style="cursor: pointer" >장바구니</button>
               </mat-card-actions>
             </mat-card>
       </td>
@@ -85,6 +123,8 @@
       </ng-container>
       </tr>
   </table>
+
+  
 </div>
 
   <!-- 까지 상품란 -->
@@ -93,3 +133,4 @@
 <br><br><br>
 
 <div align="center">Copyright ⓒ BTS Corp. All Rights Reserved.</div>
+

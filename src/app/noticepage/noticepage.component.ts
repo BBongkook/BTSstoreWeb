@@ -80,6 +80,7 @@ export class NoticepageComponent implements OnInit {
       )
   }
 
+  //공지 삭제
   deleteNotice(){
     console.log(this.ntNum);
     this._cs.delete('/deleteNotice/'+this.ntNum).subscribe(res=>{
