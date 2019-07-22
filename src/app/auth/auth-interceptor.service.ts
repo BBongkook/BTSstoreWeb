@@ -17,7 +17,11 @@ export class AuthInterceptorService implements HttpInterceptor{
     var headers:HttpHeaders = new HttpHeaders();
     console.log(tokken);
     console.log(req);
-    if(req.url.indexOf('sign')!=-1 || req.url.indexOf('productViewPage')!=-1 || req.url.indexOf('userId')!=-1 || req.url.indexOf('productSearch')!=-1  || req.url.indexOf('productDivide')!=-1 ||req.url.indexOf('productLists')!=-1){
+    //로그인이 안되어있어도 접근할수 있는 페이지
+    if(req.url.indexOf('sign')!=-1 || req.url.indexOf('updateNtCount')!=-1
+       || req.url.indexOf('productViewPage')!=-1 || req.url.indexOf('userId')!=-1 
+       || req.url.indexOf('productSearch')!=-1  || req.url.indexOf('productDivide')!=-1 
+       || req.url.indexOf('productLists')!=-1 || req.url.indexOf('noticeList')!=-1){
       return next.handle(req);
     }
     else if(req.url.indexOf('login')==-1 && !tokken){

@@ -1,12 +1,18 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <table class="table" >
+  
   <thead class="thead-light">
+    <tr>
+     
+      <h2>공지사항</h2> <br> 
     
-      <h2>공지사항</h2> <br>
+    </tr>
+  
+    
    
     <tr>
-      <th scope="col">번호</th>
+      <th scope="col" width=170 >번호</th>
       <th scope="col">제목</th>
       <th scope="col">작성일</th>
       <th scope="col">작성자</th>
@@ -14,8 +20,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let nt of notice | paginate: { itemsPerPage: 10, currentPage: p }" >
-      <td>{{nt.ntNum}}</td>
+    <tr *ngFor="let nt of notice | paginate: { itemsPerPage: 10, currentPage: p } | slice:1; let i = index;" >
+      <td>{{i+1}}</td>
       <td  data-toggle="modal" data-target="#noticeView" (click)="showModalView(nt)" onmouseover="" style="cursor: pointer">{{nt.ntTitle}}</td>
       <td>{{nt.ntCredat}}</td>
       <td>{{nt.ntWriter}}</td>

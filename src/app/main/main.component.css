@@ -26,3 +26,357 @@ td{
   max-width: 633px;
 }
 
+.example-card {
+  width: 300px;
+  height: 650px;
+  max-width: 400px;
+  max-height: 650px;
+  background-color: aliceblue;
+  box-shadow: 5px 10px #888888;
+}
+.site-wrap{
+  margin-top: 10px;
+}
+.example-name{
+  height: 100px;
+}
+.pp{
+  height: 130px;
+}
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+td{
+  padding: 50px;
+}
+.example-stretched-tabs {
+  margin-top: 20px;
+ 
+  max-width: 633px;
+}
+.d-block w-100{
+  width: 1200px;
+  height: 500px;
+}
+.topfont{
+  margin-top: 50px;
+  margin-left: 120px;
+}
+.top_tab_area {
+  width: 100%;
+  float: center;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+/* test data */
+.mainDealArea {
+  width: 1400px;
+  padding: 40px 0 0 0;
+  margin: 0 auto;
+  align-content: center;
+}
+.mainDealArea h3 {
+  position: relative;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #383838;
+  color: #383838;
+  font-size: 28px;
+  line-height: 28px;
+  letter-spacing: -2px;
+}
+.productList {
+  text-align: center;
+}
+.mainDealArea .productList ul {
+  margin-bottom: 30px;
+  text-align: left;
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+.mainDealArea .productList ul > li.firstChild {
+  width: 270px;
+  border-left: 0;
+}
+.mainDealArea .productList ul > li {
+  position: relative;
+  float: left;
+  width: 269px;
+  height: 410px;
+  border-left: 1px solid #ecedef;
+  margin-top: 30px;
+  font-size: 14px;
+  font-weight: bold;
+}
+li, menu {
+  list-style: none;
+}
+.mainDealArea .productList ul > li .item {
+  width: 214px;
+  height: 410px;
+  margin: 0 auto;
+}
+.item {
+  position: relative;
+  width: 175px;
+  height: 370px;
+  margin: 0 auto;
+  font-size: 14px;
+  font-weight: normal;
+}
+.item .icoflagArea {
+  position: absolute;
+  top: 3px;
+  left: 12px;
+  z-index: 10;
+}
+.item .icoflagArea span.icoflag.flagLpoint {
+  width: 46px;
+  background-position: -216px 0;
+}
+.item .icoflagArea span.icoflag:first-child {
+  margin-left: 0px;
+}
+.item .icoflagArea span.icoflag {
+  display: inline-block;
+  margin-right: 4px;
+  background: url() no-repeat 0 0;
+  overflow: hidden;
+  width: 47px;
+  height: 47px;
+  text-indent: -10000em;
+}
+.item .proInfo {
+  width: 100%;
+  margin: 0 auto;
+}
+.mainDealArea .item .proInfo .btnEtc {
+  width: 214px;
+  height: 214px;
+}
+a {
+  text-decoration: none;
+}
+.item .proInfo .btnEtc > a img {
+  width: 100%;
+  height: 100%;
+}
+img {
+  max-width: 100%;
+}
+.item .flagArea {
+  margin: 10px 0 11px 0;
+  height: 17px;
+  overflow-y: hidden;
+}
+.flagicon2.icoFree {
+  width: 41px;
+  background-position: 0 -68px;
+}
+.flagicon2 {
+  display: inline-block !important;
+  width: 40px;
+  height: 16px;
+  margin: 0;
+  background: url() no-repeat;
+  overflow: hidden;
+  text-indent: -10000em;
+  font-size: 0;
+}
+.mainDealArea .delSchedule.typeCheck {
+  left: 0;
+}
+.delSchedule.typeCheck {
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+}
+.item .prdNameArea {
+  height: 51px;
+}
+.item p.name {
+  position: relative;
+  font-size: 13px;
+  line-height: 16px;
+  max-height: 36px;
+  overflow: hidden;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.proInfo .name a {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  line-height: 17px;
+  color: #232a32;
+  letter-spacing: -0.6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  height: 34px;
+  white-space: normal;
+}
+.item p.modelN {
+  margin: 2px 0 6px 0;
+  color: #9aa1a7;
+  font-size: 13px;
+  height: 14px;
+  font-weight: bold;
+  overflow: hidden;
+  word-break: break-all;
+  line-height: 1em;
+}
+.item .productPrice {
+  position: relative;
+  margin: 7px 0 5px 0;
+}
+.item .productPrice.typeDiscount .discountTit {
+  float: left;
+  display: inline-block;
+  width: 55px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #232a32;
+  padding-top: 17px;
+  margin: 0 0 0 -2px;
+}
+.item .productPrice.typeDiscount .priceTit {
+  position: absolute;
+  top: -1px;
+  left: 57px;
+  width: auto;
+  padding-top: 0;
+  color: #aeb3bb;
+  font-size: 13px;
+}
+.item .productPrice .priceInfo .priceT {
+  display: block;
+  height: 15px;
+  padding-left: 26px;
+  text-decoration: line-through;
+  font-size: 13px;
+  color: #aeb3bb;
+  vertical-align: top;
+  line-height: 13px;
+}
+.item .productPrice .priceInfo .priceB {
+  display: block;
+  margin-bottom: 2px;
+  color: #232a32;
+}
+.item .productPrice .priceInfo .priceB strong {
+  display: inline-block;
+  font-family: 'tahoma';
+  font-size: 21px;
+  line-height: 24px;
+}
+.item .productPrice .priceInfo .priceB em {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 12px;
+  margin-top: 6px;
+}
+.item .productPrice .benefitInfo {
+  display: block;
+  width: 100%;
+  margin: 3px 0 0 -2px;
+  line-height: 16px;
+  color: #ed1c24;
+  overflow: hidden;
+}
+.item .productPrice .benefitInfo .benefitTit {
+  float: left;
+  margin-right: 9px;
+  font-size: 12px;
+}
+.item .productPrice .benefitInfo .benefitPrice {
+  float: left;
+  font-size: 15px;
+}
+.item .productPrice .benefitInfo .benefitPrice em {
+  display: inline-block;
+  margin-left: 2px;
+  font-size: 12px;
+}
+.mainDealArea .productList ul > li .item .proInfo .score {
+  margin-top: 10px;
+}
+.item .score span {
+  display: inline-block;
+  color: #9aa1a7;
+  font-size: 11px;
+  line-height: 15px;
+}
+.item .score strong {
+  color: #9aa1a7;
+  font-family: 'tahoma';
+  font-size: 12px;
+  font-weight: bold;
+}
+.item .score span em {
+  display: inline-block;
+  vertical-align: top;
+}
+.item .active {
+  display: none;
+  position: absolute;
+  left: -7px;
+  top: -7px;
+  width: 187px;
+  height: 380px;
+  border: 1px solid #ea4343;
+}
+.mainDealArea .productList ul > li {
+  position: relative;
+  float: left;
+  width: 269px;
+  height: 410px;
+  border-left: 1px solid red;
+  margin-top: 30px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.carousel slide{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: top;
+  white-space: normal;
+}
+.main-image{
+  padding: 0;
+  height: 641px;
+  overflow: hidden;
+  background: black;
+  height: 100%;
+  overflow: visible;
+  white-space: nowrap;
+}
+.carousel-inner{
+  display: inline-block;
+  width: 835px;
+  height: 641px;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: top;
+  white-space: normal;
+}
+

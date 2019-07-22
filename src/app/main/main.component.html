@@ -1,37 +1,60 @@
 <app-category></app-category>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 <div class="site-wrap">
 
   <!-- 메인화면 이미지 div -->
-  <div align="center">
+  <div align="center" class="main-image">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100"
+            src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-xs-gallery-2018-4?wid=2000&hei=1536&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1535396223232"
+           
+            style="width: 835px;height: 641px" alt="first slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100"
+            src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-xr-gallery3-201809?wid=2000&hei=1536&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1538156395699"
+            style="width: 835px;height: 641px" alt="two slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100"
+            src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-xr-gallery4-201809?wid=2000&hei=1536&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1538156395803"
+            style="width: 835px;height: 641px" alt="three slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100"
+            src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-xr-gallery5-201809?wid=2000&hei=1536&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1538156394576"
+            style="width: 835px;height: 641px" alt="four slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100"
+            src=" https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-xr-gallery2-201809?wid=2000&hei=1536&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1538156395322"
+            style="width: 835px;height: 641px" alt="five slide">
+        </div>
 
-
-  <mat-tab-group headerPosition="below" mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
-
-      <mat-tab label="First">
-      <img src="http://static2.e-himart.co.kr/contents/content/display/cornerContents/imageBanner/301/imageBanner_1560509149638.jpg">
-      </mat-tab>
-
-      <mat-tab label="Second">
-      <img src="http://static1.e-himart.co.kr/contents/content/display/cornerContents/imageBanner/301/imageBanner_1560932360071.jpg">
-      </mat-tab>
-
-      <mat-tab label="Third">
-          <img src="http://static2.e-himart.co.kr/contents/content/display/cornerContents/imageBanner/301/imageBanner_1559296164092.jpg">
-      </mat-tab>
-
-
-      <mat-tab label="four">
-          <img src="http://static1.e-himart.co.kr/contents/content/display/cornerContents/imageBanner/301/imageBanner_1559276791236.jpg">
-      </mat-tab>
-
-
-      <mat-tab label="five">
-          <img src="http://static2.e-himart.co.kr/contents/content/display/cornerContents/imageBanner/301/imageBanner_1560933415440.jpg">
-      </mat-tab>
-
-
-    </mat-tab-group>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>...</h5>
+          <p>...</p>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
   </div>
   <!-- 위에까지가 메인화면 div 이미지입니다. -->
 
@@ -43,7 +66,7 @@
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title">장바구니에 추가하기</h4>
-          <button type="button" class="close" (click)="hideModal()">&times;</button>
+          <button type="button" class="close" (click)="hideModal()"> &times;</button>
         </div>
   
         <!-- Modal body -->
@@ -52,13 +75,14 @@
           <label>상품명 : </label>
           {{pname}}
           <label>수량 선택</label>
-          <input type="number" name="evaluationContent" class="form-control mt-2 mb-3" maxlength="20"  id="ntcontent"  >
-          <input type="hidden" id="pNum" value="pNum">
+          <input type="number" name="evaluationContent" class="form-control mt-2 mb-3" name="cAmount" maxlength="20"  id="cAmount" [(ngModel)]="c.cAmount"  >
+          <input type="number" id="pNum" value="{{pNum}}" >
+         
         </div>
   
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-primary" (click)="sendModal()" >등록</button>
+          <button type="button" class="btn btn-outline-primary" (click)="addCart()" >담기</button>
           <button type="button" class="btn btn-outline-danger" (click)="hideModal()">취소</button>
   
           <!-- this button is hidden, used to close from typescript -->
@@ -71,66 +95,72 @@
 
 
   <!-- 아래는 메인페이지 상품란 입니다. -->
-<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;인기 상품</h1>
-<div align="center">
-  <table>
-      
-    <tr>
-        <ng-container *ngFor="let pd of product; let i = index">
-      <td *ngIf="i<4">
-          <mat-card class="example-card" >
-              <mat-card-header>
-                <mat-card-title class="example-name">{{pd.pname}}</mat-card-title>
-              </mat-card-header>
-                <img mat-card-image onmouseover="" style="cursor: pointer" (click)="goViewPage(pd.pnum)" src="{{pd.pimageUri}}">
-              <mat-card-content>
-                  <div class="pp">
-                      {{pd.pcontent}}
+
+
+
+  <div class="mainDealArea">
+    <h3>
+      <span>고민없이 선택하는 강력 추천 상품</span>
+    </h3>
+    <div class="productList" *ngFor="let pd of product" align="center">
+      <ul>
+        <li class="firstChild">
+          <div class="item">
+            <div class="proInfo">
+              <div class="btnEtc">
+                <a target="_self">
+                  <img src="{{pd.pimageUri}}" alt="{{pd.pcontent}}" width="300" height="300" style="cursor: pointer"
+                    (click)="goViewPage(pd.pnum)" />
+                </a>
+              </div>
+              <div class="prdNameArea">
+                <p class="name">
+                  <a title="{{pd.pcontent}}" target="_self">
+                    {{pd.pcontent}}</a>
+                </p>
+                <p class="modelN">
+                  {{pd.plarge}} / {{pd.pmedium}}</p>
+              </div>
+              <div class="productPrice typeDiscount">
+                <!-- 할인일경우 class typeDiscount 추가 -->
+                <div class="discountTit">판매가</div> <!-- D:20180620 추가 -->
+                <!-- <div class="priceTit">4<em>%</em></div> -->
+                <div class="priceInfo">
+                  <span class="priceT"></span>
+                  <span class="priceB"><strong>{{pd.pprice}}</strong><em>원</em></span>
+                </div>
+                <div class="benefitInfo">
+                  <div class="benefitTit">최대혜택가</div>
+                  <div class="benefitPrice">
+                    <strong>{{pd.pprice}}</strong><em>원</em>
                   </div>
-              </mat-card-content>
-              <mat-card-actions align="end">
-                <button mat-raised-button onmouseover="" style="cursor: pointer" >바로구매</button> 
-                <button mat-raised-button 
-                data-toggle="modal" 
-                data-target="#selectCart" 
-                (click)="showModal(pd)" onmouseover="" style="cursor: pointer" >장바구니</button>
-              </mat-card-actions>
-            </mat-card>
-      </td>
-    </ng-container>
-    </tr>
-    <tr>
-        <ng-container *ngFor="let pd of product; let i = index">
-        <td *ngIf="i>3">
-          
-            <mat-card class="example-card" >
-                <mat-card-header>
-                  <mat-card-title class="example-name">{{pd.pname}}</mat-card-title>
-                </mat-card-header>
-                <img mat-card-image onmouseover="" style="cursor: pointer" (click)="goViewPage(pd.pnum)" src="{{pd.pimageUri}}">
-                <mat-card-content>
-                  <div class="pp">
-                      {{pd.pcontent}}
-                  </div>
-                </mat-card-content>
-                <mat-card-actions align="end" >
-                  <button mat-button>{{pd.pcount}}</button>
-                  <button mat-button>SHARE</button>
+                </div>
+              </div>
+              
+			  <mat-card-actions align="end" >
+                  <button mat-raised-button onmouseover="" style="cursor: pointer" >바로구매</button> 
+                  <button mat-raised-button 
+                  data-toggle="modal" 
+                  data-target="#selectCart" 
+                  (click)="showModal(pd)" onmouseover="" style="cursor: pointer" >장바구니</button>
                 </mat-card-actions>
-              </mat-card>
-            
-        </td>
-      </ng-container>
-      </tr>
-  </table>
+			  
+              <div class="score">
+                <span class="star">
+                  <img src="http://static2.e-himart.co.kr/resources/layout/images/icon/star_score45.jpg" alt="4.6점" />
+                </span>
+                <strong>4.6</strong>
+                <span>(상품평 3<em>건</em>)</span>
+              </div>
+              <div class="active"></div>
+            </div>
+          </div>
+        </li>
 
-  
+      </ul>
+    </div>
+  </div>
 </div>
-
-  <!-- 까지 상품란 -->
-
-</div>
-<br><br><br>
-
+<br>
 <div align="center">Copyright ⓒ BTS Corp. All Rights Reserved.</div>
 

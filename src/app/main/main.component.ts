@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Product } from '../vo/product';
 import { CommonService } from '../common/common.service';
 import { AuthInterceptorService } from '../auth/auth-interceptor.service';
+import { Cart } from '../vo/cart';
 
 
 declare var $: any;
@@ -20,6 +21,7 @@ export class MainComponent implements OnInit {
   product: Product[];
   pname:string;
   pimageUri:string;
+  c:Cart = new Cart();
 
 
   //productvo 호출한후 제품리스트 생성. 즉, 화면에 대응하는 vo배열
@@ -40,18 +42,20 @@ export class MainComponent implements OnInit {
     location.href='productview';
   }
 
-  
-
   showModal(product):void {
-    console.log(product);
-    this.pNum = product.pNum;
+    this.c.pNum = product.pnum;
     this.pname = product.pname;
     this.pimageUri = product.pimageUri;
 
     $("#myModal").modal('show');
   }
-  sendModal(): void {
-   
+  addCart(): void {
+    this.c.uiId=sessionStorage.getItem('id');
+    this._cs.postFile('/insertCart',this.c).subscribe(res=>{
+      if(res){
+        alert('선택하신 상품이 장바구니에 추가되었습니다');
+      }
+    })
     this.hideModal();
     location.href='noticepage';
   }
