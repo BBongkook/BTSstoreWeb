@@ -12,11 +12,13 @@ export class CartInfoComponent implements OnInit {
   cart:Cart[];
   uCart:Cart = new Cart();
   totalPrice:number = 0;
+  nu:number[] = [];
+  jMap:any = {};
+
   constructor(private _cs:CommonService) { }
 
   ngOnInit() {
     this.getCartList();
-    
   }
 
   getCartList(){
@@ -58,5 +60,37 @@ export class CartInfoComponent implements OnInit {
     })
     
   }
-
+  checkInfo(checkd:number): number[]{
+    var cNum = this.nu.lastIndexOf(checkd);
+    if(cNum>=0){
+      this.nu[cNum]=null;
+      return;
+    }
+    this.nu.push(checkd);
+  }
+  doDelete(){
+    var cMap = new Map();
+    var delNum:number[] = this.nu;
+    var cArray = new Array();
+ for(var i=0; i<delNum.length; i++){
+      cMap = new Map();
+      cMap.set("number"+i,delNum[i])
+      if(cMap.get("number"+i)==null){
+        cMap.delete("number"+i);
+     }
+     this.jMap={
+      i:i, 
+      "value":cMap.get("number"+i)}
+      cArray.push(this.jMap);
+   }
+    
+    var jsonDelNum = JSON.stringify(cArray);
+    console.log(jsonDelNum);
+    this._cs.delete('/deleteCart', jsonDelNum).subscribe(res=>{
+      if(res){
+        alert('삭제성공');
+      }
+    })
+  }
+  
 }

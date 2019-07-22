@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+
 
 const baseUrl = "http://localhost:88"
 const httpJson = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
@@ -54,10 +55,11 @@ export class CommonService {
     return this._http.post(baseUrl + '/signup', params, httpJson);
   };
 
-  delete(url, param?) {
+  delete(url, params?) {
     url = baseUrl + url;
-    return this._http.delete(url,param);
+    return this._http.delete(url,params);
   }
+
 
   put(url,params?) {
     url = baseUrl + url;

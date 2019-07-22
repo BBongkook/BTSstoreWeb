@@ -23,7 +23,7 @@
   <tbody>
     <tr *ngFor="let c of cart;" >
       <td  align="center">
-          <input type="checkbox" aria-label="Checkbox for following text input">
+          <input type="checkbox" aria-label="Checkbox for following text input" (click)="checkInfo(c.cid)">
       </td>
       <td align="center">{{c.cid}}</td>
       <td><img src="{{c.pimageUri}}" width="50px"></td>
@@ -34,7 +34,9 @@
       
     </tr>
   </tbody>
-  
+  <tr>
+    <td colspan="2"><button (click)="doDelete()">선택삭제</button></td>
+  </tr>
   <tr>
     <td colspan="2">
         <br><h3>총 결제금액 </h3>
