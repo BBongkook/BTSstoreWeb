@@ -57,11 +57,11 @@ export class MainComponent implements OnInit {
       }
     })
     this.hideModal();
-    location.href='noticepage';
+    location.href='';
   }
   hideModal():void {
     document.getElementById('close-modal').click();
-    document.getElementById('close-modal1').click();
+   
   }
 }
 

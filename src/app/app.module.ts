@@ -60,7 +60,6 @@ import { MypageComponent } from './user/mypage/mypage.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { MyInfoManagementComponent } from './user/mypage/my-info-management/my-info-management.component';
 import { WithdrawalComponent } from './user/mypage/withdrawal/withdrawal.component';
-import { OrderComponent } from './user/mypage/order/order.component';
 import { NoticepageComponent } from './noticepage/noticepage.component';
 // import { Directive, Pipe } from '@angular/core';
 
@@ -81,7 +80,6 @@ import { NoticepageComponent } from './noticepage/noticepage.component';
     MypageComponent,
     MyInfoManagementComponent,
     WithdrawalComponent,
-    OrderComponent,
     NoticepageComponent
 
 

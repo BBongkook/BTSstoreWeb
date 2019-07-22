@@ -40,8 +40,10 @@ export class CommonService {
   postFile(url,obj) {
     const data = this.makeFormData(obj);
     url = baseUrl+ url;
-    return this._http.post(url + '/insertProduct', data);
+    return this._http.post(url , data);
   }
+
+
   postJson(obj) {
     const data = this.makeFormData(obj);
     return this._http.post(baseUrl + '/login', data);

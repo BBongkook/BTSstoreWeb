@@ -61,7 +61,7 @@ export class ProductinsertComponent implements OnInit {
     this.pd.pLarge = this.pLarge_level;
     this.pd.pMedium = this.exam_title;
     console.log(this.pd);
-    this.cs.postFile(this.pd).subscribe(res=>{
+    this.cs.postFile('insertProduct',this.pd).subscribe(res=>{
       if(res==1){
         alert('상품등록 완료');
         location.href = 'admin';
