@@ -11,6 +11,16 @@ export class CommonService {
 
   constructor(private _http: HttpClient) { }
 
+  
+  private makeFormData(obj): FormData {
+    const formData = new FormData();
+    for (var key in obj) {
+      formData.append(key, obj[key]);
+    }
+    return formData;
+  }
+
+
   get(url, params?) {
     url = baseUrl + url;
     return this._http.get(url);
@@ -26,13 +36,7 @@ export class CommonService {
     return this._http.post(url, params, httpJson);
   }
 
-  private makeFormData(obj): FormData {
-    const formData = new FormData();
-    for (var key in obj) {
-      formData.append(key, obj[key]);
-    }
-    return formData;
-  }
+ 
   postFile(obj) {
     const data = this.makeFormData(obj);
     return this._http.post(baseUrl + '/insertProduct', data);
