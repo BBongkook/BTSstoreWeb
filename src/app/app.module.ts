@@ -63,6 +63,7 @@ import { WithdrawalComponent } from './user/mypage/withdrawal/withdrawal.compone
 import { NoticepageComponent } from './noticepage/noticepage.component';
 import { OrderComponent } from './order/order.component';
 import { OrderInfoComponent } from './user/mypage/order-info/order-info.component';
+import { CartInfoComponent } from './user/mypage/cart-info/cart-info.component';
 // import { Directive, Pipe } from '@angular/core';
 
 @NgModule({
@@ -84,7 +85,8 @@ import { OrderInfoComponent } from './user/mypage/order-info/order-info.componen
     WithdrawalComponent,
     NoticepageComponent,
     OrderComponent,
-    OrderInfoComponent
+    OrderInfoComponent,
+    CartInfoComponent
 
 
   ],

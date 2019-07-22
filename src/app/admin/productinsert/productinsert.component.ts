@@ -58,10 +58,10 @@ export class ProductinsertComponent implements OnInit {
   }
 
   insertProduct(){
-    this.pd.pLarge = this.pLarge_level;
-    this.pd.pMedium = this.exam_title;
+    this.pd.plarge = this.pLarge_level;
+    this.pd.pmedium = this.exam_title;
     console.log(this.pd);
-    this.cs.postFile('insertProduct',this.pd).subscribe(res=>{
+    this.cs.postFile('/insertProduct',this.pd).subscribe(res=>{
       if(res==1){
         alert('상품등록 완료');
         location.href = 'admin';
@@ -71,7 +71,7 @@ export class ProductinsertComponent implements OnInit {
     });
   }
   setFile(evt){
-    this.pd.pImageFile = evt.target.files[0];
+    this.pd.pimageFile = evt.target.files[0];
 }
 
 

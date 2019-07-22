@@ -1,17 +1,17 @@
 export class Product {
 
-  pNum: number;
-  pName: string;
-  pAmount: number;
-  pPrice: number;
-  pImageUrl: String;
-  pImageFile:File;
-  pCredat: String;
-  pLarge: String;
-  pMedium: String;
-  pSmall: String;
-  pContent: String;
-  pCount: number;
+  pnum: number;
+  pname: string;
+  pamount: number;
+  pprice: number;
+  pimageUrl: String;
+  pimageFile:File;
+  pcredat: String;
+  plarge: String;
+  pmedium: String;
+  psmall: String;
+  pcontent: String;
+  pcount: number;
 
   constructor() {
 

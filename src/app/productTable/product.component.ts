@@ -24,6 +24,12 @@ export class ProductComponent implements OnInit {
       this.pLargeName = this.pName+" 검색 결과";
       this._cs.getProD('/productSearch/'+this.pName).subscribe(res=>{
         this.product = <Product[]>res;
+        for(var i=0; i<this.product.length; i++){
+          var pPriceToString = ""+this.product[i].pprice;
+          var pPriceComma = pPriceToString.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          this.product[i].pprice = <any>pPriceComma;
+
+      }
         console.log(this.product);
         sessionStorage.removeItem('searchprod');
       })
@@ -33,6 +39,12 @@ export class ProductComponent implements OnInit {
     this.pLargeName=this.productDivideName;
     this._cs.getProD('/productDivide/'+this.pLargeName).subscribe(res=>{
         this.product = <Product[]>res;
+        for(var i=0; i<this.product.length; i++){
+          var pPriceToString = ""+this.product[i].pprice;
+          var pPriceComma = pPriceToString.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          this.product[i].pprice = <any>pPriceComma;
+
+      }
         console.log(this.product);
         sessionStorage.removeItem('prod');
     })

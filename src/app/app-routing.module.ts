@@ -14,6 +14,7 @@ import { RouterGuardService } from './auth/router-guard.service';
 import { MyInfoManagementComponent } from './user/mypage/my-info-management/my-info-management.component';
 import { WithdrawalComponent } from './user/mypage/withdrawal/withdrawal.component';
 import { NoticepageComponent } from './noticepage/noticepage.component';
+import { CartInfoComponent } from './user/mypage/cart-info/cart-info.component';
 
 const routes: Routes = [
   {
@@ -65,6 +66,10 @@ const routes: Routes = [
   {
     path: 'myinfomanagement',
     component: MyInfoManagementComponent
+  },
+  {
+    path: 'cartinfo',
+    component: CartInfoComponent
   },
   {
     path: 'withdrawal',

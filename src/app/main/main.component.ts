@@ -27,12 +27,19 @@ export class MainComponent implements OnInit {
   //productvo 호출한후 제품리스트 생성. 즉, 화면에 대응하는 vo배열
   productList: Product[] = [];
   constructor(private router: Router, private _cs : CommonService, private _auservice : AuthInterceptorService) {
-      this._cs.get('/productListsBypCount').subscribe(res=>{
-        this.product = <Product[]>res;
-        console.log(this.product)
-      })
+      
   }      
   ngOnInit() {
+    this._cs.get('/productListsBypCount').subscribe(res=>{
+      this.product = <Product[]>res;
+      for(var i=0; i<this.product.length; i++){
+        var pPriceToString = ""+this.product[i].pprice;
+        var pPriceComma = pPriceToString.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        this.product[i].pprice = <any>pPriceComma;
+
+    }
+      console.log(this.product)
+    })
   }
   goPage() {
     //return this.router.navigateByUrl('/' + this.url);
@@ -54,15 +61,14 @@ export class MainComponent implements OnInit {
     this._cs.postFile('/insertCart',this.c).subscribe(res=>{
       if(res){
         alert('선택하신 상품이 장바구니에 추가되었습니다');
+        this.c.cAmount=null;
       }
     })
     this.hideModal();
-    location.href='';
   }
   hideModal():void {
     document.getElementById('close-modal').click();
    
   }
 }
-
 

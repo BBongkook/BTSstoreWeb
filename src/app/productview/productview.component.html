@@ -32,7 +32,7 @@
         <table class="table table-hover" style="width:80%">
           <tr>
             <th>판매가</th>
-            <td>{{pl.pprice}}</td>
+            <td>{{curprice}}</td>
           </tr>
           <tr>
             <th>남은수량</th>
@@ -68,34 +68,50 @@
           <mat-grid-list cols="2" rowHeight="2:0.3">
             <mat-grid-tile>
               <span class="num_ctrl_option">
-                <button type="button">
+                <button type="button" (click)="minus()">
                   <span class="blind">-</span>
                 </button>
-                <input name="last_ea1" id="last_ea1" type="text" maxlength="5" title="수량" value="1"
-                  style="text-align: center;width:30px;">
-                <button type="button">
+                <input name="ea" id="ea" type="text" maxlength="5" title="수량" [(ngModel)]="curVal" style="text-align: center;width:30px;">
+                <button type="button" (click)="plus()">
                   <span class="blind">+</span>
                 </button>
               </span>
             </mat-grid-tile>
             <mat-grid-tile>
               <strong class="result_price" align="right">
-                {{pl.pprice}}
+                {{curprice}}<span>원</span>
               </strong>
             </mat-grid-tile>
           </mat-grid-list>
         </div>
         <!-- 수량 끝 -->
-      </div>
-      <!-- 오른쪽 설명란 DIV 끝 -->
+        <!--최종가격과 버튼-->
+        <div class="total_price" id="top_total_price_chk">
+          <span class="txt">총 합계 금액</span>
+          <strong class="price">
+            <font id="end_price0">
+              <div style="display:none;"></div>{{pl.pprice}}
+            </font><span>원</span>
+          </strong>
+          <a class="cart" style="cursor:pointer" class=""><span></span></a>
+          <div class="btn_area">
+            <a class="favo" title="관심상품" style="cursor:pointer;"><span></span></a>
 
-      <!-- 구매 수량 -->
+            <a class="cart" style="cursor:pointer"><span></span></a>
+
+            <a class="buy" style="cursor:pointer;margin-left:-4px;">구매하기</a> </div>
+        </div>
+        <!--최종가격과 버튼 끝-->
+        <!-- 오른쪽 설명란 DIV 끝 -->
+
+        <!-- 구매 수량 -->
+      </div>
+      <!-- grid DIV 끝 -->
     </div>
-    <!-- grid DIV 끝 -->
-  </div>
-  <!-- 상품 DIV 끝 -->
-  <!-- 상품 DIV 아래쪽 -->
-  <div class="bottomDIV" align="center" style=" width:80%;">
-    <img src="http://ai.esmplus.com/hpcd/TAKARA/toy4_woody_spec.jpg">
+    <!-- 상품 DIV 끝 -->
+    <!-- 상품 DIV 아래쪽 -->
+    <div class="bottomDIV" align="center" style=" width:80%;">
+      <img src="http://image3.compuzone.co.kr/img/pr_early_image/447178/2200g.jpg">
+    </div>
   </div>
 </div>

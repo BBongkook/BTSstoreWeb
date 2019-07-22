@@ -5,7 +5,7 @@ export class Cart {
      uiNum : number
      pNum : number
      cAmount : number
-     cPrice : number
+     cprice : number
      pName : string
      pPrice : number
 }

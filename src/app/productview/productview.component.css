@@ -34,6 +34,7 @@ th{
   color: #3879cd;
 }
 .bottomDIV{
+  margin-left: 180px;
   padding: 3%;
 }
 .prod_area{
@@ -55,4 +56,62 @@ ul{
 .num_ctrl_option{
   position: relative;
   display: inline-block;
+}
+.total_price {
+  padding: 30px 0;
+  text-align: right;
+}
+.total_price .txt {
+  font-size: 15px;
+  margin-right: 15px;
+  color: #383838;
+  vertical-align: text-bottom;
+}
+.total_price .price {
+  font-size: 30px;
+  color: #ff4a4a;
+}
+.total_price .price span {
+  font-size: 21px;
+  margin-top: 10px;
+  display: inline-block;
+  margin-left: 2px;
+  font-weight: normal;
+}
+.total_price .btn_area {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 30px;
+}
+.total_price .btn_area .favo {
+  width: 20%;
+  border-right: 0;
+}
+.total_price .btn_area .favo span {
+  width: 27px;
+  height: 24px;
+  display: inline-block;
+  margin-top: 14px;
+  background: url(//image5.compuzone.co.kr/img/images/product_detail/btn_pd_new.png) -146px -48px no-repeat;
+}
+.total_price .btn_area a {
+  display: inline-block;
+  border: 1px solid #d4d4d4;
+  background: #fff;
+  height: 50px;
+  float: left;
+  text-align: center;
+  line-height: 48px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+.total_price .btn_area .cart {width:40%; }
+.total_price .btn_area .cart span {width:30px; height:27px; display:inline-block; margin-top: 12px; background: url(//image5.compuzone.co.kr/img/images/product_detail/btn_pd_new.png) -180px -47px no-repeat;}
+
+.total_price .btn_area .buy {
+  width: 40%;
+  background: #323232;
+  color: #fff;
+  font-size: 15px;
+  border: 1px solid #323232;
 }
