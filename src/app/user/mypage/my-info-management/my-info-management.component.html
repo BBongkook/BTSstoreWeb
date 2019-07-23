@@ -1,8 +1,12 @@
-
-  <div class="Topcontainer">
-    <h2>나의 정보 관리</h2>
+<div align="center">
+  <div class="Toptitle" align="center">
+    <div align="left">
+      <h2>내 정보 관리</h2>
+    </div>
   </div>
-
+</div>
+<div align="center">
+  <div class="middle_table" align="center">
     <table class="table-full-width" cellspacing="10">
       <tr>
         <th width="200px" nowrap>
@@ -21,27 +25,26 @@
         </th>
         <td>
           <mat-form-field class="example-full-width">
-            <input matInput type="password" placeholder="현재 비밀번호"
-            (input)="user.uiPwd = $event.target.value">
+            <input matInput type="password" placeholder="현재 비밀번호" (input)="user.uiPwd = $event.target.value">
           </mat-form-field>
         </td>
       </tr>
 
       <tr>
-        <th >
+        <th>
           <mat-label>새 비밀번호</mat-label>
         </th>
         <td>
           <mat-form-field class="example-full-width">
             <input matInput type="password" name="pass1" placeholder="새 비밀번호 " [value]=""
-            (input)="pass1 = $event.target.value">
+              (input)="pass1 = $event.target.value">
           </mat-form-field>
         </td>
-    
+
         <td>
           <mat-form-field class="example-full-width">
             <input matInput type="password" name="pass2" placeholder="새 비밀번호 확인" [value]=""
-            (input)="pass2 = $event.target.value">
+              (input)="pass2 = $event.target.value">
           </mat-form-field>
         </td>
       </tr>
@@ -102,34 +105,37 @@
           <mat-label>우편번호</mat-label>
         </th>
         <td>
-            <mat-form-field class="example-full-width">
-              <input matInput maxlength="5" placeholder="Postal Code" [value]="user.uiZipcode">
-              <mat-hint align="end"> / 5</mat-hint>
-            </mat-form-field>
-            <btn-daum-address (result)="setDaumAddressApi($event)" [options]="daumAddressOptions"></btn-daum-address>
-          </td>
-       
+          <mat-form-field class="example-full-width">
+            <input matInput maxlength="5" placeholder="Postal Code" [value]="user.uiZipcode">
+            <mat-hint align="end"> / 5</mat-hint>
+          </mat-form-field>
+          <btn-daum-address (result)="setDaumAddressApi($event)" [options]="daumAddressOptions"></btn-daum-address>
+        </td>
+
       </tr>
       <tr>
-          <td>
-              <mat-form-field class="example-full-width">
-                <input matInput placeholder="Address" [value]="user.uiAddr">
-              </mat-form-field>
-            </td>
-        
+        <td>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Address" [value]="user.uiAddr">
+          </mat-form-field>
+        </td>
+
       </tr>
       <tr>
         <th>
           <mat-label>상세주소</mat-label>
         </th>
         <td>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Address 2" [value]="user.uiAddr2">
-            </mat-form-field>
-          </td>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Address 2" [value]="user.uiAddr2">
+          </mat-form-field>
+        </td>
     </table>
+  </div>
+</div>
 
-
-<div class="bottomcontainer">
-  <button mat-raised-button color="primary" (click)="modifyMyinfo()">수정</button>
+<div align="center">
+    <div class="bottom_button">
+      <button mat-raised-button align="right" color="primary" (click)="modifyMyinfo()">수정</button>
+  </div>
 </div>

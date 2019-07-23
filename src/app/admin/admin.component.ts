@@ -21,11 +21,4 @@ export class AdminComponent implements OnInit {
   changePage(page){
     this.page = page;
   }
-  // changeValue(evt) {
-  //   $(document).ready(function () {
-  //     $("#naver").load("/usermanagement");
-  //   });
-
-  // }
-
 }

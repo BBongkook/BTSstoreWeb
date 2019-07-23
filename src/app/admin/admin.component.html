@@ -1,21 +1,5 @@
-<!-- <div class="d-flex" id="wrapper">
-  <div class="bg-light border-right" id="sidebar-wrapper">
-    <div class="list-group list-group-flush">
-      <ul>
-        <li><a href="/usermanagement" class="list-group-item list-group-item-action bg-light">회원관리</a></li>
-      </ul>
-      <a href="#" class="list-group-item list-group-item-action bg-light">상품관리</a>
+<mat-sidenav-container class="admin_container">
 
-      <a href="#" class="list-group-item list-group-item-action bg-light">결제관리</a>
-      <a href="#" class="list-group-item list-group-item-action bg-light">리뷰관리</a>
-
-    </div>
-  </div>
-
-</div> -->
-
-
-<mat-sidenav-container class="example-container">
   <mat-sidenav opened mode="side" id="left">
     <mat-list>
       <mat-list-item> <a mat-raised-button (click)="changePage('usermanagement')" id='user'>회원관리</a></mat-list-item>
@@ -28,31 +12,11 @@
       <mat-divider></mat-divider>
       <mat-list-item><a mat-raised-button routerLink=".">결제관리</a></mat-list-item>
       <mat-divider></mat-divider>
-
     </mat-list>
   </mat-sidenav>
   <mat-drawer-container id="center">
     <app-usermanagement *ngIf="page=='usermanagement'"></app-usermanagement>
     <app-productmanage *ngIf="page=='productmanage'"></app-productmanage>
     <app-productinsert *ngIf="page=='productinsert'"></app-productinsert>
-
   </mat-drawer-container>
 </mat-sidenav-container>
-
-
-<!--
-
-<mat-drawer-container class="example-container">
-    <mat-drawer mode="side" opened class="example-container2">
-      <li>
-        <ul>유저관리</ul>
-        <ul>상품관리</ul>
-        <ul>리뷰관리</ul>
-      </li>
-    </mat-drawer>
-
-    <mat-drawer-content>
-      <button>Hello~asdasdsadsadsad</button>
-    </mat-drawer-content>
-
-  </mat-drawer-container> -->

@@ -1,16 +1,11 @@
 table {
-  width: 100%;
+  width: 1500px;
 }
-
-.title{
-  background-color: red
-}
-
-.border{
-  background-color: aquamarine;
-}
-
 .bottom{
   margin-top: 10px;
-  background-color: yellowgreen;
 }
+.title{
+  width: 80%;
+  margin: 50px;
+}
+

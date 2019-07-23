@@ -1,24 +1,22 @@
 <mat-sidenav-container class="example-container">
-    <mat-sidenav opened mode="side" id="left">
-      <mat-list class="buttonType">
-        <mat-list-item > <a mat-raised-button  size="100px" color="primary" (click)="changePage('cart-info')" id='user'>&nbsp;장바구니&nbsp;&nbsp;</a></mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item ><a mat-raised-button  color="primary" (click)="changePage('order-info')">&nbsp;주문정보&nbsp;&nbsp;</a></mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-divider></mat-divider>
-        <mat-list-item ><a mat-raised-button  color="primary" (click)="changePage('myinfomanagement')">내정보관리</a></mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-divider></mat-divider>
-        <mat-list-item><a mat-raised-button color="primary" (click)="changePage('withdrawal')">회원탈퇴</a></mat-list-item>
-        <mat-divider></mat-divider>
-  
-      </mat-list>
-    </mat-sidenav>
-    <mat-drawer-container>
-      <!-- <app-usermanagement *ngIf="page=='usermanagement'"></app-usermanagement> -->
-      <app-order-info *ngIf="page=='order-info'"></app-order-info>
-      <app-my-info-management *ngIf="page=='myinfomanagement'"></app-my-info-management>
-      <app-withdrawal *ngIf="page=='withdrawal'"></app-withdrawal>
-      <app-cart-info *ngIf="page=='cart-info'"></app-cart-info>
-    </mat-drawer-container>
-  </mat-sidenav-container>
+  <mat-sidenav opened mode="side" id="left">
+    <mat-list class="buttonType">
+      <mat-list-item ><a mat-raised-button  color="primary" (click)="changePage('myinfomanagement')">내정보관리</a></mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item ><a mat-raised-button  color="primary" (click)="changePage('order-info')">&nbsp;주문정보&nbsp;&nbsp;</a></mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-divider></mat-divider>
+      <mat-list-item > <a mat-raised-button  size="100px" color="primary" (click)="changePage('cart-info')" id='user'>&nbsp;장바구니&nbsp;&nbsp;</a></mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-divider></mat-divider>
+      <mat-list-item><a mat-raised-button color="primary" (click)="changePage('withdrawal')">회원탈퇴</a></mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </mat-sidenav>
+  <mat-drawer-container>
+    <app-my-info-management *ngIf="page=='myinfomanagement'"></app-my-info-management>
+    <app-order-info *ngIf="page=='order-info'"></app-order-info>
+    <app-withdrawal *ngIf="page=='withdrawal'"></app-withdrawal>
+    <app-cart-info *ngIf="page=='cart-info'"></app-cart-info>
+  </mat-drawer-container>
+</mat-sidenav-container>

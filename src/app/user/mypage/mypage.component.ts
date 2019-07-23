@@ -10,21 +10,13 @@ export class MypageComponent implements OnInit {
 
   constructor(private router: Router) { }
   showFiller = false;
-  page = 'usermanagement';
+  page = 'myinfomanagement';
   ngOnInit() {
-    // $("#menu-toggle").click(function (e) {
-    //   e.preventDefault();
-    //   $("#wrapper").toggleClass("toggled");
-    // });
+
   }
 
   changePage(page){
     this.page = page;
   }
-  // changeValue(evt) {
-  //   $(document).ready(function () {
-  //     $("#naver").load("/usermanagement");
-  //   });
 
-  // }
 }
