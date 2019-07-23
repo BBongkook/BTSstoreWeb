@@ -15,13 +15,13 @@ export interface Large {
 })
 
 export class ProductinsertComponent implements OnInit {
-  pd:Product = new Product();
-  
-  pLarge_level:any;
-  exam_title:any;
+  pd: Product = new Product();
+
+  pLarge_level: any;
+  exam_title: any;
   degreeTitleList = [];
 
-  constructor(private cs:CommonService) { }
+  constructor(private cs: CommonService) { }
 
   ngOnInit() {
   }
@@ -39,40 +39,52 @@ export class ProductinsertComponent implements OnInit {
       degreeTitleList: [
         'OS', 'OA', 'Other'
       ]
-    }
+    },
+    {
+      'pLargeName': '컴퓨터부품',
+      degreeTitleList: [
+        'SAMSUNG', 'LG', 'Other',
+      ]
+    },
+    {
+      'pLargeName': '모니터',
+      degreeTitleList: [
+        'SAMSUNG', 'LG', 'Other',
+      ]
+    },
   ];
-  
+
   pLargeLevelChangeAction(pLarge) {
-    this.exam_title="";
+    this.exam_title = "";
     let dropDownData = this.pLargeList.find((data: any) => data.pLargeName === pLarge);
     if (dropDownData) {
       this.degreeTitleList = dropDownData.degreeTitleList;
-      if(this.degreeTitleList){
-        this.exam_title=this.degreeTitleList[0];
+      if (this.degreeTitleList) {
+        this.exam_title = this.degreeTitleList[0];
       }
-      
+
     } else {
       this.degreeTitleList = [];
     }
 
   }
 
-  insertProduct(){
+  insertProduct() {
     this.pd.plarge = this.pLarge_level;
     this.pd.pmedium = this.exam_title;
     console.log(this.pd);
-    this.cs.postFile('/insertProduct',this.pd).subscribe(res=>{
-      if(res==1){
+    this.cs.postFile('/insertProduct', this.pd).subscribe(res => {
+      if (res == 1) {
         alert('상품등록 완료');
         location.href = 'admin';
-      }else{
+      } else {
         alert('상품등록에 실패하였습니다.');
       }
     });
   }
-  setFile(evt){
+  setFile(evt) {
     this.pd.pimageFile = evt.target.files[0];
-}
+  }
 
 
 }

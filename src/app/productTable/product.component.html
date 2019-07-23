@@ -197,7 +197,7 @@
               <mat-grid-tile [colspan]="1" [rowspan]="2">
 
                 <figure>
-                  <a href="/product"><img src="{{pl.pimageUri}}" alt="Image placeholder" class="img-fluid"></a>
+                  <img src="{{pl.pimageUri}}" style="cursor: pointer" (click)="goViewPage(pl.pnum)" alt="Image placeholder" class="img-fluid">
                 </figure>
 
               </mat-grid-tile>

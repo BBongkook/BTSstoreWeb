@@ -1,5 +1,3 @@
-
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -11,105 +9,106 @@
 <div class="all-div">
 
   <div class="Topcontainer">
-  <h2>상품 추가</h2>
-</div>
+    <h2>상품 추가</h2>
+  </div>
 
-<div class="container">
-  <table class="table">
+  <div class="container">
+    <table class="table">
 
-    <!-- 상품 이름 -->
-    <tr>
-      <th>
-        <mat-label>상품이름</mat-label>
-      </th>
-      <td>
-        <mat-form-field class="table-full-width">
-          <input matInput id="pName" [(ngModel)]="pd.pName" placeholder="name">
-        </mat-form-field>
-      </td>
-    </tr>
+      <!-- 상품 이름 -->
+      <tr>
+        <th>
+          <mat-label>상품이름</mat-label>
+        </th>
+        <td>
+          <mat-form-field class="table-full-width">
+            <input matInput id="pName" [(ngModel)]="pd.pName" placeholder="name">
+          </mat-form-field>
+        </td>
+      </tr>
 
-    <!-- 재고 -->
-    <tr>
-      <th>
-        <mat-label>재고</mat-label>
-      </th>
-      <td>
-        <mat-form-field class="table-full-width">
-          <input type="number" id="pAmount" [(ngModel)]="pd.pAmount" matInput placeholder="Amount">
-        </mat-form-field>
-      </td>
-    </tr>
+      <!-- 재고 -->
+      <tr>
+        <th>
+          <mat-label>재고</mat-label>
+        </th>
+        <td>
+          <mat-form-field class="table-full-width">
+            <input type="number" id="pAmount" [(ngModel)]="pd.pAmount" matInput placeholder="Amount">
+          </mat-form-field>
+        </td>
+      </tr>
 
-    <!-- 가격 -->
-    <tr>
-      <th>
-        <mat-label>가격</mat-label>
-      </th>
-      <td>
-        <mat-form-field class="table-full-width">
-          <input type="number" id="pPrice" [(ngModel)]="pd.pPrice" matInput placeholder="Price">
-        </mat-form-field>
-      </td>
-    </tr>
-    <br>
-    <!-- 상품이미지 -->
-    <tr>
-      <th>
-        <mat-label>상품이미지</mat-label>
-      </th>
-      <td>
-        <input type="file" id="pImageFile" (change)="setFile($event)" [(ngModel)]="pd.pimageFile">
+      <!-- 가격 -->
+      <tr>
+        <th>
+          <mat-label>가격</mat-label>
+        </th>
+        <td>
+          <mat-form-field class="table-full-width">
+            <input type="number" id="pPrice" [(ngModel)]="pd.pPrice" matInput placeholder="Price">
+          </mat-form-field>
+        </td>
+      </tr>
+      <br>
+      <!-- 상품이미지 -->
+      <tr>
+        <th>
+          <mat-label>상품이미지</mat-label>
+        </th>
+        <td>
+          <input type="file" id="pImageFile" (change)="setFile($event)" [(ngModel)]="pd.pimageFile">
 
-      </td>
-    </tr>
-    <br>
-    <!-- 카테고리 분류 -->
-    <tr>
-      <th>
-        <mat-label>카테고리 분류</mat-label>
-      </th>
-      <td>
-        <mat-form-field>
-          <mat-select placeholder="대분류" name="pLarge_level" (selectionChange)="pLargeLevelChangeAction(pLarge_level)"
-            [(ngModel)]="pLarge_level">
-            <mat-option *ngFor="let pLarge of pLargeList" [value]="pLarge.pLargeName">{{ pLarge.pLargeName }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </td>
-    </tr>
+        </td>
+      </tr>
+      <br>
+      <!-- 카테고리 분류 -->
+      <tr>
+        <th>
+          <mat-label>카테고리 분류</mat-label>
+        </th>
+        <td>
+          <mat-form-field>
+            <mat-select placeholder="대분류" name="pLarge_level" (selectionChange)="pLargeLevelChangeAction(pLarge_level)"
+              [(ngModel)]="pLarge_level">
+              <mat-option *ngFor="let pLarge of pLargeList" [value]="pLarge.pLargeName">{{ pLarge.pLargeName }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
 
-    <!-- 카테고리 분류 중분류-->
-    <tr>
-      <td>
-      </td>
-      <td>
-        <mat-form-field>
-          <mat-select placeholder="중분류" name="exam_title" [(ngModel)]="exam_title">
-            <mat-option *ngFor="let degreeTitle of degreeTitleList" [value]="degreeTitle">{{ degreeTitle }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </td>
-    </tr>
+      <!-- 카테고리 분류 중분류-->
+      <tr>
+        <td>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-select placeholder="중분류" name="exam_title" [(ngModel)]="exam_title">
+              <mat-option *ngFor="let degreeTitle of degreeTitleList" [value]="degreeTitle">{{ degreeTitle }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
 
-    <!-- 카테고리 분류 소분류-->
-    <tr>
-      <td>
-      </td>
-      <td>
-        <mat-form-field class="table-full-width">
-          <input matInput id="pSmall" [(ngModel)]="pd.pSmall" placeholder="소분류">
-        </mat-form-field>
-      </td>
-    </tr>
+      <!-- 카테고리 분류 소분류-->
+      <tr>
+        <td>
+        </td>
+        <td>
+          <mat-form-field class="table-full-width">
+            <input matInput id="pSmall" [(ngModel)]="pd.pSmall" placeholder="소분류">
+          </mat-form-field>
+        </td>
+      </tr>
 
 
 
-  </table>
-</div>
-<br>
-<div class="bottomcontainer">
-  <button (click)="insertProduct()">등록</button>
-</div>
+    </table>
+  </div>
+  <br>
+  <div class="bottomcontainer">
+    <button (click)="insertProduct()">등록</button>
+  </div>
 </div>

@@ -39,6 +39,9 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('auth', this.us.uiAuth);
         sessionStorage.setItem('token', this.us.uiToken);
         console.log(sessionStorage.getItem('token'));
+
+          setTimeout("expiredToken()",3000);
+
         location.href = '';
       } else {
         alert('아이디나 비밀번호를 확인하세요.');
@@ -47,5 +50,12 @@ export class LoginComponent implements OnInit {
   }
   goPage(url: string) {
     this._router.navigate([url]);
+  }
+  expiredToken(){
+    sessionStorage.removeItem('id');
+    sessionStorage.removeItem('auth');
+    sessionStorage.removeItem('token');
+    alert('로그인 후 30분이 지났습니다. 다시 로그인 해주세요');
+    location.href='login';
   }
 }
