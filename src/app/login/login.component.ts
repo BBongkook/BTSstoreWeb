@@ -3,7 +3,7 @@ import { User } from '../vo/user';
 import { Router } from '@angular/router';
 import { CommonService } from '../common/common.service';
 
-if(sessionStorage.getItem('id')){
+if(sessionStorage.getItem('id')!="admin"){
   window.setTimeout(function () {
     sessionStorage.removeItem('id');
     sessionStorage.removeItem('auth');
@@ -24,6 +24,10 @@ export class LoginComponent implements OnInit {
   token: any = "";
   
   constructor(private _cs: CommonService, private _router: Router) {
+    if(sessionStorage.getItem('id')){
+      alert('이미 로그인 되어 있습니다.');
+      location.href='';
+    }
   }
 
 
