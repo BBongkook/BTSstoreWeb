@@ -73,20 +73,17 @@ export class CartInfoComponent implements OnInit {
     var delNum:number[] = this.nu;
     var cArray = new Array();
  for(var i=0; i<delNum.length; i++){
-      cMap = new Map();
       cMap.set("number"+i,delNum[i])
       if(cMap.get("number"+i)==null){
         cMap.delete("number"+i);
      }
-     this.jMap={
-      i:i, 
-      "value":cMap.get("number"+i)}
-      cArray.push(this.jMap);
+     this.jMap={"value":cMap.get("number"+i)}
+     cArray.push(this.jMap);
    }
     
     var jsonDelNum = JSON.stringify(cArray);
     console.log(jsonDelNum);
-    this._cs.delete('/deleteCart', jsonDelNum).subscribe(res=>{
+    this._cs.delete('/deleteCart', cArray).subscribe(res=>{
       if(res){
         alert('삭제성공');
       }

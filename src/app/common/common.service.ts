@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 
 const baseUrl = "http://localhost:88"
-const httpJson = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+const httpJson = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }),body:{} }
 const httpData = { headers: new HttpHeaders({ 'ENCTYPE-Type': 'multipart/form-data' }) }
 @Injectable({
   providedIn: 'root'
@@ -55,9 +55,22 @@ export class CommonService {
     return this._http.post(baseUrl + '/signup', params, httpJson);
   };
 
+  // makeParam(params):string{
+  //   let str = '';
+  //   for(let key in params){
+  //     str += key + '=' + params[key];
+  //   }
+  //   if(str){
+  //     str = str.substring(str.length-1);
+  //   }
+  //   return str;
+  // }
+
+  
   delete(url, params?) {
     url = baseUrl + url;
-    return this._http.delete(url,params);
+    httpJson.body = params;
+    return this._http.delete(url,httpJson);
   }
 
 
