@@ -86,6 +86,7 @@ export class CartInfoComponent implements OnInit {
     this._cs.delete('/deleteCart', cArray).subscribe(res=>{
       if(res){
         alert('삭제성공');
+        this.getCartList();
       }
     })
   }
