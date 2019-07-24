@@ -4,7 +4,7 @@ export class Product {
   pname: string;
   pamount: number;
   pprice: number;
-  pimageUrl: String;
+  pimageUri: String;
   pimageFile:File;
   pcredat: String;
   plarge: String;

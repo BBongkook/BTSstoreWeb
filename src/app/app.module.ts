@@ -64,6 +64,7 @@ import { NoticepageComponent } from './noticepage/noticepage.component';
 import { OrderComponent } from './order/order.component';
 import { OrderInfoComponent } from './user/mypage/order-info/order-info.component';
 import { CartInfoComponent } from './user/mypage/cart-info/cart-info.component';
+import { PaymentComponent } from './payment/payment.component';
 // import { Directive, Pipe } from '@angular/core';
 
 @NgModule({
@@ -86,7 +87,8 @@ import { CartInfoComponent } from './user/mypage/cart-info/cart-info.component';
     NoticepageComponent,
     OrderComponent,
     OrderInfoComponent,
-    CartInfoComponent
+    CartInfoComponent,
+    PaymentComponent
 
 
   ],
@@ -138,6 +140,9 @@ import { CartInfoComponent } from './user/mypage/cart-info/cart-info.component';
     NgxPaginationModule
     // Directive,
     // Pipe,
+  ],
+  entryComponents: [
+    ProductComponent
   ],
   providers: [ 
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },

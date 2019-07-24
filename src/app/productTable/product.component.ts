@@ -34,6 +34,15 @@ export class ProductComponent implements OnInit {
         sessionStorage.removeItem('searchprod');
       })
     }else{
+      this.productDivide();
+  }
+  }
+  goViewPage(pNum){
+    sessionStorage.setItem('pNum',pNum);
+    location.href='productview';
+  }
+
+  productDivide(){
     this.productDivideName = sessionStorage.getItem('prod');
     console.log(this.productDivideName);
     this.pLargeName=this.productDivideName;
@@ -48,10 +57,17 @@ export class ProductComponent implements OnInit {
         console.log(this.product);
         sessionStorage.removeItem('prod');
     })
-  }
-  }
-  goViewPage(pNum){
-    sessionStorage.setItem('pNum',pNum);
-    location.href='productview';
+  };
+
+  productFilter(divide:string){
+    this.pLargeName=this.productDivideName;
+    this._cs.getProD('/productDivide/'+this.pLargeName+'&'+divide).subscribe(res=>{
+      this.product = <Product[]>res;
+      for(var i=0; i<this.product.length; i++){
+        var pPriceToString = ""+this.product[i].pprice;
+        var pPriceComma = pPriceToString.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        this.product[i].pprice = <any>pPriceComma;
+      }
+    })
   }
 }
