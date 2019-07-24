@@ -33,8 +33,12 @@ export class ProductComponent implements OnInit {
         console.log(this.product);
         sessionStorage.removeItem('searchprod');
       })
-    }else{
-      this.productDivide();
+    }else if(sessionStorage.getItem('prod')){
+        this.productDivide();
+        sessionStorage.removeItem('prod');
+    }
+    else{
+      this.productFilter;
   }
   }
   goViewPage(pNum){
@@ -55,13 +59,14 @@ export class ProductComponent implements OnInit {
 
       }
         console.log(this.product);
-        sessionStorage.removeItem('prod');
+
     })
   };
 
   productFilter(divide:string){
     this.pLargeName=this.productDivideName;
     this._cs.getProD('/productDivide/'+this.pLargeName+'&'+divide).subscribe(res=>{
+      console.log(res);
       this.product = <Product[]>res;
       for(var i=0; i<this.product.length; i++){
         var pPriceToString = ""+this.product[i].pprice;
