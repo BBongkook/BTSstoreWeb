@@ -13,7 +13,7 @@
     <tr>
       <th  width="30"></th>
       <th  align="center" >장바구니 번호</th>
-      <th scope="col" width="100" colspan="2" >상품명</th>
+      <th scope="col" width="200" colspan="2" >상품명</th>
       <th scope="col"  width="120">상품 가격</th>
       <th scope="col">수량</th>
       <th scope="col">총 가격</th>
@@ -29,20 +29,29 @@
       <td><img src="{{c.pimageUri}}" width="50px"></td>
       <td>{{c.pname}}</td>
       <td align="cenger">{{c.pprice}}원</td>
-      <td align="center"><input type="text" style=width:20px; [(ngModel)]="c.camount"><button (click)="amountChange(c.cid, c.camount,c.pnum)">변경</button></td>
+      <td width="300">
+        <input class="form-control form-control-sm" style=width:65px; type="text"[(ngModel)]="c.camount">
+        <button mat-stroked-button (click)="amountChange(c.cid, c.camount,c.pnum)">변경</button></td>
       <td align="center">{{c.cprice}}원</td>      
       
     </tr>
   </tbody>
   <tr>
-    <td colspan="2"><button (click)="doDelete()">선택삭제</button></td>
+    <td colspan="3">
+        <br><h3>총 결제금액 </h3>
+    </td>
+    <td colspan="4" align="end">
+        <br><h3>{{totalPrice}}원</h3>
+    </td>
   </tr>
   <tr>
     <td colspan="2">
-        <br><h3>총 결제금액 </h3>
+        <button mat-stroked-button (click)="doDelete()">선택삭제</button>
     </td>
-    <td colspan="5" align="end">
-        <br><h3>{{totalPrice}}원</h3>
+     
+       
+    <td colspan="5" align="end"> 
+        <button mat-raised-button color="primary">주문하기</button>
     </td>
   </tr>
  
