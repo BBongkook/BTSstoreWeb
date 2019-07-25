@@ -1,28 +1,28 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<table class="table table-hover" >
+<table class="table table-hover" style="margin-left:150px">
   
   <thead class="thead-light">
     <tr>
     <td colspan="7">
-      <h2>장바구니</h2> <br> 
+      <h2 style="margin: 30px">장바구니</h2>
     </td>
     </tr>
 
 
-    <tr>
+    <tr align="center">
       <th  width="30"></th>
       <th  align="center" >장바구니 번호</th>
       <th scope="col" width="200" colspan="2" >상품명</th>
       <th scope="col"  width="120">상품 가격</th>
-      <th scope="col">수량</th>
-      <th scope="col">총 가격</th>
+      <th>수량</th>
+      <th>총 가격</th>
       
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let c of cart;" >
-      <td  align="center">
+    <tr *ngFor="let c of cart;" align="center">
+      <td style="vertical-align:middle">
           <input type="checkbox" aria-label="Checkbox for following text input" (click)="checkInfo(c.cid)">
       </td>
       <td align="center">{{c.cid}}</td>
@@ -56,4 +56,3 @@
   </tr>
  
 </table>
-

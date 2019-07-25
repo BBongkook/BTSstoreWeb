@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../vo/user';
+import { CommonService } from '../common/common.service';
 
 @Component({
   selector: 'app-menu',
@@ -16,10 +17,10 @@ export class MenuComponent implements OnInit {
   searchProduct:string='';
   userId = sessionStorage.getItem('id');
 
-  constructor(private _router: Router) { }
+  constructor(private _router: Router, private _cs:CommonService) { }
 
   ngOnInit() {
-    if (sessionStorage.getItem('id')) {
+    if (this._cs.isLogin()) {
       this.loginout = 'LOGOUT';
       this.isLoginout = false;
     }

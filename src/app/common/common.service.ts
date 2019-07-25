@@ -78,4 +78,14 @@ export class CommonService {
     url = baseUrl + url;
     return this._http.put(url, params, httpJson);
   }
+
+
+  isLogin():boolean{
+    let id = sessionStorage.getItem('id');
+    let token = sessionStorage.getItem('token');
+    if(id && token){
+      return true;
+    }
+    return false;
+  }
 }

@@ -3,11 +3,9 @@ import { User } from '../vo/user';
 import { Router } from '@angular/router';
 import { CommonService } from '../common/common.service';
 
-if(sessionStorage.getItem('id')!="admin"){
+if(sessionStorage.getItem('id') && sessionStorage.getItem('id')!='admin'){
   window.setTimeout(function () {
-    sessionStorage.removeItem('id');
-    sessionStorage.removeItem('auth');
-    sessionStorage.removeItem('token');
+    sessionStorage.clear();
     alert('로그인 후 30분이 지났습니다. 자동 로그아웃 됩니다.');
     location.href = '';
   },1800000);
@@ -24,7 +22,7 @@ export class LoginComponent implements OnInit {
   token: any = "";
   
   constructor(private _cs: CommonService, private _router: Router) {
-    if(sessionStorage.getItem('id')){
+    if(this._cs.isLogin()){
       alert('이미 로그인 되어 있습니다.');
       location.href='';
     }
@@ -33,13 +31,12 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
-    if (sessionStorage.getItem('id')) {
+    if (this._cs.isLogin()) {
       this._router.navigate(['/']);
     }
-
   }
+  
   doLogin(form): void {
-
     if (!this.us.uiId) {
       alert('아이디를 입력해주세요.');
       return;
@@ -55,9 +52,7 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('id', this.us.uiId);
         sessionStorage.setItem('auth', this.us.uiAuth);
         sessionStorage.setItem('token', this.us.uiToken);
-        console.log(sessionStorage.getItem('token'));
-        location.href = '';
-        
+        location.href = '';   
       } else {
         alert('아이디나 비밀번호를 확인하세요.');
       }

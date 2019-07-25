@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductComponent } from '../productTable/product.component';
 
 @Component({
   selector: 'app-category',

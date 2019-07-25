@@ -15,6 +15,7 @@ import { MyInfoManagementComponent } from './user/mypage/my-info-management/my-i
 import { WithdrawalComponent } from './user/mypage/withdrawal/withdrawal.component';
 import { NoticepageComponent } from './noticepage/noticepage.component';
 import { CartInfoComponent } from './user/mypage/cart-info/cart-info.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   {
@@ -78,6 +79,10 @@ const routes: Routes = [
   {
     path: 'mypage',
     component: MypageComponent
+  },
+  {
+    path: 'payment',
+    component: PaymentComponent
   },
 ];
 
