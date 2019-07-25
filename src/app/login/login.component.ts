@@ -3,6 +3,9 @@ import { User } from '../vo/user';
 import { Router } from '@angular/router';
 import { CommonService } from '../common/common.service';
 
+declare var $: any;
+
+
 if(sessionStorage.getItem('id') && sessionStorage.getItem('id')!='admin'){
   window.setTimeout(function () {
     sessionStorage.clear();
@@ -20,6 +23,8 @@ export class LoginComponent implements OnInit {
   us: User = new User();
   isLoginout: boolean = true;
   token: any = "";
+  isResult: boolean = false;
+  noResult: boolean = false;
   
   constructor(private _cs: CommonService, private _router: Router) {
     if(this._cs.isLogin()){
@@ -60,5 +65,30 @@ export class LoginComponent implements OnInit {
   }
   goPage(url: string) {
     this._router.navigate([url]);
+  }
+
+  showModal():void {
+    console.log('모달모달');
+    $("#findId").modal('show');
+  }
+  findId() {
+   console.log(this.us);
+   this._cs.post('/userId',this.us).subscribe(res=>{
+     if(res){
+      this.isResult = true;
+      this.noResult = false;
+      this.us.uiId=res['uiId'];
+     }else{
+      this.isResult = false;
+      this.noResult = true;
+     }
+     
+     
+    })
+  
+  }
+  hideModal():void {
+    document.getElementById('close-modal').click();
+   
   }
 }

@@ -8,21 +8,64 @@
     <mat-form-field>
       <input matInput type="password" id="uiPwd" [(ngModel)]="us.uiPwd" placeholder="비밀번호">
     </mat-form-field>
+    
     <div class="example-button-row">
         <button mat-raised-button color="primary" (click)="doLogin()">로그인</button>
     </div>
 </div>
+<br>
 
-<div>
-관리자 아이디 : admin
-<br>
-관리자 비밀번호 : admin
-<br>
-<br>
-일반유저 아이디 : a1
-<br>
-일번유저 비밀번호 : asdf
-</div>
+    <div class="find_info">
+      <a target="_blank" id="idinquiry"href="javascript: void(0);" (click)="showModal()" >아이디 찾기</a> <span class="bar" aria-hidden="true"> | </span> 
+      <a target="_blank" id="pwinquiry" >비밀번호 찾기</a> <span class="bar" aria-hidden="true"> | </span> 
+      <a target="_blank" id="sign"  routerLink="/sign" *ngIf=this.isLoginout>회원가입</a>
+    </div>
+  
+
+
+     <!-- The Modal : cart modal-->
+  <div class="modal fade" id="findId">
+      <div class="modal-dialog">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">아이디 찾기</h4>
+            <button type="button" class="close" (click)="hideModal()"> &times;</button>
+          </div>
+    
+          <!-- Modal body -->
+          <div class="modal-body mb-3">
+            <label> 이름 </label>
+            <input type="text" name="name" id="name" class="form-control mt-2 mb-3" [(ngModel)]="us.uiName">
+            <label> 이메일 </label>
+            <input type="email" name="email" class="form-control mt-2 mb-3" maxlength="20"  id="eamil" [(ngModel)]="us.uiEmail" >
+          </div>
+
+          <!--아이디 찾기 결과-->
+          <div class="findIdResult" *ngIf="this.isResult">
+          회원님의 아이디는  {{us.uiId}}  입니다.
+          </div>
+
+          <div class="findIdResult" *ngIf="this.noResult">
+          가입되어있지 않은 회원입니다 이거 말좀 바꿔봅시다~~!
+          </div>
+
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" (click)="findId()" >찾기</button>
+            <button type="button" class="btn btn-outline-danger" (click)="hideModal()">취소</button>
+    
+            <!-- this button is hidden, used to close from typescript -->
+            <button type="button" id="close-modal" data-dismiss="modal" style="display: none">Close</button>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  
+
 
 <head>
   <meta charset="utf-8">
@@ -39,3 +82,7 @@
 
   </script>
   </body>
+
+
+ 
+ 
