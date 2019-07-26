@@ -30,7 +30,7 @@
           <td>
             <div class="form-check">
               <label class="form-check-label">
-                <input type="checkbox" name="deleteCheck" id="deleteCheck">
+                <input type="checkbox" name="deleteCheck" id="deleteCheck" (click)="delUser(user.uiNum)">
               </label>
             </div>
           </td>
@@ -49,6 +49,6 @@
 <div class="container">
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
   <div class="bottom" align="right">
-    <button (click)="delete()" [(ngModel)]="user.uiNum" class="btn btn-danger">삭제</button>
+    <button (click)="userDelete()" class="btn btn-danger">삭제</button>
   </div>
 </div>

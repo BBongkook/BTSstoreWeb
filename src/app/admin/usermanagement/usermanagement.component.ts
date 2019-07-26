@@ -16,11 +16,18 @@ export class UsermanagementComponent implements OnInit {
   p: number = 1;
   //uservo  호출.
   user: User = new User()
-
+  userNumArray: number[] = [];
   //uservo 호출한후 유저리스트 생성. 즉, 화면에 대응하는 vo배열
   userList: User[] = [];
 
   constructor(private _as: AdminService, private _cs: CommonService) {
+  }
+
+  ngOnInit() {
+    this.getUserList();
+   }
+
+  getUserList(){
     this._cs.get('/userlist').subscribe(
       res => {
         if (res) {
@@ -32,49 +39,44 @@ export class UsermanagementComponent implements OnInit {
       err => {
         console.log(err);
         alert('사용자 권한이 없습니다.')
-        location.href=''
+        location.href = ''
       })
   }
- 
 
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
+  delUser(uNum: number) {
+    var tmpUnum = this.userNumArray.lastIndexOf(uNum);
+    if (tmpUnum>=0) {
+      this.userNumArray[tmpUnum] =0;
+      this.sort(this.userNumArray);
+      this.userNumArray.pop();
+      return;
+    }
+    this.userNumArray.push(uNum);
+    this.sort(this.userNumArray);
+  }
+  userDelete(){
+    var setUserNumJson = JSON.stringify(this.userNumArray);
+    console.log(setUserNumJson);
+    this._cs.delete('/deluser', setUserNumJson).subscribe(res=>{
+      if(res){
+        console.log('삭제 성공');
+        this.getUserList();
+      }
+    },err=>{
+      alert('삭제 실패');
+    })
+  }
   
-  /** The label for the checkbox on the passed row */
-  
-  ngOnInit() { }
-
-
-  delete(row?: User) {
-    this._cs.delete('/deluser').subscribe(res => {
-      console.log(row.uiNum)
-    },
-
-
-      err => {
-        alert('삭제실패!');
-        console.log('삭제실패!');
-      })
-
+  sort(uArray:number[]){
+    for(var i=0; i<uArray.length; i++){
+      for(var j=0; j<uArray.length; j++){
+        if(uArray[i]>uArray[j]){
+          var tmpNum = uArray[i];
+          uArray[i]=uArray[j];
+          uArray[j]=tmpNum;
+        }
+      }
+    }
   }
 
-  // loadUserList() {
-  //   this._cs.get('/userlist').subscribe(res => {
-  //     this.userList = <User[]>res;
-  //   },
-  //     err => {
-  //       console.log(err);
-  //     })
-  // };
-
-  // deleteUser() {
-  //   this._cs.delete('/deluser').subscribe(res => {
-  //     console.log(res);
-  //   },
-  //     err => {
-  //       console.log('삭제실패!');
-  //     })
-  // }
-
-
-  // }
 }
