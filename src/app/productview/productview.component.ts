@@ -61,6 +61,8 @@ export class ProductviewComponent implements OnInit {
 
   addCart(): void {
     this.c.uiId = sessionStorage.getItem('id');
+    this.c.pNum = <any>this.pNum;
+    this.c.cAmount = this.curVal;
     this._cs.postFile('/insertCart', this.c).subscribe(res => {
       if (res) {
         alert('선택하신 상품이 장바구니에 추가되었습니다');
