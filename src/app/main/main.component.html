@@ -11,13 +11,12 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-        
+
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img class="d-block w-100"
             src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-xs-gallery-2018-4?wid=2000&hei=1536&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1535396223232"
-           
             style="width: 835px;height: 641px" alt="first slide">
         </div>
         <div class="carousel-item">
@@ -62,37 +61,45 @@
   <div class="modal fade" id="selectCart">
     <div class="modal-dialog">
       <div class="modal-content">
-  
+
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title">장바구니에 추가하기</h4>
           <button type="button" class="close" (click)="hideModal()"> &times;</button>
         </div>
-  
+
         <!-- Modal body -->
-        <div class="modal-body mb-3">
-            <img mat-card-image onmouseover="" style="cursor: pointer" (click)="goViewPage(pd.pnum)" src="{{pimageUri}}">
+        <div class="modal-body mb-3" align="center">
+          <img mat-card-image onmouseover="" style="cursor: pointer" (click)="goViewPage(pd.pnum)" src="{{pimageUri}}">
+          <br>
           <label>상품명 : </label>
           {{pname}}
-          <label>수량 선택</label>
-          <input type="number" name="evaluationContent" class="form-control mt-2 mb-3" name="cAmount" maxlength="20"  id="cAmount" [(ngModel)]="c.cAmount" *ngIf="c.cAmount>0 else cartAmount">
-          <ng-template #cartAmount>
-            <input type="number" name="evaluationContent" class="form-control mt-2 mb-3" name="cAmount" maxlength="20"  id="cAmount" [(ngModel)]="c.cAmount" (input)="c.cAmount = $event.target.value=1">
-          </ng-template>          
-         
+          <div>
+            <div align="center">
+              <div>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="수량선택" type="number" name="evaluationContent" align="center"
+                    name="cAmount" value="1" maxlength="20" id="cAmount" [(ngModel)]="c.cAmount">
+                </mat-form-field>
+
+              </div>
+            </div>
+          </div>
+
+
         </div>
-  
+
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-primary" (click)="addCart()" >담기</button>
+          <button type="button" class="btn btn-outline-primary" (click)="addCart()">담기</button>
           <button type="button" class="btn btn-outline-danger" (click)="hideModal()">취소</button>
-  
+
           <!-- this button is hidden, used to close from typescript -->
           <button type="button" id="close-modal" data-dismiss="modal" style="display: none">Close</button>
         </div>
       </div>
     </div>
-</div>
+  </div>
 
 
 
@@ -138,15 +145,13 @@
                   </div>
                 </div>
               </div>
-              
-			  <mat-card-actions align="end" >
-                  <button mat-raised-button onmouseover="" style="cursor: pointer" >바로구매</button> 
-                  <button mat-raised-button 
-                  data-toggle="modal" 
-                  data-target="#selectCart" 
-                  (click)="showModal(pd)" onmouseover="" style="cursor: pointer" >장바구니</button>
-                </mat-card-actions>
-			  
+
+              <mat-card-actions align="end">
+                <button mat-raised-button onmouseover="" style="cursor: pointer">바로구매</button>
+                <button mat-raised-button data-toggle="modal" data-target="#selectCart" (click)="showModal(pd)"
+                  onmouseover="" style="cursor: pointer">장바구니</button>
+              </mat-card-actions>
+
               <div class="score">
                 <span class="star">
                   <img src="http://static2.e-himart.co.kr/resources/layout/images/icon/star_score45.jpg" alt="4.6점" />
@@ -165,4 +170,3 @@
 </div>
 
 <div class="footer" align="center">Copyright ⓒ BTS Corp. All Rights Reserved.</div>
-

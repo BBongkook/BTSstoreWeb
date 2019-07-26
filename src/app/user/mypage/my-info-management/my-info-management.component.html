@@ -15,7 +15,7 @@
 
         <td width="100px" nowrap>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="ID" disabled [value]="user.uiId">
+            <input matInput placeholder="아이디" disabled [value]="user.uiId">
           </mat-form-field>
         </td>
       </tr>
@@ -116,7 +116,7 @@
       <tr>
         <td>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Address" [value]="user.uiAddr">
+            <input matInput placeholder="주소" [value]="user.uiAddr">
           </mat-form-field>
         </td>
 
@@ -127,8 +127,8 @@
         </th>
         <td>
           <mat-form-field class="example-full-width">
-              <input matInput placeholder="Address 2" [value]="user.uiAddr2"
-              (input)="user.uiAddr2 = $event.target.value">
+            <input matInput placeholder="상세주소" [value]="user.uiAddr2"
+            (input)="user.uiAddr2 = $event.target.value">
           </mat-form-field>
         </td>
     </table>

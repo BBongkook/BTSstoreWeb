@@ -1,59 +1,87 @@
 <div id="body" align="center">
   <div class="middle">
     <div class="ordTitle">
-      <h3 class="title">주문/결제</h3>
-      <span class="steps">
-        <em>주문결제 &gt;</em>
-        주문완료
-      </span>
-    </div>
-    <div>
-      <div class="customer">
-        <!-- 구매자정보 -->
-        <div class="customer__root">
-          <h2 class="customer__h2" align="left">구매자정보</h2>
-          <table class="customer__table">
-            <tbody>
-              <tr>
-                <td class="customer__col customer__col--1" width=104>이름</td>
-                <td class="customer__col customer__col--2">{{userlist.uiName}}</td>
-              </tr>
-              <tr>
-                <td class="customer__col customer__col--1">이메일</td>
-                <td class="customer__col customer__col--2">{{userlist.uiEmail}}</td>
-              </tr>
-              <tr>
-                <td class="customer__col customer__col--1">휴대폰 번호</td>
-                <td class="customer__col customer__col--2">{{userlist.uiPhone}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <!-- 아래부터 받는사람정보 -->
-        <div>
-          <h2 class="delivery-address__caption-header">받는사람정보
-            <button class="delivery-address__popup-list-button" type="button">배송지변경</button>
-          </h2>
-          <table class="delivery-address">
-            <tbody>
-              <tr>
-                <th class="delivery-address__th">이름</th>
-                <td class="delivery-address__td delivery-address__td--name delivery-address__td-rocket-fresh-mvp2">
-                  <span class="delivery-address__name">이름</span>
-                  <span class="delivery-address__type-label">기본배송지</span>
-                </td>
-              </tr>
-              <tr>
-                <th class="delivery-address__th">배송주소</th>
-                <td class="delivery-address__td">배송주소</td>
-              </tr>
-               <tr>
-                 <th class="delivery-address__th delivery-address__th--no-line">연락처</th>
-                 <td class="delivery-address__td delivery-address__td--no-line">010-1111-2222</td>
-               </tr>
-            </tbody>
-          </table>
-        </div>
+    <h3 class="title">주문/결제</h3>
+    <span class="steps">
+      <em>주문결제 &gt;</em>
+      주문완료
+    </span>
+  </div>
+  <div>
+    <div class="customer">
+      <!-- 구매자정보 -->
+      <div class="customer__root">
+        <h2 class="customer__h2" align="left">구매자정보</h2>
+        <table class="customer__table">
+          <tbody>
+            <tr>
+              <td class="customer__col customer__col--1" width=104>이름</td>
+              <td class="customer__col customer__col--2">{{userlist.uiName}}</td>
+            </tr>
+            <tr>
+              <td class="customer__col customer__col--1">이메일</td>
+              <td class="customer__col customer__col--2">{{userlist.uiEmail}}</td>
+            </tr>
+            <tr>
+              <td class="customer__col customer__col--1">휴대폰 번호</td>
+              <td class="customer__col customer__col--2">{{userlist.uiPhone}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+      <!-- 아래부터 받는사람정보 -->
+      <div>
+        <h2 class="delivery-address__caption-header">받는사람정보
+          <button class="delivery-address__popup-list-button" type="button" (click)="delivery_change()">배송지변경</button>
+        </h2>
+        <table class="delivery-address">
+          <tbody>
+            <tr>
+              <th class="delivery-address__th">이름</th>
+              <td class="delivery-address__td delivery-address__td--name delivery-address__td-rocket-fresh-mvp2">
+                <span class="delivery-address__name">{{userlist.uiName}}</span>
+                <span class="delivery-address__type-label">기본배송지</span>
+              </td>
+            </tr>
+            <tr>
+              <th class="delivery-address__th">배송주소</th>
+              <td class="delivery-address__td">{{userlist.uiAddr}}</td>
+            </tr>
+            <tr>
+              <th class="delivery-address__th">상세주소</th>
+              <td class="delivery-address__td">{{userlist.uiAddr2}}</td>
+            </tr>
+             <tr>
+               <th class="delivery-address__th delivery-address__th--no-line">연락처</th>
+               <td class="delivery-address__td delivery-address__td--no-line">{{userlist.uiPhone}}</td>
+             </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- 결제정보 -->
+      <div class="customer__root">
+        <h2 class="customer__h2" align="left">결제정보</h2>
+        <table class="customer__table">
+          <tbody>
+            <tr>
+              <td class="customer__col customer__col--1" width=104>총상품가격</td>
+              <td class="customer__col customer__col--2">{{cart.cprice}}</td>
+            </tr>
+            <tr>
+              <td class="customer__col customer__col--1">배송비</td>
+              <td class="customer__col customer__col--2">0원</td>
+            </tr>
+            <tr>
+              <td class="customer__col customer__col--1">총결제금액</td>
+              <td class="customer__col customer__col--2">{{userlist.uiPhone}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- 결제하기 버튼 -->
+      <button type="button" id="paymentBtn" (click)="payment()">
+        <img src="//image12.coupangcdn.com/image/rocketpay-order-image/pc/btn_payment.gif" width="260" height="60" alt="결제하기">
+      </button>
     </div>
   </div>
+</div>

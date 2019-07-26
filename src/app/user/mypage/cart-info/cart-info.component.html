@@ -12,7 +12,7 @@
 
     <tr align="center">
       <th  width="30"></th>
-      <th  align="center" >장바구니 번호</th>
+      <th  align="center" style="vertical-align: middle">장바구니 번호</th>
       <th scope="col" width="200" colspan="2" >상품명</th>
       <th scope="col"  width="120">상품 가격</th>
       <th>수량</th>
@@ -21,7 +21,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let c of cart;" align="center">
+    <tr *ngFor="let c of cart;" align="center" style="height: 10px;">
       <td style="vertical-align:middle">
           <input type="checkbox" aria-label="Checkbox for following text input" (click)="checkInfo(c.cid)">
       </td>
@@ -31,7 +31,7 @@
       <td align="cenger">{{c.pprice}}원</td>
       <td width="300">
         <input class="form-control form-control-sm" style=width:65px; type="text"[(ngModel)]="c.camount">
-        <button mat-stroked-button (click)="amountChange(c.cid, c.camount,c.pnum)">변경</button></td>
+        <button class="btn btn-outline-success" (click)="amountChange(c.cid, c.camount,c.pnum)">변경</button></td>
       <td align="center">{{c.cprice}}원</td>      
       
     </tr>

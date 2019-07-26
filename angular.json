@@ -90,7 +90,10 @@
               },
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/jquery-1.12.4.min.js",
+              "src/assets/iamport.payment-1.1.5.js"
+            ],
             "assets": [
               "src/favicon.ico"
               

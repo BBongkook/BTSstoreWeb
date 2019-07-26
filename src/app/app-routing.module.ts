@@ -16,6 +16,7 @@ import { WithdrawalComponent } from './user/mypage/withdrawal/withdrawal.compone
 import { NoticepageComponent } from './noticepage/noticepage.component';
 import { CartInfoComponent } from './user/mypage/cart-info/cart-info.component';
 import { PaymentComponent } from './payment/payment.component';
+import { DeliveryChangeComponent } from './payment/delivery-change/delivery-change.component';
 
 const routes: Routes = [
   {
@@ -47,7 +48,7 @@ const routes: Routes = [
     component: UsermanagementComponent
   },
   {
-    path : 'noticepage',
+    path: 'noticepage',
     component: NoticepageComponent
   },
   {
@@ -84,6 +85,15 @@ const routes: Routes = [
     path: 'payment',
     component: PaymentComponent
   },
+  {
+    path: 'delivery_change',
+    component: DeliveryChangeComponent
+  },
+  {
+    path: '**',
+    redirectTo:'/',
+    pathMatch: 'full' 
+  }
 ];
 
 @NgModule({

@@ -65,6 +65,7 @@ import { OrderComponent } from './order/order.component';
 import { OrderInfoComponent } from './user/mypage/order-info/order-info.component';
 import { CartInfoComponent } from './user/mypage/cart-info/cart-info.component';
 import { PaymentComponent } from './payment/payment.component';
+import { DeliveryChangeComponent } from './payment/delivery-change/delivery-change.component';
 // import { Directive, Pipe } from '@angular/core';
 
 @NgModule({
@@ -88,7 +89,8 @@ import { PaymentComponent } from './payment/payment.component';
     OrderComponent,
     OrderInfoComponent,
     CartInfoComponent,
-    PaymentComponent
+    PaymentComponent,
+    DeliveryChangeComponent
 
 
   ],
@@ -137,7 +139,7 @@ import { PaymentComponent } from './payment/payment.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
     // Directive,
     // Pipe,
   ],
@@ -146,7 +148,8 @@ import { PaymentComponent } from './payment/payment.component';
   ],
   providers: [ 
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
-    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
+    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher},
+    
   ],
   bootstrap: [AppComponent]
 })

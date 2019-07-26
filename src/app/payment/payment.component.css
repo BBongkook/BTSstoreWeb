@@ -157,3 +157,23 @@ table {
 .delivery-address__td--no-line {
     border-bottom: 0;
 }
+/* 결제정보 */
+.checkout__h2 {
+    padding-left: 2px;
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+.page-pc .pay-price .wrap-title {
+    vertical-align: top;
+    text-align: right;
+    border-right: 1px solid #e4e4e4;
+    background: #f4f4f4;
+}
+/* 결제버튼 */
+#paymentBtn {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+}
