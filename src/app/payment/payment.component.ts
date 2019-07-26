@@ -35,18 +35,18 @@ export class PaymentComponent implements OnInit {
       res=>{
         console.log(res);
         this.userlist=<User[]>res
-        userName = this.user.uiName;
-        userEmail = this.user.uiEmail;
-        useraddr = this.user.uiAddr;
-        useraddr2 = this.user.uiAddr2;
-        userpostcode = this.user.uiZipcode;
+        userName = this.userlist['uiName'];
+        userEmail = this.userlist['uiEmail'];
+        useraddr = this.userlist['uiAddr'];
+        useraddr2 = this.userlist['uiAddr2'];
+        userpostcode = this.userlist['uiZipcode'];
       }
     )
     this._cs.get('/cartList/'+sessionStorage.getItem('id')).subscribe(
       res=>{
         this.cartlist = <Cart[]>res;
         console.log(this.cartlist);
-        productName = this.cart.pname;
+        productName = this.cartlist['pname'];
         for(var idx of this.cartlist){
           this.totalPrice = this.totalPrice + idx.cprice;
           this.productArray[this.productArray.length]=idx.pname;
@@ -73,7 +73,7 @@ export class PaymentComponent implements OnInit {
       pg : 'inicis', // version 1.1.0부터 지원.
       pay_method : 'card',
       merchant_uid : 'merchant_' + new Date().getTime(),
-      name : productName,
+      name : '주문명 : ' + productName,
       amount : this.totalPrice,
       buyer_email : userEmail,
       buyer_name : userName,
