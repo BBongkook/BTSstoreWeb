@@ -75,11 +75,13 @@
           <label>상품명 : </label>
           {{pname}}
           <div>
-            <div align="center">
-              <div>
+            <div align="center" style="width: 400px;">
+              <div >
+                <br>
+                &nbsp;&nbsp;  수량선택  :&nbsp;&nbsp;
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="수량선택" type="number" name="evaluationContent" align="center"
-                    name="cAmount" value="1" maxlength="20" id="cAmount" [(ngModel)]="c.cAmount">
+                  <input matInput  type="number" name="evaluationContent" align="center"
+                    name="cAmount" value="1" maxlength="20" min="1" id="cAmount" [(ngModel)]="c.cAmount">
                 </mat-form-field>
 
               </div>
