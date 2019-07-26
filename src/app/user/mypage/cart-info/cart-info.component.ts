@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Cart } from 'src/app/vo/cart';
 import { CommonService } from 'src/app/common/common.service';
 import { unescapeIdentifier } from '@angular/compiler';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart-info',
@@ -14,8 +15,7 @@ export class CartInfoComponent implements OnInit {
   totalPrice:number = 0;
   nu:number[] = [];
   jMap:any = {};
-
-  constructor(private _cs:CommonService) { }
+  constructor(private _cs:CommonService,private _router:Router) { }
 
   ngOnInit() {
     this.getCartList();
@@ -91,5 +91,10 @@ export class CartInfoComponent implements OnInit {
       }
     })
   }
-  
+
+  goPage(url: string) {
+    this._router.navigate([url]);
+  }
+
+
 }
