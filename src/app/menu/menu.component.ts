@@ -9,7 +9,7 @@ import { CommonService } from '../common/common.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  loginout: string = 'LOGIN';
+  loginout: string = '로그인';
   isLoginout: boolean = true;
   isButtonVisible: boolean = false;
   isButtonMyPage: boolean = false;
@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     if (this._cs.isLogin()) {
-      this.loginout = 'LOGOUT';
+      this.loginout = '로그아웃';
       this.isLoginout = false;
     }
     if (sessionStorage.getItem('auth') === "0") {

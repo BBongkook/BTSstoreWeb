@@ -8,14 +8,14 @@
         <input matInput [(ngModel)]="searchProduct">
       </mat-form-field>
       &nbsp;
-      <button mat-raised-button (click)="searchAllProduct(searchProduct)">SEARCH</button>
+      <button mat-raised-button (click)="searchAllProduct(searchProduct)">검색</button>
+      <button *ngIf=!this.isLoginout mat-raised-button routerLink="/cartinfo">장바구니</button>
       <button *ngIf=this.isLoginout mat-raised-button routerLink="/login">{{this.loginout}}</button>
       <button *ngIf=!this.isLoginout mat-raised-button (click)="doLogout()">{{this.loginout}}</button>
-      <a mat-raised-button routerLink="/sign" *ngIf=this.isLoginout>SIGN UP</a>
-      <a mat-raised-button routerLink="/admin" *ngIf=isButtonVisible>MANAGE</a>
-      <a mat-raised-button routerLink="/mypage" *ngIf=isButtonMyPage>MYPAGE</a>
-      <a mat-raised-button routerLink="/noticepage">NOTICE</a>
-      <a mat-raised-button routerLink="/payment">Pay</a>
+      <a mat-raised-button routerLink="/sign" *ngIf=this.isLoginout>회원가입</a>
+      <a mat-raised-button routerLink="/admin" *ngIf=isButtonVisible>관리</a>
+      <a mat-raised-button routerLink="/mypage" *ngIf=isButtonMyPage>마이페이지</a>
+      <a mat-raised-button routerLink="/noticepage">공지사항</a>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
