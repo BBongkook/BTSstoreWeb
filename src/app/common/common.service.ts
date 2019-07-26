@@ -37,6 +37,11 @@ export class CommonService {
     return this._http.post(url, params, httpJson);
   }
 
+  postEmail(url,params){
+    url = baseUrl+ url;
+    return this._http.post(url, params, {responseType: 'text'});
+  }
+
  
   postFile(url,obj) {
     const data = this.makeFormData(obj);
