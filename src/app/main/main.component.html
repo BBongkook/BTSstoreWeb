@@ -75,8 +75,10 @@
           <label>상품명 : </label>
           {{pname}}
           <label>수량 선택</label>
-          <input type="number" name="evaluationContent" class="form-control mt-2 mb-3" name="cAmount" maxlength="20"  id="cAmount" [(ngModel)]="c.cAmount"  >
-          
+          <input type="number" name="evaluationContent" class="form-control mt-2 mb-3" name="cAmount" maxlength="20"  id="cAmount" [(ngModel)]="c.cAmount" *ngIf="c.cAmount>0 else cartAmount">
+          <ng-template #cartAmount>
+            <input type="number" name="evaluationContent" class="form-control mt-2 mb-3" name="cAmount" maxlength="20"  id="cAmount" [(ngModel)]="c.cAmount" (input)="c.cAmount = $event.target.value=1">
+          </ng-template>          
          
         </div>
   

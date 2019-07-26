@@ -127,7 +127,8 @@
         </th>
         <td>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Address 2" [value]="user.uiAddr2">
+              <input matInput placeholder="Address 2" [value]="user.uiAddr2"
+              (input)="user.uiAddr2 = $event.target.value">
           </mat-form-field>
         </td>
     </table>
