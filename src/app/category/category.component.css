@@ -1,10 +1,15 @@
 #topdiv{
-  height: 10%;
-  width: 100%;
-  /* border: 10%; */
-  
+  width: 80%;
   color: black;
+  margin-left: 300px;
+  vertical-align: middle;
 }
 #buttonFont{
   font-family: 'Gothic A1', sans-serif;
+}
+#rightDiv{
+
+  height: 36px;
+  float: right;
+  width:20%;
 }
