@@ -7,6 +7,11 @@ declare const jQuery:any;
 declare const IMP:any;
 
 var userName;
+var userEmail;
+var usertel;
+var useraddr;
+var useraddr2;
+var userpostcode;
 var productName;
 
 
@@ -17,11 +22,11 @@ var productName;
 })
 export class PaymentComponent implements OnInit {
   userlist:User[] = [];
-  cartlist:Cart[];
   user:User = new User();
-  totalPrice:number=0;
-  convertPrice:string;
+  cartlist:Cart[];
   cart:Cart = new Cart();
+  convertPrice:string;
+  totalPrice:number=0;
   productArray:string[] = [];
   productName:string;
 
@@ -31,12 +36,17 @@ export class PaymentComponent implements OnInit {
         console.log(res);
         this.userlist=<User[]>res
         userName = this.user.uiName;
+        userEmail = this.user.uiEmail;
+        useraddr = this.user.uiAddr;
+        useraddr2 = this.user.uiAddr2;
+        userpostcode = this.user.uiZipcode;
       }
     )
     this._cs.get('/cartList/'+sessionStorage.getItem('id')).subscribe(
       res=>{
         this.cartlist = <Cart[]>res;
         console.log(this.cartlist);
+        productName = this.cart.pname;
         for(var idx of this.cartlist){
           this.totalPrice = this.totalPrice + idx.cprice;
           this.productArray[this.productArray.length]=idx.pname;
@@ -63,13 +73,13 @@ export class PaymentComponent implements OnInit {
       pg : 'inicis', // version 1.1.0부터 지원.
       pay_method : 'card',
       merchant_uid : 'merchant_' + new Date().getTime(),
-      name : this.productName,
+      name : productName,
       amount : this.totalPrice,
-      buyer_email : 'iamport@siot.do',
+      buyer_email : userEmail,
       buyer_name : userName,
-      buyer_tel : '010-1234-5678',
-      buyer_addr : '서울특별시 강남구 삼성동',
-      buyer_postcode : '123-456',
+      buyer_tel : usertel,
+      buyer_addr : useraddr + useraddr2,
+      buyer_postcode : userpostcode,
       m_redirect_url : 'https://www.yourdomain.com/payments/complete'
   }, function(rsp) {
       if ( rsp.success ) {
