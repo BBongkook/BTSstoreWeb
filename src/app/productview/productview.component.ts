@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../common/common.service';
 import { Product } from '../vo/product';
 import { AppComponent } from '../app.component';
+import { Cart } from '../vo/cart';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-productview',
@@ -14,8 +16,8 @@ export class ProductviewComponent implements OnInit {
   curVal:number = 1;
   curprice:number;
   savePrice:number;
-
-  constructor(private _cs: CommonService) {
+  c: Cart = new Cart();
+  constructor(private _cs: CommonService, private _router: Router) {
     this.pNum = sessionStorage.getItem('pNum');
     
   }
@@ -56,5 +58,22 @@ export class ProductviewComponent implements OnInit {
         var pPriceComma = pPriceToString.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         this.product[0].pprice = <any>pPriceComma;
   }
+
+  addCart(): void {
+    this.c.uiId = sessionStorage.getItem('id');
+    this._cs.postFile('/insertCart', this.c).subscribe(res => {
+      if (res) {
+        alert('선택하신 상품이 장바구니에 추가되었습니다');
+        this.c.cAmount = null;
+      }
+    })
+  }
+
+  goPage(url: string) {
+    this._router.navigate([url]);
+  }
+
+
+
 }
 
