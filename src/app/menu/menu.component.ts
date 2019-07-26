@@ -41,6 +41,10 @@ export class MenuComponent implements OnInit {
     location.href = '';
   }
   searchAllProduct(searchProduct){
+    if(searchProduct==''){
+      alert('검색어를 입력해주세요.');
+      return;
+    }
     sessionStorage.setItem('searchprod',searchProduct);
     location.href='product';
   }
