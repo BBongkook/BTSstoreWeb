@@ -19,9 +19,12 @@ export class PaymentComponent implements OnInit {
   userlist:User[] = [];
   cartlist:Cart[];
   user:User = new User();
-
+  totalPrice:number=0;
+  convertPrice:string;
   cart:Cart = new Cart();
-  
+  productArray:string[] = [];
+  productName:string;
+
   constructor(private _cs:CommonService) { 
     this._cs.get('/userId/'+sessionStorage.getItem('id')).subscribe(
       res=>{
@@ -32,10 +35,18 @@ export class PaymentComponent implements OnInit {
     )
     this._cs.get('/cartList/'+sessionStorage.getItem('id')).subscribe(
       res=>{
-        console.log(res);
-        this.cartlist=<Cart[]>res
-        productName = this.cart.pName;
-        console.log(productName);
+        this.cartlist = <Cart[]>res;
+        console.log(this.cartlist);
+        for(var idx of this.cartlist){
+          this.totalPrice = this.totalPrice + idx.cprice;
+          this.productArray[this.productArray.length]=idx.pname;
+        }
+        if(this.productArray.length>1){
+          this.productName = this.productArray[0]+"외"+(this.productArray.length-1)+"개"
+        }
+        var prePriceToString = "" + this.totalPrice;
+        this.convertPrice = prePriceToString.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        console.log(this.convertPrice);
       }
     )
     
@@ -52,8 +63,8 @@ export class PaymentComponent implements OnInit {
       pg : 'inicis', // version 1.1.0부터 지원.
       pay_method : 'card',
       merchant_uid : 'merchant_' + new Date().getTime(),
-      name : '주문명 : '+ productName,
-      amount : 10000,
+      name : this.productName,
+      amount : this.totalPrice,
       buyer_email : 'iamport@siot.do',
       buyer_name : userName,
       buyer_tel : '010-1234-5678',

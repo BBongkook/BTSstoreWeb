@@ -25,7 +25,7 @@ export class MainComponent implements OnInit {
 
   //productvo 호출한후 제품리스트 생성. 즉, 화면에 대응하는 vo배열
   productList: Product[] = [];
-  constructor(private router: Router, private _cs: CommonService, private _auservice: AuthInterceptorService) {
+  constructor(private router: Router, private _cs: CommonService, private _auservice: AuthInterceptorService, private _router:Router) {
   this.c.cAmount =1;
   }
   ngOnInit() {
@@ -40,9 +40,10 @@ export class MainComponent implements OnInit {
       console.log(this.product)
     })
   }
-  goPage() {
-    //return this.router.navigateByUrl('/' + this.url);
+  goPage(url: string) {
+    this._router.navigate([url]);
   }
+
   goViewPage(pNum) {
     sessionStorage.setItem('pNum', pNum);
     location.href = 'productview';
@@ -71,4 +72,3 @@ export class MainComponent implements OnInit {
     this.c.cAmount =1;
   }
 }
-

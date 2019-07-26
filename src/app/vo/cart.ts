@@ -5,6 +5,6 @@ export class Cart {
      pNum : number
      cAmount : number
      cprice : number
-     pName : string
+     pname : string
      pprice : number
 }

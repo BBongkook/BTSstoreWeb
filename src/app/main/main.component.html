@@ -75,13 +75,11 @@
           <label>상품명 : </label>
           {{pname}}
           <div>
-            <div align="center" style="width: 400px;">
-              <div >
-                <br>
-                &nbsp;&nbsp;  수량선택  :&nbsp;&nbsp;
+            <div align="center">
+              <div>
                 <mat-form-field class="example-full-width">
-                  <input matInput  type="number" name="evaluationContent" align="center"
-                    name="cAmount" value="1" maxlength="20" min="1" id="cAmount" [(ngModel)]="c.cAmount">
+                  <input matInput placeholder="수량선택" type="number" name="evaluationContent" align="center"
+                    name="cAmount" value="1" maxlength="20" id="cAmount" [(ngModel)]="c.cAmount">
                 </mat-form-field>
 
               </div>
@@ -126,7 +124,7 @@
               </div>
               <div class="prdNameArea">
                 <p class="name">
-                  <a title="{{pd.pcontent}}" target="_self">
+                  <a title="{{pd.pcontent}}" target="_self" (click)="goViewPage(pd.pnum)" style="cursor: pointer">
                     {{pd.pcontent}}</a>
                 </p>
                 <p class="modelN">
@@ -149,7 +147,7 @@
               </div>
 
               <mat-card-actions align="end">
-                <button mat-raised-button onmouseover="" style="cursor: pointer">바로구매</button>
+                <button mat-raised-button onmouseover="" style="cursor: pointer"  (click)="goViewPage(pd.pnum)">바로구매</button>
                 <button mat-raised-button data-toggle="modal" data-target="#selectCart" (click)="showModal(pd)"
                   onmouseover="" style="cursor: pointer">장바구니</button>
               </mat-card-actions>
