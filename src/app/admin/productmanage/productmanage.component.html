@@ -22,10 +22,11 @@
         <th>소분류</th>
         <th>Amount</th>
         <th>Credat</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-     <tr *ngFor="let pd of product | paginate: { itemsPerPage: 10, currentPage: p }">
+     <tr *ngFor="let pd of productList | paginate: { itemsPerPage: 10, currentPage: p }">
        <td>{{pd.pnum}}</td>
        <td><img src="{{pd.pimageUri}}" width="50px"></td>
        <td>{{pd.pname}}</td>
@@ -34,6 +35,7 @@
        <td style="width: 100px">{{pd.psmall}}</td>
        <td>{{pd.pamount}}</td>
        <td>{{pd.pcredat}}</td>
+       <td><button mat-raised-button onmouseover="" style="cursor: pointer" (click)="deleteProduct(pd.pnum)">삭제</button></td>
      </tr>
     </tbody>
   </table>
