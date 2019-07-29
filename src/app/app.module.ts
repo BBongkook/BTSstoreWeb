@@ -92,7 +92,6 @@ import { DeliveryChangeComponent } from './payment/delivery-change/delivery-chan
     PaymentComponent,
     DeliveryChangeComponent
 
-
   ],
   imports: [
     BrowserModule,
@@ -139,7 +138,7 @@ import { DeliveryChangeComponent } from './payment/delivery-change/delivery-chan
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    NgxPaginationModule,
+    NgxPaginationModule
     // Directive,
     // Pipe,
   ],

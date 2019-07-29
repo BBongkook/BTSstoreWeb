@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     }
   }
   
-  doLogin(form): void {
+  doLogin(): void {
     if (!this.us.uiId) {
       alert('아이디를 입력해주세요.');
       return;

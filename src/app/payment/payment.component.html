@@ -16,15 +16,15 @@
           <tbody>
             <tr>
               <td class="customer__col customer__col--1" width=104>이름</td>
-              <td class="customer__col customer__col--2">{{userlist.uiName}}</td>
+              <td class="customer__col customer__col--2">{{userlist['uiName']}}</td>
             </tr>
             <tr>
               <td class="customer__col customer__col--1">이메일</td>
-              <td class="customer__col customer__col--2">{{userlist.uiEmail}}</td>
+              <td class="customer__col customer__col--2">{{userlist['uiEmail']}}</td>
             </tr>
             <tr>
               <td class="customer__col customer__col--1">휴대폰 번호</td>
-              <td class="customer__col customer__col--2">{{userlist.uiPhone}}</td>
+              <td class="customer__col customer__col--2">{{userlist['uiPhone']}}</td>
             </tr>
           </tbody>
         </table>
@@ -39,21 +39,21 @@
             <tr>
               <th class="delivery-address__th">이름</th>
               <td class="delivery-address__td delivery-address__td--name delivery-address__td-rocket-fresh-mvp2">
-                <span class="delivery-address__name">{{userlist.uiName}}</span>
+                <span class="delivery-address__name">{{userlist['uiName']}}</span>
                 <span class="delivery-address__type-label">기본배송지</span>
               </td>
             </tr>
             <tr>
               <th class="delivery-address__th">배송주소</th>
-              <td class="delivery-address__td">{{userlist.uiAddr}}</td>
+              <td class="delivery-address__td">{{userlist['uiAddr']}}</td>
             </tr>
             <tr>
               <th class="delivery-address__th">상세주소</th>
-              <td class="delivery-address__td">{{userlist.uiAddr2}}</td>
+              <td class="delivery-address__td">{{userlist['uiAddr2']}}</td>
             </tr>
              <tr>
                <th class="delivery-address__th delivery-address__th--no-line">연락처</th>
-               <td class="delivery-address__td delivery-address__td--no-line">{{userlist.uiPhone}}</td>
+               <td class="delivery-address__td delivery-address__td--no-line">{{userlist['uiPhone']}}</td>
              </tr>
           </tbody>
         </table>
@@ -73,7 +73,7 @@
             </tr>
             <tr>
               <td class="customer__col customer__col--1">총결제금액</td>
-              <td class="customer__col customer__col--2">{{userlist.uiPhone}}</td>
+              <td class="customer__col customer__col--2">{{userlist['uiPhone']}}</td>
             </tr>
           </tbody>
         </table>
