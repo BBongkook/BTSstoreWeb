@@ -12,4 +12,11 @@ export class OrderInfoComponent implements OnInit {
   ngOnInit() {
   }
 
+  orderList(){
+    sessionStorage.setItem('orderlist','order-list');
+    location.href='mypage';
+  }
+  contShop(){
+    location.href='';
+  }
 }

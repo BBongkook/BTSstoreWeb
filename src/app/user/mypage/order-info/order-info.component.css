@@ -1,0 +1,37 @@
+#body .middle {
+    clear: both;
+    padding: 0 0 40px;
+    background: #fff;
+}
+.ordTitle {
+    margin-top: 10px;
+    width:60%;
+    height: 70px;
+    overflow: hidden;
+    border-bottom: 3px solid #777;
+}
+.ordTitle .title {
+    float: left;
+    margin-top: 5px;
+    padding-left: 0;
+    line-height: 70px;
+    font-size: 30px;
+    color: #111;
+}
+.ordTitle .steps {
+    float: right;
+    padding-right: 5px;
+    margin-top: 20px;
+    line-height: 50px;
+    font-size: 15px;
+    color: #bbb;
+    font-weight: bold;
+}
+.ordTitle .steps em {
+    font-weight: bold;
+    color: #346aff;
+}
+#payBtn {
+    width: 260px;
+    height: 60px;
+}

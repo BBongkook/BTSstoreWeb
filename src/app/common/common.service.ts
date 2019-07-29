@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 
-const baseUrl = "https://a.btsstore.shop"
+const baseUrl = "http://localhost:88"
 const httpJson = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }),body:{} }
 const httpData = { headers: new HttpHeaders({ 'ENCTYPE-Type': 'multipart/form-data' }) }
 @Injectable({

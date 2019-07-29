@@ -17,6 +17,8 @@ import { NoticepageComponent } from './noticepage/noticepage.component';
 import { CartInfoComponent } from './user/mypage/cart-info/cart-info.component';
 import { PaymentComponent } from './payment/payment.component';
 import { DeliveryChangeComponent } from './payment/delivery-change/delivery-change.component';
+import { OrderInfoComponent } from './user/mypage/order-info/order-info.component';
+import { OrderComponent } from './user/mypage/order-list/order.component';
 
 const routes: Routes = [
   {
@@ -58,12 +60,10 @@ const routes: Routes = [
   {
     path: 'productmanage',
     component: ProductComponent,
-    canActivate: [RouterGuardService]
   },
   {
     path: 'productinsert',
     component: ProductinsertComponent,
-    canActivate: [RouterGuardService]
   },
   {
     path: 'myinfomanagement',
@@ -72,6 +72,14 @@ const routes: Routes = [
   {
     path: 'cartinfo',
     component: CartInfoComponent
+  },
+  {
+    path : 'orderlist',
+    component: OrderComponent
+  },
+  {
+    path: 'orderinfo',
+    component : OrderInfoComponent
   },
   {
     path: 'withdrawal',

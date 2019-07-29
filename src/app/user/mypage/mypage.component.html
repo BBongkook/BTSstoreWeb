@@ -3,7 +3,7 @@
     <mat-list class="buttonType">
       <mat-list-item ><a mat-raised-button  color="primary" (click)="changePage('myinfomanagement')">내정보관리</a></mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item ><a mat-raised-button  color="primary" (click)="changePage('order-info')">&nbsp;주문정보&nbsp;&nbsp;</a></mat-list-item>
+      <mat-list-item ><a mat-raised-button  color="primary" (click)="changePage('order-list')">&nbsp;주문정보&nbsp;&nbsp;</a></mat-list-item>
       <mat-divider></mat-divider>
       <mat-divider></mat-divider>
       <mat-list-item > <a mat-raised-button  size="100px" color="primary" (click)="changePage('cart-info')" id='user'>&nbsp;장바구니&nbsp;&nbsp;</a></mat-list-item>
@@ -15,7 +15,7 @@
   </mat-sidenav>
   <mat-drawer-container>
     <app-my-info-management *ngIf="page=='myinfomanagement'"></app-my-info-management>
-    <app-order-info *ngIf="page=='order-info'"></app-order-info>
+    <app-order *ngIf="page=='order-list'"></app-order>
     <app-withdrawal *ngIf="page=='withdrawal'"></app-withdrawal>
     <app-cart-info *ngIf="page=='cart-info'"></app-cart-info>
   </mat-drawer-container>

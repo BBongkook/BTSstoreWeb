@@ -61,7 +61,7 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { MyInfoManagementComponent } from './user/mypage/my-info-management/my-info-management.component';
 import { WithdrawalComponent } from './user/mypage/withdrawal/withdrawal.component';
 import { NoticepageComponent } from './noticepage/noticepage.component';
-import { OrderComponent } from './order/order.component';
+import { OrderComponent } from './user/mypage/order-list/order.component';
 import { OrderInfoComponent } from './user/mypage/order-info/order-info.component';
 import { CartInfoComponent } from './user/mypage/cart-info/cart-info.component';
 import { PaymentComponent } from './payment/payment.component';

@@ -7,10 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./mypage.component.css']
 })
 export class MypageComponent implements OnInit {
+page:string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    if(sessionStorage.getItem('orderlist')!=null){
+      this.page = 'order-list';
+      sessionStorage.removeItem('orderlist');
+    }else{
+      this.page = 'myinfomanagement';
+    }
+   }
   showFiller = false;
-  page = 'myinfomanagement';
   ngOnInit() {
 
   }

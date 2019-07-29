@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<table class="table table-hover" style="margin-left:150px">
+  
+  <thead class="thead-light">
+    <tr>
+    <td colspan="7">
+      <h2 style="margin: 30px">주문정보</h2>
+    </td>
+    </tr>
+
+
+    <tr align="center">
+
+      <th  align="center" style="vertical-align: middle">내역</th>
+      <th scope="col" width="200" colspan="2" >상품명</th>
+      <th scope="col"  width="120">상품 가격</th>
+      <th>수량</th>
+      <th>총 가격</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of cart;" align="center" style="height: 10px;">
+
+      <td align="center"></td>
+      <td><img src="{{c.pimageUri}}" width="50px"></td>
+      <td>{{c.pname}}</td>
+      <td align="cenger">{{c.pprice}}원</td>
+      <td align="center">{{c.camount}}</td>
+      <td align="center">{{c.cprice}}원</td>      
+      
+    </tr>
+  </tbody>
+  <tr>
+    <td colspan="3">
+        <br><h3>총 주문금액 </h3>
+    </td>
+    <td colspan="4" align="end">
+        <br><h3>{{totalPrice}}원</h3>
+    </td>
+  </tr>
+ 
+</table>

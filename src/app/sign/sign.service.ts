@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SignService {
-  private baseUrl: string = 'https://a.btsstore.shop/'
+  private baseUrl: string = 'http://localhost:88'
   constructor(private _http:HttpClient) { }
 
 
