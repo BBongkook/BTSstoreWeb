@@ -12,7 +12,7 @@ var usertel;
 var useraddr;
 var useraddr2;
 var userpostcode;
-var productName;
+
 
 
 @Component({
@@ -46,7 +46,6 @@ export class PaymentComponent implements OnInit {
       res=>{
         this.cartlist = <Cart[]>res;
         console.log(this.cartlist);
-        productName = this.cartlist['pname'];
         for(var idx of this.cartlist){
           this.totalPrice = this.totalPrice + idx.cprice;
           this.productArray[this.productArray.length]=idx.pname;
@@ -73,7 +72,7 @@ export class PaymentComponent implements OnInit {
       pg : 'inicis', // version 1.1.0부터 지원.
       pay_method : 'card',
       merchant_uid : 'merchant_' + new Date().getTime(),
-      name : '주문명 : ' + productName,
+      name : this.productName,
       amount : this.totalPrice,
       buyer_email : userEmail,
       buyer_name : userName,
