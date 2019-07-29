@@ -8,7 +8,7 @@ import { CommonService } from '../common/common.service';
   providedIn: 'root'
 })
 export class ProductService {
-  private baseUrl: string = 'http://localhost:88/'
+  private baseUrl: string = 'https://a.btsstore.shop/'
   
   constructor(private _pt:ProductComponent, private _cs:CommonService) { }
 

@@ -8,7 +8,7 @@ import { User } from '../vo/user';
   providedIn: 'root'
 })
 export class LoginService {
-  private baseUrl: string = 'http://localhost:88/'
+  private baseUrl: string = 'https://a.btsstore.shop/'
   constructor() { }
 
   doLogin(us: User) {
