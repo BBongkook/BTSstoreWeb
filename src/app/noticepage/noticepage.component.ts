@@ -20,10 +20,7 @@ export class NoticepageComponent implements OnInit {
   ntNum:number;
 
   constructor(private _cs:CommonService) { 
-    this._cs.get('/noticeList').subscribe(res => {
-      this.notice = <Notice[]>res;
-      console.log(this.notice);
-    })
+    this.getNoticeList();
   }
 
   ngOnInit() {
@@ -32,12 +29,14 @@ export class NoticepageComponent implements OnInit {
     }
   }
 
+  getNoticeList(){
+    this._cs.get('/noticeList').subscribe(res => {
+      this.notice = <Notice[]>res;
+    })
+  }
 
   showModal():void {
-    
     $("#myModal").modal('show');
-  
-
   }
 
   showModalView(nt):void {
@@ -73,11 +72,12 @@ export class NoticepageComponent implements OnInit {
     this._cs.post("/insertNotice",this.n).subscribe(res=>{
       if(res){
         alert('공지가 등록되었습니다.');
+        this.getNoticeList();
       }else{
         alert('등록실패');
       }
-    }
-      )
+    })
+    
   }
 
   //공지 삭제
@@ -86,10 +86,12 @@ export class NoticepageComponent implements OnInit {
     this._cs.delete('/deleteNotice/'+this.ntNum).subscribe(res=>{
       if(res){
         alert('삭제되었습니다');
+        this.getNoticeList();
       }
     });
     this.hideModal();
-    location.href='noticepage';
+   
+    
   }
 
 

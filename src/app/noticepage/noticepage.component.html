@@ -20,8 +20,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let nt of notice | paginate: { itemsPerPage: 10, currentPage: p } | slice:1; let i = index;" >
-      <td>{{i+1}}</td>
+    <tr *ngFor="let nt of notice | paginate: { itemsPerPage: 10, currentPage: p };" >
+      <td>{{nt.ntNum}}</td>
       <td  data-toggle="modal" data-target="#noticeView" (click)="showModalView(nt)" onmouseover="" style="cursor: pointer">{{nt.ntTitle}}</td>
       <td>{{nt.ntCredat}}</td>
       <td>{{nt.ntWriter}}</td>
