@@ -11,6 +11,7 @@ import { CommonService } from '../common/common.service';
 export class ProductComponent implements OnInit {
   //imgurl:string = 'http://localhost:88/img/'
   p: number = 1;
+  productCategoryName:string;
   pLargeName:string='';
   pName:string='';
   productDivideName:string;
@@ -35,6 +36,7 @@ export class ProductComponent implements OnInit {
       })
     }else if(sessionStorage.getItem('prod')){
         this.productDivide();
+        this.productCategoryName = sessionStorage.getItem('prod');
         sessionStorage.removeItem('prod');
     }
     else{

@@ -13,6 +13,7 @@
       <button *ngIf=this.isLoginout mat-raised-button routerLink="/login">{{this.loginout}}</button>
       <button *ngIf=!this.isLoginout mat-raised-button (click)="doLogout()">{{this.loginout}}</button>
       <a mat-raised-button routerLink="/sign" *ngIf=this.isLoginout>회원가입</a>
+      <a mat-raised-button routerLink="/mypage" *ngIf=isButtonMyPage>마이페이지</a>
       <a mat-raised-button routerLink="/admin" *ngIf=isButtonVisible>관리</a>
       <a mat-raised-button routerLink="/noticepage">공지사항</a>
     </div>
