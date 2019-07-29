@@ -8,6 +8,6 @@ server.get('/*',(req,res)=>{
 })
 
 
-server.listen(80,()=>{
-    console.log('server stated at 80 port!');
+server.listen(1587,()=>{
+    console.log('server stated at 1587 port!');
 })
