@@ -38,6 +38,7 @@ export class ProductviewComponent implements OnInit {
   }
 
   
+  
   minus() {
     this.curVal = this.curVal - 1;
     if (this.curVal < 1) {
@@ -73,6 +74,7 @@ export class ProductviewComponent implements OnInit {
   }
   save_confirm(){
     if (confirm('장바구니에 상품이 담겼습니다. 장바구니로 이동하시겠습니까')){
+      sessionStorage.removeItem('pNmm');
       location.href='cartinfo';
     }
     else{
@@ -83,7 +85,17 @@ export class ProductviewComponent implements OnInit {
     this._router.navigate([url]);
   }
 
-
+  buy(){
+    this.c.uiId = sessionStorage.getItem('id');
+    this.c.pNum = <any>this.pNum;
+    this.c.cAmount = this.curVal;
+    this._cs.postFile('/insertCart', this.c).subscribe(res => {
+      if (res) {
+        this.c.cAmount = null;
+      }
+    })
+    this.goPage('/payment');
+  }
 
 }
 

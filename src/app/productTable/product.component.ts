@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../vo/product';
 import { CommonService } from '../common/common.service';
+import { Cart } from '../vo/cart';
+
 
 @Component({
   selector: 'app-product',
@@ -14,9 +16,13 @@ export class ProductComponent implements OnInit {
   pLargeName:string='';
   pName:string='';
   productDivideName:string;
-  product: Product[]
-
-  constructor(private _cs:CommonService) { }
+  product: Product[];
+  c: Cart = new Cart();
+  curVal : number = 1;
+  pNum: string;
+  constructor(private _cs:CommonService) {
+    this.pNum = sessionStorage.getItem('pNum');
+   }
   
   ngOnInit() {
     if(sessionStorage.getItem('searchprod')!=null){
@@ -42,6 +48,7 @@ export class ProductComponent implements OnInit {
       this.productFilter;
   }
   }
+  // 상품
   goViewPage(pNum){
     sessionStorage.setItem('pNum',pNum);
     location.href='productview';
@@ -64,6 +71,8 @@ export class ProductComponent implements OnInit {
     })
   };
 
+
+
   productFilter(divide:string){
     this.pLargeName=this.productDivideName;
     this._cs.get('/productDivide/'+this.pLargeName+'&'+divide).subscribe(res=>{
@@ -76,4 +85,29 @@ export class ProductComponent implements OnInit {
       }
     })
   }
+ 
+  addCart(pNum): void {
+    console.log(pNum)
+    sessionStorage.setItem('pNum',pNum);
+    this.c.uiId = sessionStorage.getItem('id');
+    this.c.pNum = <any>sessionStorage.getItem('pNum');
+    this.c.cAmount = this.curVal;
+    this._cs.postFile('/insertCart', this.c).subscribe(res => {
+      if (res) {
+        alert('선택하신 상품이 장바구니에 추가되었습니다');
+        this.save_confirm();
+        this.c.cAmount = null;
+      }
+    })
+  }
+  save_confirm(){
+    if (confirm('장바구니에 상품이 담겼습니다. 장바구니로 이동하시겠습니까')){
+      location.href='cartinfo';
+    }
+    else{
+    }
+  }
+
+
+
 }
