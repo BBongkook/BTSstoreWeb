@@ -67,13 +67,13 @@
         </td>
         <td width="91" height="120" style="padding-top: 3px;padding-bottom: 3px;padding-left: 3px;padding-right: 3px;">
           <div align="center">
-            <a href="">
-              <img src="http://www.commawang.co.kr/skin/shop/basic/images/bn/bsn_insertcart.gif" vspace="2">
-            </a>
+            
+              <img src="http://www.commawang.co.kr/skin/shop/basic/images/bn/bsn_insertcart.gif" vspace="2" (click)="addCart(pl.pnum)" style="cursor: pointer">
+            
             <br>
-            <a href="">
-              <img src="http://www.commawang.co.kr/skin/shop/basic/images/bn/bsn_insertbuy.gif" vspace="2" align="absmiddle">
-            </a>
+         
+              <img src="http://www.commawang.co.kr/skin/shop/basic/images/bn/bsn_insertbuy.gif" vspace="2" align="absmiddle" (click)="goViewPage(pl.pnum)" style="cursor: pointer">
+            
           </div>
         </td>
       </tr>
