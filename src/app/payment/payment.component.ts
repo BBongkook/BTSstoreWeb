@@ -46,6 +46,8 @@ export class PaymentComponent implements OnInit {
     this._cs.get('/cartList/'+sessionStorage.getItem('id')).subscribe(
       res=>{
         this.cartlist = <Cart[]>res;
+        console.log(this.cartlist);
+        console.log(this.cartlist[0].pname);
         for(var idx of this.cartlist){
           this.totalPrice = this.totalPrice + idx.cprice;
           this.productArray[this.productArray.length]=idx.pname;
@@ -63,7 +65,6 @@ export class PaymentComponent implements OnInit {
   }
 
   ngOnInit() {
-    
    
   }
 
@@ -73,7 +74,7 @@ export class PaymentComponent implements OnInit {
       pg : 'inicis', // version 1.1.0부터 지원.
       pay_method : 'card',
       merchant_uid : 'merchant_' + new Date().getTime(),
-      name : this.productName,
+      name : this.cartlist[0].pname,
       amount : this.totalPrice,
       buyer_email : userEmail,
       buyer_name : userName,
