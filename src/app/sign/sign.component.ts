@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Sign } from '../vo/sign';
-import { SignService } from './sign.service';
-import { User } from '../vo/user';
 import { FormControl, Validators } from '@angular/forms';
 import { CommonService } from '../common/common.service';
 
@@ -15,7 +13,7 @@ export class SignComponent implements OnInit {
   uiPwd2: string = "";
   isUnique: boolean = false;
   pw_passed: boolean = true;
-  constructor(private _ss: SignService, private _cs: CommonService) { }
+  constructor(private _cs: CommonService) { }
   daumAddressOptions = {
     class: ['btn', 'mat-raised-button']
   };
@@ -113,7 +111,7 @@ export class SignComponent implements OnInit {
 
   checkId() {
     var url = "userId/" + this.ss.uiId;
-    this._ss.get(url).subscribe(
+    this._cs.get(url).subscribe(
       res => {
         if (!res) {
           if (this.ss.uiId == null || this.ss.uiId == '') {

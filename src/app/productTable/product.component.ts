@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../vo/product';
-import { ProductService } from './product.service';
 import { CommonService } from '../common/common.service';
 
 @Component({
