@@ -154,6 +154,7 @@ li, menu {
 .item .proInfo {
   width: 100%;
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 .mainDealArea .item .proInfo .btnEtc {
   width: 214px;

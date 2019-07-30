@@ -11,8 +11,8 @@ export class RouterGuardService implements CanActivate {
   constructor(private _router: Router) { }
   canActivate(next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    console.log(`id:${localStorage.getItem('id')}`);
-    console.log(`auth:${localStorage.getItem('auth')}`);
+    // console.log(`id:${localStorage.getItem('id')}`);
+    // console.log(`auth:${localStorage.getItem('auth')}`);
     if (localStorage.getItem('id')) {
       if (localStorage.getItem('auth') === '0'){
         return true;

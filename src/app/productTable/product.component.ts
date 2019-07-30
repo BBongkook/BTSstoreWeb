@@ -23,7 +23,7 @@ export class ProductComponent implements OnInit {
     if(sessionStorage.getItem('searchprod')!=null){
       this.pName=sessionStorage.getItem('searchprod');
       this.pLargeName = this.pName+" 검색 결과";
-      this._cs.getProD('/productSearch/'+this.pName).subscribe(res=>{
+      this._cs.get('/productSearch/'+this.pName).subscribe(res=>{
         this.product = <Product[]>res;
         for(var i=0; i<this.product.length; i++){
           var pPriceToString = ""+this.product[i].pprice;
@@ -52,7 +52,7 @@ export class ProductComponent implements OnInit {
     this.productDivideName = sessionStorage.getItem('prod');
     console.log(this.productDivideName);
     this.pLargeName=this.productDivideName;
-    this._cs.getProD('/productDivide/'+this.pLargeName).subscribe(res=>{
+    this._cs.get('/productDivide/'+this.pLargeName).subscribe(res=>{
         this.product = <Product[]>res;
         for(var i=0; i<this.product.length; i++){
           var pPriceToString = ""+this.product[i].pprice;
@@ -67,7 +67,7 @@ export class ProductComponent implements OnInit {
 
   productFilter(divide:string){
     this.pLargeName=this.productDivideName;
-    this._cs.getProD('/productDivide/'+this.pLargeName+'&'+divide).subscribe(res=>{
+    this._cs.get('/productDivide/'+this.pLargeName+'&'+divide).subscribe(res=>{
       console.log(res);
       this.product = <Product[]>res;
       for(var i=0; i<this.product.length; i++){

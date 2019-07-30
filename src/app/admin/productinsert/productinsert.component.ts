@@ -43,7 +43,7 @@ export class ProductinsertComponent implements OnInit {
     {
       'pLargeName': '컴퓨터부품',
       degreeTitleList: [
-        'SAMSUNG', 'LG', 'Other',
+        'CPU', 'SSD', 'HDD',
       ]
     },
     {
@@ -68,7 +68,7 @@ export class ProductinsertComponent implements OnInit {
     }
 
   }
-
+// 상품등록 로직
   insertProduct() {
     this.pd.plarge = this.pLarge_level;
     this.pd.pmedium = this.exam_title;

@@ -27,10 +27,6 @@ export class CommonService {
     return this._http.get(url);
   }
 
-  getProD(url,params?){
-    url = baseUrl + url;
-    return this._http.get(url);
-  }
 
   post(url,params) {
     url = baseUrl+ url;

@@ -29,6 +29,7 @@ export class PaymentComponent implements OnInit {
   totalPrice:number=0;
   productArray:string[] = [];
   productName:string;
+  
 
   constructor(private _cs:CommonService) { 
     this._cs.get('/userId/'+sessionStorage.getItem('id')).subscribe(
@@ -45,7 +46,6 @@ export class PaymentComponent implements OnInit {
     this._cs.get('/cartList/'+sessionStorage.getItem('id')).subscribe(
       res=>{
         this.cartlist = <Cart[]>res;
-        console.log(this.cartlist);
         for(var idx of this.cartlist){
           this.totalPrice = this.totalPrice + idx.cprice;
           this.productArray[this.productArray.length]=idx.pname;
@@ -56,6 +56,7 @@ export class PaymentComponent implements OnInit {
         var prePriceToString = "" + this.totalPrice;
         this.convertPrice = prePriceToString.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         console.log(this.convertPrice);
+        console.log(this.productName);
       }
     )
     

@@ -1,5 +1,4 @@
 export class Cart {
-
      cId : number
      uiId : string
      pNum : number

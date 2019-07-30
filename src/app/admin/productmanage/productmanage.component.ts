@@ -22,7 +22,7 @@ export class ProductmanageComponent implements OnInit {
 
   ngOnInit() {
   }
-
+// 상품삭제
   deleteProduct(pNum:number){
     console.log(pNum);
     this._cs.delete('/deleteProduct',pNum).subscribe(res=>{
@@ -30,7 +30,7 @@ export class ProductmanageComponent implements OnInit {
       this.getProductList();
     })
   }
-
+// 상품조회
   getProductList(){
     this._cs.get('/productLists').subscribe(res => {
       this.productList = <Product[]>res;
