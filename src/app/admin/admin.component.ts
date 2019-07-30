@@ -12,10 +12,6 @@ export class AdminComponent implements OnInit {
   showFiller = false;
   page = 'usermanagement';
   ngOnInit() {
-    // $("#menu-toggle").click(function (e) {
-    //   e.preventDefault();
-    //   $("#wrapper").toggleClass("toggled");
-    // });
   }
 
   changePage(page){

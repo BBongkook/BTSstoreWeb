@@ -26,7 +26,7 @@ export class UsermanagementComponent implements OnInit {
   ngOnInit() {
     this.getUserList();
    }
-
+// 유저조회
   getUserList(){
     this._cs.get('/userlist').subscribe(
       res => {
@@ -42,7 +42,7 @@ export class UsermanagementComponent implements OnInit {
         location.href = ''
       })
   }
-
+// 유저삭제
   delUser(uNum: number) {
     var tmpUnum = this.userNumArray.lastIndexOf(uNum);
     if (tmpUnum>=0) {
@@ -54,6 +54,7 @@ export class UsermanagementComponent implements OnInit {
     this.userNumArray.push(uNum);
     this.sort(this.userNumArray);
   }
+  
   userDelete(){
     var setUserNumJson = JSON.stringify(this.userNumArray);
     console.log(setUserNumJson);
