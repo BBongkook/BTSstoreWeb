@@ -6,7 +6,7 @@ import { CommonService } from '../common/common.service';
 declare var $: any;
 
 
-if (sessionStorage.getItem('id') && sessionStorage.getItem('id') != 'admin') {
+if (sessionStorage.getItem('id') || sessionStorage.getItem('id') != 'admin') {
   window.setTimeout(function () {
     sessionStorage.clear();
     alert('로그인 후 30분이 지났습니다. 자동 로그아웃 됩니다.');

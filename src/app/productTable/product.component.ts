@@ -10,7 +10,6 @@ import { Cart } from '../vo/cart';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  //imgurl:string = 'http://localhost:88/img/'
   p: number = 1;
   productCategoryName:string;
   pLargeName:string='';
