@@ -26,7 +26,7 @@
     "@progress/kendo-angular-scrollview": "^2.2.2",
     "@progress/kendo-theme-default": "latest",
     "@types/jquery": "^3.3.29",
-    "angular": "^1.7.8",
+    "angular": "^1.8.0",
     "angular-alert-module": "^2.0.3",
     "angular-fluid-grid": "0.0.5",
     "angular-material": "^1.1.19",
